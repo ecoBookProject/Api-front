@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+.login-page {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cor{
+    background-color: #B5BF65;
+}
+
+.h1-cor{
+    color: floralwhite;
+}
