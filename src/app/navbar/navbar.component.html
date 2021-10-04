@@ -1,21 +1,71 @@
+<!-- NavBar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-color">
-    <a class="navbar-brand text-color" href="#">EcoBook <i class="fa fa-pagelines" aria-hidden="true"></i></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Buscar">
-        <button class="btn btn-outline-success my-2 my-sm-0 btn-color" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-      </form>
-       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/cadastro">Login/Cadastro <span class="sr-only">(current)</span><i class="fa fa-sign-in" aria-hidden="true"></i></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Carrinho <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <a class="navbar-brand text-color ml-2" href="#">EcoBook <i class="fa fa-pagelines" aria-hidden="true"></i></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <form class="form-inline my-3 ml-auto d-flex justify-content-center">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar">
+      <button class="btn my-2 my-sm-0 btn-color rounded-right" type="submit"><i class="fa fa-search"></i></button>
+    </form>
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0 d-flex align-items-center">
+      <li class="nav-item active">
+        <a class="nav-link mr-3">Olá,<br>seja bem-vinde!</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-items nav-link mr-3" href="#">Login/Cadastro
+          <span><i class="fa-nav fa fa-user d-flex justify-content-center" aria-hidden="true"></i></span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-items nav-link" href="#">Carrinho
+          <span><i class="fa-nav fa fa-shopping-cart d-flex justify-content-center" aria-hidden="true"></i></span>
+        </a>
+
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- Sub NavBar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-color2">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav justify-content-lg-around flex-fill">
+      <li class="nav-item dropdown active">
+        <a class="nav-link navbar-brand" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-bars mr-2" aria-hidden="true"></i> Categorias
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Biografia</a>
+          <a class="dropdown-item" href="#">Fantasia</a>
+          <a class="dropdown-item" href="#">Ficção Científica</a>
+          <a class="dropdown-item" href="#">Horror</a>
+          <a class="dropdown-item" href="#">Poesia</a>
+          <a class="dropdown-item" href="#">Romance</a>
+          <a class="dropdown-item" href="#">Sagas</a>
+        </div>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Livros</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">eBooks</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Mais vendidos</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Ofertas</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Lançamentos</a>
+      </li>
+    </ul>
+  </div>
+</nav>

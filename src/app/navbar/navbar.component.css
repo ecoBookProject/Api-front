@@ -1,16 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+.navbar {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
 
 .bg-color {
+    background-color: #B5BF65;
+}
+
+.bg-color2 {
     background-color: #90A641;
 }
 
 .btn-color {
     background-color: #BFAF80;
-}
-
-.btn-outline-success, .fa{
     color: #fff;
 }
 
-.btn {
-  border: none;
+.dropdown-item {
+    color: #fff;
+}
+
+.dropdown-menu {
+    background-color: #90A641;
+}
+
+.nav-items {
+    font-size: 10pt;
+}
+
+.fa-nav {
+    font-size: 15pt;
+    border: none;
 }
