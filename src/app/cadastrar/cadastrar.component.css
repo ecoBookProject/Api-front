@@ -1,12 +1,4 @@
-section {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #FFF;
-    background-size: cover;
-    font-family: 'Mulish', sans-serif;
-  }
+
   .cor{
     background-color: #B5BF65;
   }
