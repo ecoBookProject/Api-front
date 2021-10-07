@@ -2,5 +2,6 @@ export const environment = {
   production: true,
   idClient: 0,
   name: '',
-  token: ''
+  token: '',
+  type_user: ''
 };
