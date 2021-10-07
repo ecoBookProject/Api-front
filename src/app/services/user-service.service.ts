@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
@@ -12,13 +12,19 @@ export class UserServiceService {
 
   constructor(private http: HttpClient) { }
 
+  token = {headers: new HttpHeaders().set('Authorization', environment.token)}
+
   cadastrar(user: UserModel): Observable<UserModel> {
-    return this.http.post<UserModel>('https://projetointegradorgrupo4.herokuapp.com/users/register', user)
+    return this.http.post<UserModel>('https://projetoecobook.herokuapp.com/users/register', user)
   }
 
   //Para o login ->  
   entrar(userDto: UserDTO): Observable<UserDTO> {
-    return this.http.post<UserDTO>('https://projetointegradorgrupo4.herokuapp.com/users/auth', userDto)
+    return this.http.post<UserDTO>('https://projetoecobook.herokuapp.com/users/auth', userDto)
+  }
+
+  getByIdUser(id: number):Observable<UserModel>{
+    return this.http.get<UserModel>(`https://projetoecobook.herokuapp.com/users/${id}`, this.token)
   }
 
   logged() {
@@ -29,4 +35,13 @@ export class UserServiceService {
     return ok;
   }
 
+  type_users(){
+    let ok: boolean = true
+
+    if(environment.type_user == 'Adim'){
+      ok = false
+    }
+
+    return ok
+  }
 }

@@ -1,0 +1,10 @@
+.curso{
+    cursor: pointer;
+    color: #FFF;
+}
+.curso:hover{
+    color: red;
+}
+a{
+    text-decoration: none;
+}
