@@ -15,6 +15,7 @@ import { ContatoComponent } from './contato/contato.component';
 import { LoginComponent } from './login/login.component';
 import { AdimHomeComponent } from './adim-home/adim-home.component';
 import { AdimNavbarComponent } from './adim-navbar/adim-navbar.component';
+import { BookDeleteComponent } from './delete/book-delete/book-delete.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AdimNavbarComponent } from './adim-navbar/adim-navbar.component';
     ContatoComponent,
     LoginComponent,
     AdimHomeComponent,
-    AdimNavbarComponent
+    AdimNavbarComponent,
+    BookDeleteComponent
   ],
   imports: [
     BrowserModule,
