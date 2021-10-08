@@ -17,7 +17,15 @@ export class BookServiceService {
     return this.http.get<BookModel[]>('https://projetoecobook.herokuapp.com/book', this.token)
   }
 
+  getByIdBook(id: number):Observable<BookModel>{
+    return this.http.get<BookModel>(`https://projetoecobook.herokuapp.com/book/${id}`, this.token)
+  }
+
   postPostagem(book: BookModel): Observable<BookModel>{
     return this.http.post<BookModel>('https://projetoecobook.herokuapp.com/book', book, this.token)
+  }
+
+  deleteBook(id: number){
+    return this.http.delete(`https://projetoecobook.herokuapp.com/book/${id}`, this.token)
   }
 }
