@@ -29,8 +29,16 @@ export class LoginComponent implements OnInit {
       environment.idClient = this.userDto.idClient;
       environment.name = this.userDto.name;
       environment.token = this.userDto.token;
-      alert('Usuário logado com sucesso!')
-      this.router.navigate(['/home'])
+      environment.type_user = this.userDto.type_user
+
+      if(this.userDto.type_user == "Adim")
+      {
+        alert('Adiministrador logado com sucesso!')
+        this.router.navigate(['/adim-home'])
+      }else{
+        alert('Usuario logado com sucesso!')
+        this.router.navigate(['/home'])
+      }
     }, error => {
       if (error.status == 401 || error.status == 404) {
         alert('Usuário ou senha estão incorretos')

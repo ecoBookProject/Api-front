@@ -13,6 +13,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { ContatoComponent } from './contato/contato.component';
 import { LoginComponent } from './login/login.component';
+import { AdimHomeComponent } from './adim-home/adim-home.component';
+import { AdimNavbarComponent } from './adim-navbar/adim-navbar.component';
+import { BookDeleteComponent } from './delete/book-delete/book-delete.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { LoginComponent } from './login/login.component';
     NavbarComponent,
     RodapeComponent,
     ContatoComponent,
-    LoginComponent
+    LoginComponent,
+    AdimHomeComponent,
+    AdimNavbarComponent,
+    BookDeleteComponent
   ],
   imports: [
     BrowserModule,
