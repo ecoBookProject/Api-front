@@ -9,8 +9,7 @@
 
             <div class="row d-flex justify-content-center mt-3 mb-5">
                 <div class="col-md-6">
-                    <button class="btn btn-outline-light mr-2" data-toggle="modal" data-target="#novaPostagem">Novo
-                        Livro</button>
+                    <button class="btn btn-outline-light mr-2" data-toggle="modal" data-target="#novaPostagem">Novo Livro</button>
                     <a href="#postagens" class="btn btn-outline-light">Ver Livros</a>
                 </div>
             </div>
@@ -37,7 +36,7 @@
                             <h5 class="card-title text-center">{{item.title}}</h5>
                             <p class="card-text text-center">{{item.publisher}}</p>
                             <p class="text-center"><del class="mr-3 c-grey">R$90,00</del><a>R${{item.price}}</a></p>
-                            <a href="#"
+                            <a [routerLink]="['/book-edit', item.idProduct]"
                                 class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 border border-light ">Editar</a>
                             <a href="#"
                                 class="btn btn-danger mt-auto d-flex justify-content-center rounded-0 border border-light" [routerLink]="['/book-delete', item.idProduct]">Apagar</a>

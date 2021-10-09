@@ -1,0 +1,87 @@
+<div class="container mt-5 mb-5 ">
+    <div class="row"> 
+        <div class="col-md-12"> 
+            <h1 class="text-center text-secondary">Atualizar livro</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-6">
+            <div class="d-flex">
+                <div class="form-group mr-2 col-md-4">
+                    <label for="titulo">Titulo</label>
+                    <input [(ngModel)]="book.title" type="text" class="form-control" id="titulo" placeholder="Digite o titulo">
+                </div>
+                <div class="form-group mr-2 col-md-4">
+                    <label for="titulo">Link da Foto</label>
+                    <input [(ngModel)]="book.foto" type="text" class="form-control" id="titulo" placeholder="Digite o link da foto">
+                </div>
+                <div class="form-group mr-2 col-md-4">
+                    <label for="titulo">Preço</label>
+                    <input [(ngModel)]="book.price" type="text" class="form-control" id="titulo" placeholder="Digite o preço">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="texto">Descrição</label>
+                <textarea [(ngModel)]="book.description" class="form-control" name="texto" id="texto" rows="3"
+                    placeholder="Digite a descrição do livro"></textarea>
+            </div>
+            <div class="d-flex">
+                <div class="form-group mr-2 col-md-4">
+                    <label for="titulo">Autor</label>
+                    <input [(ngModel)]="book.author" type="text" class="form-control" id="titulo" placeholder="Digite o titulo">
+                </div>
+                <div class="form-group mr-2 col-md-4">
+                    <label for="titulo">Ano de publicação</label>
+                    <input [(ngModel)]="book.year" type="text" class="form-control" id="titulo" placeholder="Digite o ano de publicação do livro">
+                </div>
+                <div class="form-group mr-2 col-md-4">
+                    <label for="titulo">Estoque</label>
+                    <input [(ngModel)]="book.inventory" type="text" class="form-control" id="titulo" placeholder="Digite o estoque">
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="form-group mr-2 col-md-4">
+                    <label for="titulo">Linguagem</label>
+                    <input [(ngModel)]="book.language" type="text" class="form-control" id="titulo" placeholder="Digite a linguagem">
+                </div>
+                <div class="form-group mr-2 col-md-4">
+                    <label for="titulo">isbn</label>
+                    <input [(ngModel)]="book.isbn" type="text" class="form-control" id="titulo" placeholder="Digite o codigo isbn">
+                </div>
+                <div class="form-group mr-2 col-md-4">
+                    <label for="titulo">ean</label>
+                    <input [(ngModel)]="book.ean" type="text" class="form-control" id="titulo" placeholder="Digite o codigo ean">
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="form-group mr-2 col-md-4">
+                    <label for="titulo">País</label>
+                    <input [(ngModel)]="book.country" type="text" class="form-control" id="titulo" placeholder="Digite o País">
+                </div>
+                <div class="form-group mr-2 col-md-4">
+                    <label for="titulo">Editora</label>
+                    <input [(ngModel)]="book.publisher" type="text" class="form-control" id="titulo" placeholder="Digite a editora">
+                </div>
+                <div class="form-group mr-2 col-md-4">
+                    <label for="titulo">Formato</label>
+                    <input [(ngModel)]="book.format" type="text" class="form-control" id="titulo" placeholder="Digite o formato">
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="form-group mr-2 col-md-5">
+                    <label for="titulo">Paginas</label>
+                    <input [(ngModel)]="book.pages" type="text" class="form-control" id="titulo" placeholder="Digite a quantidade de paginas">
+                </div>
+                <div class="form-group mr-2 col-md-5">
+                    <label for="texto">Escolha um tema ou <a data-dismiss="modal">cadastre um
+                            novo</a>:</label>
+                    <select class="form-control" name="tema" id="tema">
+                        <option value="valor1">Valor 1</option>
+                        <option value="valor2" selected>Valor 2</option>
+                        <option value="valor3">Valor 3</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
