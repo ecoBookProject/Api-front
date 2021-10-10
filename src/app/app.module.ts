@@ -16,6 +16,8 @@ import { LoginComponent } from './login/login.component';
 import { AdimHomeComponent } from './adim-home/adim-home.component';
 import { AdimNavbarComponent } from './adim-navbar/adim-navbar.component';
 import { BookDeleteComponent } from './delete/book-delete/book-delete.component';
+import { BookEditComponent } from './edit/book-edit/book-edit.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatStepperModule } from '@angular/material/stepper';
 
@@ -30,7 +32,8 @@ import { MatStepperModule } from '@angular/material/stepper';
     LoginComponent,
     AdimHomeComponent,
     AdimNavbarComponent,
-    BookDeleteComponent
+    BookDeleteComponent,
+    BookEditComponent
   ],
   imports: [
     BrowserModule,
