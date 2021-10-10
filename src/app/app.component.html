@@ -1,5 +1,5 @@
 <app-adim-navbar *ngIf='users.type_users() == false'></app-adim-navbar>
-<app-navbar *ngIf='users.type_users()'></app-navbar>
+<app-navbar *ngIf='users.type_users() && users.logged()'></app-navbar>
 <router-outlet></router-outlet>
-<app-rodape></app-rodape>
+<app-rodape *ngIf='users.logged()'></app-rodape>
 

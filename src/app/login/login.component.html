@@ -1,37 +1,30 @@
-<div class="container-fluid mt-5">
-    <div class="row login-page">
-        <div class="col-md-6 cor">
-            <div class="container col-md-6">
-                <div id="content">
-                    <div class="container-fluid">
-                        <div class="lock-container">
-                            <h1 class="d-flex justify-content-center h1-cor">Login</h1>
-                            <div class="panel panel-default text-center mt-5">
-                                <div class="panel-body">
-                                    <div class="panel-body">
-                                        <div class="form-group ">
-                                            <label for="user">E-mail</label>
-                                            <input [(ngModel)]='userDto.email' class="form-control " type="text"
-                                                name="user" id="user" placeholder="Insira seu E-mail">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="password">Senha</label>
-                                            <input [(ngModel)]='userDto.password' class="form-control" type="password"
-                                                name="password" id="password" placeholder="Insira sua senha">
-                                        </div>
-                                        <div class="d-flex justify-content-center">
-                                            <button type="submit" class="btn btn-success" (click)='login()'> Entrar
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <hr class="mt-5 mb-5">
-                                    <p class="text-center">
-                                        Não tem uma conta? <a routerLink='/cadastro'>Cadastre-se</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+<nav class="navbar navbar-expand-lg navbar-color">
+    <a class="navbar-brand align-text-bottom h-100" href="#">
+        ecobook <img src="https://i.imgur.com/ftw5v44.png" class="align-bottom" width="30" height="30" alt="" loading="lazy">
+    </a>
+</nav>
+<div class="container-fluid h-100">
+    <div class="row d-flex align-items-center justify-content-center">
+        <div class="col-md-6" id="img-bg"></div>
+        <div class="col-md-6">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6 col-style">
+                    <h4 class="text-center title-form mt-4">Faça seu login</h4>
+                    <div class="form-group mx-3">
+                        <label for="user">E-mail</label>
+                        <input [(ngModel)]='userDto.email' class="form-control " type="text" name="user" id="user"
+                            placeholder="Insira seu E-mail">
                     </div>
+                    <div class="form-grou mx-3">
+                        <label for="password">Senha</label>
+                        <input [(ngModel)]='userDto.password' class="form-control" type="password" name="password"
+                            id="password" placeholder="Insira sua senha">
+                    </div>
+                    <div class="d-flex justify-content-center mt-3">
+                        <button type="submit" class="btn btn-color" (click)='login()'>Entrar</button>
+                    </div>
+                    <hr class="my-4">
+                    <p class="text-center my-4">Não tem uma conta? <a routerLink='/cadastro'>Cadastre-se</a> </p>
                 </div>
             </div>
         </div>

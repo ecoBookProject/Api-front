@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 .navbar {
     color: #fff;
     font-family: 'Roboto', sans-serif;
+}
+
+#logo-style {
+    font-family: 'Indie Flower', cursive;
+    color: #fff;
+    font-size: 26px;
 }
 
 .bg-color {
@@ -31,4 +39,8 @@
 .fa-nav {
     font-size: 15pt;
     border: none;
+}
+
+.pointer {
+    cursor: pointer;
 }
