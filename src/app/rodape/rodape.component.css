@@ -1,3 +1,8 @@
 .c-rodape{
     background-color: #B5BF65 ;
-    }
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+}

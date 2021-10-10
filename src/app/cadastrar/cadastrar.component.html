@@ -1,155 +1,138 @@
-<br>
-<div class="container col-md-6 form-login justify-content-center cor mt-5 mb-5">
-    <div class="d-flex justify-content-center text-dark">
-        <h1 class="fs-54 font-weight-bold">CADASTRO</h1>
-    </div>
-    <div class="tab-content" id="pills-tabContent">
-        <!--Etapa1 do cadastro-->
-        <div class="tab-pane fade show active" id="pills-etapa1" role="tabpanel"
-            aria-labelledby="pills-todasPostagens-tab">
-            <div class="container d-flex justify-content-center">
-                <div class="form-outer">
-                    <form>
-                        <div class="title font-weight-bold">Etapa 1</div>
-                        <div class="page slide-page">
-                            <div class="field">
-                                <div class="label">CEP</div>
-                                <input type="text" mask="00000-000" name="cep" id="cep" [(ngModel)]="user.cep"
-                                    placeholder="Cep">
-                                <div class="col-md-4">
-                                    <button class="btn btn-primary" (click)='buscar()'>Buscar</button>
+<nav class="navbar navbar-expand-lg navbar-color">
+    <a class="navbar-brand align-text-bottom h-100" href="#">
+        ecobook <img src="https://i.imgur.com/ftw5v44.png" class="align-bottom" width="30" height="30" alt="" loading="lazy">
+    </a>
+</nav>
+<div class="container-fluid">
+    <div class="row d-flex align-items-center justify-content-center">
+        <div class="col-md-6">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-md-6 col-style">
+                    <div class="tab-content" id="pills-tabContent">
+                        <!--Etapa1 do cadastro-->
+                        <div class="tab-pane fade show active" id="pills-etapa1" role="tabpanel"
+                            aria-labelledby="pills-etapa1-tab">
+                            <form>
+                                <h3 class="title-form text-center mt-3">Etapa 1</h3>
+                                <div class="form-group my-3">
+                                    <div class="label">CEP</div>
+                                    <input class="form-control" type="text" mask="00000-000" name="cep" id="cep"
+                                        [(ngModel)]="user.cep" placeholder="Ex: 01234-567">
+                                    <div class="d-flex justify-content-end">
+                                        <button class="btn btn-secondary btn-sm mt-2 mr-2" (click)='buscar()'>Buscar</button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="field">
-                                <div class="label">Endereço</div>
-                                <input type="text" name="logradouro" id="logradouro" [(ngModel)]="user.address"
-                                    #logradouro="ngModel" placeholder="Endereço" />
-                            </div>
-                            <div class="field">
-                                <div class="label">Bairro</div>
-                                <input type="text" name="bairro" id="bairro" [(ngModel)]="user.district"
-                                    placeholder="Bairro" />
-                            </div>
-                            <div class="field justify-content-center">
-                                <button class="btn btn-primary style-button2 mr-4" routerLink="/login">
-                                    Voltar
-                                </button>
-                                <button class="btn btn-primary style-button" id="pills-etapa2-tab" data-toggle="pill"
-                                    href="#pills-etapa2" role="tab" aria-controls="pills-etapa2" aria-selected="false">
-                                    Proximo
-                                </button>
-                            </div>
+                                <div class="form-group my-3">
+                                    <div class="label">Endereço</div>
+                                    <input class="form-control" type="text" name="logradouro" id="logradouro"
+                                        [(ngModel)]="user.address" #logradouro="ngModel" placeholder="Rua das Laranjeiras">
+                                </div>
+                                <div class="form-group my-3">
+                                    <div class="label">Bairro</div>
+                                    <input class="form-control" type="text" name="bairro" id="bairro"
+                                        [(ngModel)]="user.district" placeholder="Bairro">
+                                </div>
+                                <div class="d-flex justify-content-center mb-3">
+                                    <button class="btn mr-4 btn-color" routerLink="/login">Voltar</button>
+                                    <button class="btn btn-color" id="pills-etapa2-tab" data-toggle="pill"
+                                        href="#pills-etapa2" role="tab" aria-controls="pills-etapa2" aria-selected="false">
+                                        Próximo
+                                    </button>
+                                </div>
+                            </form>
                         </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!--Etapa2 do cadastro-->
-        <div class="tab-pane fade" id="pills-etapa2" role="tabpanel" aria-labelledby="pills-minhasPostagens-tab">
-            <div class="container d-flex justify-content-center">
-                <div class="form-outer">
-                    <form>
-                        <div class="title font-weight-bold">Etapa 2</div>
-                        <div class="page slide-page">
-                            <div class="field">
-                                <div class="label">Cidade</div>
-                                <input type="text" name="cidade" id="cidade" [(ngModel)]="user.city"
-                                    placeholder="Cidade" />
-                            </div>
-                            <div class="field">
-                                <div class="label">Numero</div>
-                                <input type="text" [(ngModel)]="user.number" name="numero" id="numero" required
-                                    placeholder="Numero" />
-                            </div>
-                            <div class="field">
-                                <div class="label">Complemento</div>
-                                <input type="text" [(ngModel)]="user.complement" name="compl" id="compl"
-                                    placeholder="Ex: Bl2 apto100" />
-                            </div>
-                            <div class="field">
-                                <div class="label">Estado</div>
-                                <input type="text" name="estado" id="estado" [(ngModel)]="user.state" required
-                                    placeholder="Estado" />
-                            </div>
-                            <div class="field justify-content-center">
-                                <button class="btn btn-primary style-button" id="pills-etapa3-tab" data-toggle="pill"
-                                    href="#pills-etapa3" role="tab" aria-controls="pills-etapa3" aria-selected="false">
-                                    Proximo
-                                </button>
-                            </div>
+                        <!--Etapa2 do cadastro-->
+                        <div class="tab-pane fade" id="pills-etapa2" role="tabpanel" aria-labelledby="pills-etapa2-tab">
+                            <form>
+                                <h3 class="title-form text-center mt-3">Etapa 2</h3>
+                                <div class="form-group my-3">
+                                    <div class="label">Número</div>
+                                    <input class="form-control" type="text" [(ngModel)]="user.number" name="numero" id="numero"
+                                        required placeholder="Número">
+                                </div>
+                                <div class="form-group my-3">
+                                    <div class="label">Complemento</div>
+                                    <input class="form-control" type="text" [(ngModel)]="user.complement" name="compl"
+                                        id="compl" placeholder="Ex: Bloco2 Apto100">
+                                </div>
+                                <div class="form-group my-3">
+                                    <div class="label">Cidade</div>
+                                    <input class="form-control" type="text" name="cidade" id="cidade" [(ngModel)]="user.city"
+                                        placeholder="Cidade">
+                                </div>
+                                <div class="form-group my-3">
+                                    <div class="label">UF</div>
+                                    <input class="form-control" type="text" name="estado" id="estado" [(ngModel)]="user.state"
+                                        required placeholder="Estado">
+                                </div>
+                                <div class="d-flex justify-content-center mb-3">
+                                    <button class="btn btn-color" id="pills-etapa3-tab" data-toggle="pill"
+                                        href="#pills-etapa3" role="tab" aria-controls="pills-etapa3" aria-selected="false">
+                                        Próximo
+                                    </button>
+                                </div>
+                            </form>
                         </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!--Etapa3 do cadastro-->
-        <div class="tab-pane fade" id="pills-etapa3" role="tabpanel" aria-labelledby="pills-etapa3-tab">
-            <div class="container d-flex justify-content-center">
-                <div class="form-outer">
-                    <form>
-                        <div class="title font-weight-bold">Etapa 3</div>
-                        <div class="page slide-page">
-                            <div class="field">
-                                <div class="label">Nome Completo</div>
-                                <input type="text" name="name" id="name" [(ngModel)]="user.name" required
-                                    placeholder="Nome" />
-                            </div>
-                            <div class="field">
-                                <div class="label">Telefone</div>
-                                <input type="text" [(ngModel)]="user.phone" mask="(00) 00000-0000" name="phone"
-                                    id="phone" required placeholder="Numero do telefone" />
-                            </div>
-                            <div class="field">
-                                <div class="label">CPF</div>
-                                <input type="text" [(ngModel)]="user.cpf" mask="000.000.000-00" name="cpf" id="cpf"
-                                    required placeholder="CPF" />
-                            </div>
-                            <div class="field justify-content-center">
-                                <button class="btn btn-primary style-button" id="pills-etapa4-tab" data-toggle="pill"
-                                    href="#pills-etapa4" role="tab" aria-controls="pills-etapa4" aria-selected="false">
-                                    Proximo
-                                </button>
-                            </div>
+                        <!--Etapa3 do cadastro-->
+                        <div class="tab-pane fade" id="pills-etapa3" role="tabpanel" aria-labelledby="pills-etapa3-tab">
+                            <form>
+                                <h3 class="title-form text-center mt-3">Etapa 3</h3>
+                                <div class="form-group my-3">
+                                    <div class="label">Nome Completo</div>
+                                        <input class="form-control" type="text" name="name" id="name" [(ngModel)]="user.name" required placeholder="Nome e sobrenome">
+                                </div>
+                                <div class="form-group my-3">
+                                    <div class="label">CPF</div>
+                                    <input class="form-control" type="text" [(ngModel)]="user.cpf" mask="000.000.000-00" name="cpf" id="cpf"
+                                        required placeholder="CPF" >
+                                </div>
+                                <div class="form-group my-3">
+                                    <div class="label">Telefone</div>
+                                    <input class="form-control" type="text" [(ngModel)]="user.phone" mask="(00) 00000-0000" name="phone"
+                                        id="phone" required placeholder="(xx) 99999-9999">
+                                </div>                      
+                                <div class="d-flex justify-content-center mb-3">
+                                    <button class="btn btn-color" id="pills-etapa4-tab" data-toggle="pill"
+                                        href="#pills-etapa4" role="tab" aria-controls="pills-etapa4" aria-selected="false">
+                                        Próximo
+                                    </button>
+                                </div>
+                            </form>
                         </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!--Etapa4 do cadastro-->
-        <div class="tab-pane fade" id="pills-etapa4" role="tabpanel" aria-labelledby="pills-etapa4-tab">
-            <div class="container d-flex justify-content-center">
-                <div class="form-outer">
-                    <form>
-                        <div class="title font-weight-bold">Etapa 4</div>
-                        <div class="page slide-page">
-                            <div class="field">
-                                <div class="label">Email</div>
-                                <input type="text" [(ngModel)]="user.email" name="email" id="email" required
-                                    autocomplete="off" placeholder="Email" />
-                            </div>
-                            <div class="field">
-                                <div class="label">Senha</div>
-                                <input (input)='confirmSenha($event)' type="password" name="senha" id="senha" required
+                        <!--Etapa4 do cadastro-->
+                        <div class="tab-pane fade" id="pills-etapa4" role="tabpanel" aria-labelledby="pills-etapa4-tab">
+                            <form>
+                                <h3 class="title-form text-center mt-3">Etapa final</h3>
+                                <div class="form-group my-3">
+                                    <div class="label">E-mail</div>
+                                        <input class="form-control" type="email" [(ngModel)]="user.email" name="email" id="email" required
+                                            autocomplete="off" placeholder="Ex: nome@email.com">
+                                </div>
+                                <div class="form-group my-3">
+                                    <div class="label">Senha</div>
+                                    <input class="form-control" (input)='confirmSenha($event)' type="password" name="senha" id="senha" required
                                     placeholder="Senha">
-                            </div>
-                            <div class="field">
-                                <div class="label">Confirmar a senha</div>
-                                <input type="password" [(ngModel)]="user.password" name="Confsenha" id="Confsenha"
-                                    required placeholder="Confirme sua senha">
-                            </div>
-                            <div class="field justify-content-center">
-                                <button class="btn btn-primary style-button2 mr-4" routerLink="">
-                                    Voltar
-                                </button>
-                                <button type="submit" class="btn btn-primary style-button" (click)='cadastrar()'>
-                                    Cadastrar
-                                </button>
-                            </div>
+                                </div>
+                                <div class="form-group my-3">
+                                    <div class="label">Confirmar senha</div>
+                                    <input class="form-control" type="password" [(ngModel)]="user.password" name="Confsenha" id="Confsenha"
+                                        required placeholder="Confirme sua senha">
+                                </div>                      
+                                <div class="d-flex justify-content-center mb-3">
+                                    <button class="btn btn-color mr-4" routerLink="">
+                                        Início
+                                    </button>
+                                    <button type="submit" class="btn btn-color" (click)='cadastrar()'>
+                                        Cadastrar
+                                    </button>
+                                </div>
+                            </form>
                         </div>
-                    </form>
-                </div>
-            </div>
+        
+                    </div>
+                </div>                
+            </div>           
         </div>
+        <div class="col-md-6" id="img-bg"></div>
     </div>
 </div>
-<br><br><br><br><br><br>

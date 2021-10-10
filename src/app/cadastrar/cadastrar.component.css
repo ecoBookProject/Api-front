@@ -1,90 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
-  .cor{
-    background-color: #B5BF65;
-  }
-  .cont .form-outer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    border-radius: 20px 20px 20px 20px;
-  }
-  .cont .form-outer form{
-    display: flex;
-    width: 90%;
-    box-sizing: border-box;
-    border-radius: 20px 20px 20px 20px;
-  }
-  .form-outer form .page{
-    box-sizing: border-box;
-    border-radius: 20px 20px 20px 20px;
-  }
-  .form-outer form .page .title{
-    text-align: left;
-    font-size: 25px;
-    font-weight: 500;
-  }
-  .form-outer form .page .field{
-    width: 300px;
-    height: 45px;
-    margin: 30px 0;
-    display: flex;
-    position: relative;
-  }
-  form .page .field .label{
-    position: absolute;
-    top: -25px;
-    font-weight: 500;
-  }
-  form .page .field input{
-    height: 100%;
-    width: 100%;
-    border: 1px solid lightgrey;
-    border-radius: 5px;
-    padding-left: 15px;
-    font-size: 18px;
-  }
-  form .page .field select{
-    width: 100%;
-    padding-left: 10px;
-    font-size: 17px;
-    font-weight: 500;
-  } 
-  .login-page{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .form-login {
-    padding: 25px 15px;
-    border-radius: 20px 20px 20px 20px;
-    border: 2px solid #000;
-    bottom: 10px;
-  }
-  .title{
-    font-size: 20pt;
-    text-align: center;
-  }
-  .style-button {
-    border: none;
-    background: rgba(85, 172, 230, 0.95);
-  }
-  .style-button:hover {
-    background-color: #2f95e7;
-  }
-  .style-button:active {
-    background-color: #3794e0 !important;
-    border:none !important;
-  }
-  .style-button2 {
-    border: none;
-    background: rgba(230, 102, 85, 0.95);
-  }
-  .style-button2:hover {
-    background-color: #eb322c;
-  }
-  .style-button2:active {
-    background-color: #e44225 !important;
-    border:none !important;
-  }
-  
+#img-bg {
+  background-image: url('https://i.imgur.com/fDR5IxO.png');
+  min-height: 695px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 100%;
+  height: auto;
+}
+.col-md-4 {
+  border: 1px solid #ebe8e8;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}
+
+.btn-sm {
+  border-radius: 14px;
+}
+
+.title-form {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+::placeholder {
+  color: rgb(196, 196, 196);
+  font-size: 14px;
+}
+
+.btn-color {
+  background-color: #90A641;
+  color: white;
+  font-weight: 400;
+  border: none;
+  width: 100px;
+  border-radius: 20px;
+}
+
+.btn-color:hover {
+  background-color: #738623;
+}
+
+.col-style {
+  border: 1px solid #ebe8e8;
+}
+
+.navbar-color {
+  background-color: #90A641;
+}
+
+.navbar-brand {
+  font-family: 'Indie Flower', cursive;
+  color: #fff;
+  font-size: 26px;
+}
