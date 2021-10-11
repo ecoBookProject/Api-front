@@ -19,6 +19,7 @@ import { BookDeleteComponent } from './delete/book-delete/book-delete.component'
 import { BookEditComponent } from './edit/book-edit/book-edit.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { VitrineComponent } from './vitrine/vitrine.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdimHomeComponent,
     AdimNavbarComponent,
     BookDeleteComponent,
-    BookEditComponent
+    BookEditComponent,
+    VitrineComponent
   ],
   imports: [
     BrowserModule,
