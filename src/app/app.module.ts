@@ -1,7 +1,8 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
+import { NgxCurrencyModule } from 'ngx-currency';
 import { HttpClientModule } from '@angular/common/http';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
@@ -17,8 +18,6 @@ import { AdimHomeComponent } from './adim-home/adim-home.component';
 import { AdimNavbarComponent } from './adim-navbar/adim-navbar.component';
 import { BookDeleteComponent } from './delete/book-delete/book-delete.component';
 import { BookEditComponent } from './edit/book-edit/book-edit.component';
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -42,17 +41,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NgxMaskModule.forRoot({
       dropSpecialCharacters: false
     }),
-    BrowserAnimationsModule,
-    ReactiveFormsModule
+    NgxCurrencyModule
   ],
   providers: [
     {
       provide: LocationStrategy,
       useClass: HashLocationStrategy
     }
-  ],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
   ],
   bootstrap: [AppComponent]
 })

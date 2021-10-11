@@ -5,6 +5,7 @@ import { BookModel } from '../models/BookModel';
 import { CategoryModel } from '../models/CategoryModel';
 import { UserModel } from '../models/UserModel';
 import { BookServiceService } from '../services/book-service.service';
+import { CategoryServiceService } from '../services/category-service.service';
 import { UserServiceService } from '../services/user-service.service';
 
 @Component({
@@ -18,14 +19,15 @@ export class AdimHomeComponent implements OnInit {
   listBook: BookModel[]
   user: UserModel = new UserModel()
   idUser = environment.idClient
-  categoty: CategoryModel = new CategoryModel()
+  category: CategoryModel = new CategoryModel()
   idCategory: number
   listCategory: CategoryModel[]
 
   constructor(
     private router: Router,
     private bookService: BookServiceService,
-    private userService: UserServiceService
+    private userService: UserServiceService,
+    private categoryService: CategoryServiceService
   ) { }
 
   ngOnInit(){
@@ -35,6 +37,7 @@ export class AdimHomeComponent implements OnInit {
     }
 
     this.findAllBook()
+    this.findAllCategory()
   }
 
   findAllBook(){
@@ -49,7 +52,30 @@ export class AdimHomeComponent implements OnInit {
     })
   }
 
-  post(){
+  findAllCategory(){
+    this.categoryService.getAllCategory().subscribe((resp: CategoryModel[])=>{
+      this.listCategory = resp
+    })
+  }
 
+  findByIdCategory(){
+    this.categoryService.getByIdCategory(this.idCategory).subscribe((resp: CategoryModel) => {
+      this.category = resp
+    })
+  }
+
+  post(){
+    this.category.idCategory = this.idCategory
+    this.book.category = this.category
+
+    this.user.idClient = this.idUser
+    this.book.users = this.user
+
+    this.bookService.postBook(this.book).subscribe((resp: BookModel) => {
+      this.book = resp
+      alert('Livro publicado com sucesso!')
+      this.book = new BookModel()
+      this.findAllBook()
+    })
   }
 }
