@@ -19,7 +19,6 @@ import { BookDeleteComponent } from './delete/book-delete/book-delete.component'
 import { BookEditComponent } from './edit/book-edit/book-edit.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
   declarations: [
@@ -44,7 +43,6 @@ import { MatStepperModule } from '@angular/material/stepper';
       dropSpecialCharacters: false
     }),
     BrowserAnimationsModule,
-    MatStepperModule,
     ReactiveFormsModule
   ],
   providers: [
