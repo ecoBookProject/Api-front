@@ -38,8 +38,8 @@ export class CadastrarComponent implements OnInit {
       console.log(this.user)
       this.userService.cadastrar(this.user).subscribe((resp: UserModel) => {
       this.user = resp
-      this.router.navigate([''])
       alert('Usuario cadastrado com sucesso!')
+      this.router.navigate(['/login'])
       })
     }
   }

@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { UserDTO } from '../models/UserDTO';
@@ -10,7 +11,10 @@ import { UserModel } from '../models/UserModel';
 })
 export class UserServiceService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private router: Router
+    ) { }
 
   token = {headers: new HttpHeaders().set('Authorization', environment.token)}
 
@@ -29,8 +33,8 @@ export class UserServiceService {
 
   logged() {
     let ok: boolean = false;
-    if (environment.token != '') {
-      ok = true;
+    if (this.router.url.includes('/home')) {
+      ok = true;      
     }
     return ok;
   }
@@ -41,7 +45,6 @@ export class UserServiceService {
     if(environment.type_user == 'Adim'){
       ok = false
     }
-
     return ok
   }
 }

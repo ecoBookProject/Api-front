@@ -31,6 +31,8 @@ export class LoginComponent implements OnInit {
       environment.token = this.userDto.token;
       environment.type_user = this.userDto.type_user
 
+      console.log(environment.token)
+
       if(this.userDto.type_user == "Adim")
       {
         alert('Adiministrador logado com sucesso!')
