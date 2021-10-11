@@ -33,7 +33,7 @@
                     <div class="card">
                         <img class="card-img-top" src="{{item.foto}}" alt="When Time Stopped">
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-center">{{item.title}}</h5>
+                            <h5 class="card-title text-center titulo">{{item.title}}</h5>
                             <p class="card-text text-center">{{item.publisher}}</p>
                             <p class="text-center"><del class="mr-3 c-grey">R$90,00</del><a>R${{item.price}}</a></p>
                             <a [routerLink]="['/book-edit', item.idProduct]"

@@ -28,4 +28,7 @@ export class BookServiceService {
   deleteBook(id: number){
     return this.http.delete(`https://projetoecobook.herokuapp.com/book/${id}`, this.token)
   }
+  putBook(book: BookModel):Observable<BookModel>{
+    return this.http.put<BookModel>('https://projetoecobook.herokuapp.com/book', book, this.token)
+  }
 }
