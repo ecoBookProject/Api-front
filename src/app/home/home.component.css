@@ -41,3 +41,15 @@
     transform: scale(1.1);
     z-index: 2;
 }
+
+.titulo{
+    word-wrap: break-word;
+    width: 13em;
+    font-size: 20px;
+}
+
+.loader-container{
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+}

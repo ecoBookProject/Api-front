@@ -22,6 +22,9 @@ import { BookEditComponent } from './edit/book-edit/book-edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VitrineComponent } from './vitrine/vitrine.component';
 
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
+import {MatProgressBarModule} from '@angular/material/progress-bar'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +48,9 @@ import { VitrineComponent } from './vitrine/vitrine.component';
     NgxMaskModule.forRoot({
       dropSpecialCharacters: false
     }),
-    NgxCurrencyModule
+    NgxCurrencyModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule
   ],
   providers: [
     {
