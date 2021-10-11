@@ -6,6 +6,7 @@ import { BookDeleteComponent } from './delete/book-delete/book-delete.component'
 import { BookEditComponent } from './edit/book-edit/book-edit.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { VitrineComponent } from './vitrine/vitrine.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent },
   {path: 'adim-home', component: AdimHomeComponent},
   {path: 'book-delete/:id', component: BookDeleteComponent},
-  {path: 'book-edit/:id', component: BookEditComponent}
+  {path: 'book-edit/:id', component: BookEditComponent},
+  {path: 'vitrine', component: VitrineComponent }
 ];
 
 @NgModule({
