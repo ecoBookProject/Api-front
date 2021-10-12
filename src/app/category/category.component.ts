@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 import { CategoryModel } from '../models/CategoryModel';
 import { CategoryService } from '../services/category.service';
 
@@ -13,11 +15,14 @@ export class CategoryComponent implements OnInit {
   listCategory: CategoryModel[]
 
   constructor(
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private router: Router
   ) { }
 
   ngOnInit() {
-
+      if(environment.token == '') {
+        this.router.navigate(['/login'])
+      }
     this.findAllCategories()
   }
 
