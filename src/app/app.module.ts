@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
+import { NgxCurrencyModule } from 'ngx-currency';
 import { HttpClientModule } from '@angular/common/http';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
@@ -21,6 +22,12 @@ import { CategoryComponent } from './category/category.component';
 import { CategoryEditComponent } from './edit/category-edit/category-edit.component';
 import { CategoryDeleteComponent } from './delete/category-delete/category-delete.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { VitrineComponent } from './vitrine/vitrine.component';
+
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
+import {MatProgressBarModule} from '@angular/material/progress-bar'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +43,8 @@ import { CategoryDeleteComponent } from './delete/category-delete/category-delet
     BookEditComponent,
     CategoryComponent,
     CategoryEditComponent,
-    CategoryDeleteComponent
+    CategoryDeleteComponent,
+    VitrineComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +53,10 @@ import { CategoryDeleteComponent } from './delete/category-delete/category-delet
     HttpClientModule,
     NgxMaskModule.forRoot({
       dropSpecialCharacters: false
-    })
+    }),
+    NgxCurrencyModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule
   ],
   providers: [
     {

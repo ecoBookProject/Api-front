@@ -9,6 +9,7 @@ import { BookEditComponent } from './edit/book-edit/book-edit.component';
 import { CategoryEditComponent } from './edit/category-edit/category-edit.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { VitrineComponent } from './vitrine/vitrine.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: 'book-edit/:id', component: BookEditComponent},
   {path: 'category', component: CategoryComponent},
   {path: 'category-edit/:id', component: CategoryEditComponent},
-  {path: 'category-delete/:id', component: CategoryDeleteComponent}
+  {path: 'category-delete/:id', component: CategoryDeleteComponent},
+  {path: 'vitrine', component: VitrineComponent }
 ];
 
 @NgModule({

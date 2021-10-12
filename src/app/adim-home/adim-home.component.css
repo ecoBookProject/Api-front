@@ -32,6 +32,7 @@
     display: flex;
 }
 
+
 .card:hover{
     box-sizing: border-box !important;
     cursor: pointer;
@@ -40,4 +41,10 @@
     -ms-transform: scale(1.1);
     transform: scale(1.1);
     z-index: 2;
+}
+
+.titulo{
+    word-wrap: break-word;
+    width: 13em;
+    font-size: 20px;
 }

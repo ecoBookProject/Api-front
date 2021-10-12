@@ -1,6 +1,8 @@
 <!-- NavBar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-color">
-  <a class="navbar-brand text-color ml-2" href="#">EcoBook <i class="fa fa-pagelines" aria-hidden="true"></i></a>
+  <a class="navbar-brand align-text-bottom h-100 ml-5" href="#" id="logo-style">
+    ecobook <img src="https://i.imgur.com/ftw5v44.png" class="align-bottom" width="30" height="30" alt="" loading="lazy">
+</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
     aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -11,19 +13,23 @@
       <button class="btn my-2 my-sm-0 btn-color rounded-right" type="submit"><i class="fa fa-search"></i></button>
     </form>
     <ul class="navbar-nav ml-auto mt-2 mt-lg-0 d-flex align-items-center">
-      <li class="nav-item active">
-        <a class="nav-link text-center">Olá,<br>seja bem-vinde!</a>
+      <li class="nav-item active mx-2">
+        <a class="nav-link text-center">Olá, {{name}}<br>seja bem-vinde!</a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item active mx-1">
         <a class="nav-items nav-link" routerLink="/login">Login/Cadastro
           <span><i class="fa-nav fa fa-user d-flex justify-content-center" aria-hidden="true"></i></span>
         </a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item active mx-1">
         <a class="nav-items nav-link" href="#">Carrinho
           <span><i class="fa-nav fa fa-shopping-cart d-flex justify-content-center" aria-hidden="true"></i></span>
         </a>
-
+      </li>
+      <li class="nav-item active mx-1">
+        <a class="nav-items nav-link" (click)='logout()'> Sair
+          <span><i class="fa-nav fa fa-sign-out d-flex justify-content-center" ></i></span>
+        </a>
       </li>
     </ul>
   </div>
