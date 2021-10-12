@@ -16,13 +16,22 @@ export class CategoryComponent implements OnInit {
     private categoryService: CategoryService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    this.findAllCategories()
+  }
+
+  findAllCategories () {
+    this.categoryService.getAllCategory().subscribe((resp: CategoryModel[]) => {
+      this.listCategory = resp
+    })
   }
 
   cadastrar () {
     this.categoryService.postCategory(this.category).subscribe((resp: CategoryModel) => {
       this.category = resp
       alert('Categoria cadastrada com sucesso!')
+      this.findAllCategories()
       this.category = new CategoryModel()
 
     })
