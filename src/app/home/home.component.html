@@ -1,5 +1,5 @@
 <!-- Carousel -->
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"  data-interval="3000">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -33,185 +33,29 @@
     </div>
 </div>
 
+<div class="row d-flex justify-content-center" *ngIf='!previous'>
+    <h2>Carregando</h2>
+    <mat-progress-bar mode="indeterminate" ></mat-progress-bar>
+</div>
 <!-- Books card -->
 <div id="books-card">
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="col-12">
             </div>
-            <div class="card-deck h-100 mb-3">
-                <div class="card">
-                    <img class="card-img-top" src="https://i.imgur.com/g3gO4vY.jpg" alt="When Time Stopped">
+            <div class="card-deck mb-3 mr-3" *ngFor='let item of listBook'>
+                <div class="card h-100" *ngIf='previous'>
+                    <img class="card-img-top" src="{{item.foto}}" alt="When Time Stopped">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">WHEN TIME STOPPED</h5>
-                        <p class="card-text text-center">Scribner Book Company</p>
-                        <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>R$30,00</a></p>
-                        <a href="#"
-                            class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 bc-green border border-light ">Comprar</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="https://i.imgur.com/vcUQCQb.jpg" alt="Historia do mundo">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">HISTÓRIA DO MUNDO</h5>
-                        <p class="card-text text-center">Fundamento</p>
-                        <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>R$30,00</a></p>
-                        <a href="#"
-                            class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 bc-green border border-light ">Comprar</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="https://i.imgur.com/zxdZhmB.jpg" alt="Barack Obama">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">BARACK OBAMA</h5>
-                        <p class="card-text text-center">Companhia das Letras</p>
-                        <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>R$30,00</a></p>
-                        <a href="#"
-                            class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 bc-green border border-light ">Comprar</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="https://i.imgur.com/3YruORL.jpg" alt="Brasil uma biografia">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">BRASIL: UMA BIOGRAFIA</h5>
-                        <p class="card-text text-center">Companhia das Letras</p>
-                        <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>R$30,00</a></p>
+                        <h5 class=" text-center titulo" (click)="vitrine()">{{item.title}}</h5>
+                        <p class="card-text text-center">{{item.publisher}}</p>
+                        <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>R${{item.price}}</a></p>
                         <a href="#"
                             class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 bc-green border border-light ">Comprar</a>
                     </div>
                 </div>
             </div>
             <div class="col-12">
-            </div>
-            <div class="card-deck h-100 mb-3">
-                <div class="card">
-                    <img class="card-img-top" src="https://i.imgur.com/NWrS9zb.jpg" alt="A HISTÓRIA DO MUNDO">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">A HISTÓRIA DO MUNDO</h5>
-                        <p class="card-text text-center">Valentina</p>
-                        <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>R$30,00</a></p>
-                        <a href="#"
-                            class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 bc-green border border-light ">Comprar</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="https://i.imgur.com/Th9Vucv.jpg" alt="Livro O Código da Vinci">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">O CÓDIGO DA VINCI</h5>
-                        <p class="card-text text-center">Arqueiro</p>
-                        <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>R$30,00</a></p>
-                        <a href="#"
-                            class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 bc-green border border-light ">Comprar</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="https://i.imgur.com/hKg1hLW.jpg" alt="Raízes do Brasil">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">RAÍZES DO BRASIL</h5>
-                        <p class="card-text text-center">Caitica</p>
-                        <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>R$30,00</a></p>
-                        <a href="#"
-                            class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 bc-green border border-light ">Comprar</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="https://i.imgur.com/c9xl9kR.jpg" alt="Ney Matograsso">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">NEY MATOGROSSO</h5>
-                        <p class="card-text text-center">Julio Maria</p>
-                        <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>R$30,00</a></p>
-                        <a href="#"
-                            class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 bc-green border border-light ">Comprar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-            </div>
-            <div class="card-deck h-100 mb-3">
-                <div class="card">
-                    <img class="card-img-top" src="https://i.imgur.com/bvDuhUD.jpg" alt="Minha História">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">MINHA HISTÓRIA</h5>
-                        <p class="card-text text-center">Objetiva</p>
-                        <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>R$30,00</a></p>
-                        <a href="#"
-                            class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 bc-green border border-light ">Comprar</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="https://i.imgur.com/f6HmXp8.jpg" alt="Dom Quixote">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">DOM QUIXOTE</h5>
-                        <p class="card-text text-center">Moderna</p>
-                        <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>R$30,00</a></p>
-                        <a href="#"
-                            class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 bc-green border border-light ">Comprar</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="https://i.imgur.com/6zhEeBA.jpg" alt="O segredo do meu turbante">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">O SEGREDO<br>DO MEU TURBANTE</h5>
-                        <p class="card-text text-center">Globo Livros</p>
-                        <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>R$30,00</a></p>
-                        <a href="#"
-                            class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 bc-green border border-light ">Comprar</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="https://i.imgur.com/d1AIAwZ.jpg" alt="Alice no país das maravilhas">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">ALICE NO PÁIS <br> DAS MARAVILHAS</h5>
-                        <p class="card-text text-center">Pelicano</p>
-                        <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>R$30,00</a></p>
-                        <a href="#"
-                            class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 bc-green border border-light ">Comprar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-            </div>
-            <div class="card-deck h-100 mb-3">
-                <div class="card">
-                    <img class="card-img-top" src="https://i.imgur.com/t4Pbi4a.jpg" alt="A Era do Capital">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">A ERA DO CAPITAL</h5>
-                        <p class="card-text text-center">Paz e Terra</p>
-                        <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>R$30,00</a></p>
-                        <a href="#"
-                            class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 bc-green border border-light ">Comprar</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="https://i.imgur.com/JyxV4Gq.jpg" alt="Anjos e demônios">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">ANJOS E DEMÔNIOS</h5>
-                        <p class="card-text text-center">Arqueiro</p>
-                        <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>R$30,00</a></p>
-                        <a href="#"
-                            class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 bc-green border border-light ">Comprar</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="https://i.imgur.com/vdq4o0Z.jpg" alt="Inferno">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">INFERNO</h5>
-                        <p class="card-text text-center">Arqueiro</p>
-                        <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>R$30,00</a></p>
-                        <a href="#"
-                            class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 bc-green border border-light ">Comprar</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="https://i.imgur.com/BaJqVeR.jpg" alt="Símbolo Perdido">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">SÍMBOLO PERDIDO</h5>
-                        <p class="card-text text-center">Arqueiro</p>
-                        <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>R$30,00</a></p>
-                        <a href="#"
-                            class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 bc-green border border-light ">Comprar</a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

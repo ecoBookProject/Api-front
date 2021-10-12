@@ -9,8 +9,7 @@
 
             <div class="row d-flex justify-content-center mt-3 mb-5">
                 <div class="col-md-6">
-                    <button class="btn btn-outline-light mr-2" data-toggle="modal" data-target="#novaPostagem">Novo
-                        Livro</button>
+                    <button class="btn btn-outline-light mr-2" data-toggle="modal" data-target="#novaPostagem">Novo Livro</button>
                     <a href="#postagens" class="btn btn-outline-light">Ver Livros</a>
                 </div>
             </div>
@@ -23,34 +22,32 @@
 </div>
 
 <!-- Books card -->
-<div class="container mb-5 mt-5" id="postagens">
-    <div id="books-card">
-        <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="col-12">
-                </div>
-                <!--Card == Livro-->
-                <div class="card-deck h-100 mb-3 mr-3" *ngFor='let item of listBook'>
-                    <div class="card">
-                        <img class="card-img-top" src="{{item.foto}}" alt="When Time Stopped">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-center">{{item.title}}</h5>
-                            <p class="card-text text-center">{{item.publisher}}</p>
-                            <p class="text-center"><del class="mr-3 c-grey">R$90,00</del><a>R${{item.price}}</a></p>
-                            <a href="#"
+<div class="container mt-5 mb-5"></div>
+<div id="books-card">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-12">
+            </div>
+            <div class="card-deck mb-3 mr-3" *ngFor='let item of listBook'>
+                <div class="card h-100">
+                    <img class="card-img-top" src="{{item.foto}}" alt="When Time Stopped">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class=" text-center titulo">{{item.title}}</h5>
+                        <p class="card-text text-center">{{item.publisher}}</p>
+                        <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>R${{item.price}}</a></p>
+                        <a [routerLink]="['/book-edit', item.idProduct]"
                                 class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 border border-light ">Editar</a>
                             <a href="#"
                                 class="btn btn-danger mt-auto d-flex justify-content-center rounded-0 border border-light" [routerLink]="['/book-delete', item.idProduct]">Apagar</a>
-                        </div>
-                    </div>
-                    <div class="col-12">
                     </div>
                 </div>
-                <!---->
+            </div>
+            <div class="col-12">
             </div>
         </div>
     </div>
 </div>
+<div class="container mt-5 mb-5"></div>
 
 <!-- Modal -->
 <div class="modal fade bd-example-modal-lg" id="novaPostagem" tabindex="-1" role="dialog"
@@ -67,83 +64,81 @@
                 <div class="d-flex">
                     <div class="form-group mr-2 col-md-4">
                         <label for="titulo">Titulo</label>
-                        <input type="text" class="form-control" id="titulo" placeholder="Digite o titulo">
+                        <input [(ngModel)]="book.title" type="text" class="form-control" id="titulo" placeholder="Digite o titulo">
                     </div>
                     <div class="form-group mr-2 col-md-4">
                         <label for="titulo">Link da Foto</label>
-                        <input type="text" class="form-control" id="titulo" placeholder="Digite o link da foto">
+                        <input [(ngModel)]="book.foto" type="text" class="form-control" id="titulo" placeholder="Digite o link da foto">
                     </div>
                     <div class="form-group mr-2 col-md-4">
                         <label for="titulo">Preço</label>
-                        <input type="text" class="form-control" id="titulo" placeholder="Digite o preço">
+                        <input [(ngModel)]="book.price" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" class="form-control" id="titulo" placeholder="Digite o preço">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="texto">Descrição</label>
-                    <textarea class="form-control" name="texto" id="texto" rows="3"
+                    <textarea [(ngModel)]="book.description" class="form-control" name="texto" id="texto" rows="3"
                         placeholder="Digite a descrição do livro"></textarea>
                 </div>
                 <div class="d-flex">
                     <div class="form-group mr-2 col-md-4">
                         <label for="titulo">Autor</label>
-                        <input type="text" class="form-control" id="titulo" placeholder="Digite o titulo">
+                        <input [(ngModel)]="book.author" type="text" class="form-control" id="titulo" placeholder="Digite o titulo">
                     </div>
                     <div class="form-group mr-2 col-md-4">
                         <label for="titulo">Ano de publicação</label>
-                        <input type="text" class="form-control" id="titulo" placeholder="Digite o ano de publicação do livro">
+                        <input [(ngModel)]="book.year" type="text" class="form-control" id="titulo" placeholder="Digite o ano de publicação do livro">
                     </div>
                     <div class="form-group mr-2 col-md-4">
                         <label for="titulo">Estoque</label>
-                        <input type="text" class="form-control" id="titulo" placeholder="Digite o estoque">
+                        <input [(ngModel)]="book.inventory" type="text" class="form-control" id="titulo" placeholder="Digite o estoque">
                     </div>
                 </div>
                 <div class="d-flex">
                     <div class="form-group mr-2 col-md-4">
                         <label for="titulo">Linguagem</label>
-                        <input type="text" class="form-control" id="titulo" placeholder="Digite a linguagem">
+                        <input [(ngModel)]="book.language" type="text" class="form-control" id="titulo" placeholder="Digite a linguagem">
                     </div>
                     <div class="form-group mr-2 col-md-4">
                         <label for="titulo">isbn</label>
-                        <input type="text" class="form-control" id="titulo" placeholder="Digite o codigo isbn">
+                        <input [(ngModel)]="book.isbn" type="text" class="form-control" id="titulo" placeholder="Digite o codigo isbn">
                     </div>
                     <div class="form-group mr-2 col-md-4">
                         <label for="titulo">ean</label>
-                        <input type="text" class="form-control" id="titulo" placeholder="Digite o codigo ean">
+                        <input [(ngModel)]="book.ean" type="text" class="form-control" id="titulo" placeholder="Digite o codigo ean">
                     </div>
                 </div>
                 <div class="d-flex">
                     <div class="form-group mr-2 col-md-4">
                         <label for="titulo">País</label>
-                        <input type="text" class="form-control" id="titulo" placeholder="Digite o País">
+                        <input [(ngModel)]="book.country" type="text" class="form-control" id="titulo" placeholder="Digite o País">
                     </div>
                     <div class="form-group mr-2 col-md-4">
                         <label for="titulo">Editora</label>
-                        <input type="text" class="form-control" id="titulo" placeholder="Digite a editora">
+                        <input [(ngModel)]="book.publisher" type="text" class="form-control" id="titulo" placeholder="Digite a editora">
                     </div>
                     <div class="form-group mr-2 col-md-4">
                         <label for="titulo">Formato</label>
-                        <input type="text" class="form-control" id="titulo" placeholder="Digite o formato">
+                        <input [(ngModel)]="book.format" type="text" class="form-control" id="titulo" placeholder="Digite o formato">
                     </div>
                 </div>
                 <div class="d-flex">
                     <div class="form-group mr-2 col-md-5">
                         <label for="titulo">Paginas</label>
-                        <input type="text" class="form-control" id="titulo" placeholder="Digite a quantidade de paginas">
+                        <input [(ngModel)]="book.pages" type="text" class="form-control" id="titulo" placeholder="Digite a quantidade de paginas">
                     </div>
                     <div class="form-group mr-2 col-md-5">
                         <label for="texto">Escolha um tema ou <a data-dismiss="modal">cadastre um
                                 novo</a>:</label>
-                        <select class="form-control" name="tema" id="tema">
-                            <option value="valor1">Valor 1</option>
-                            <option value="valor2" selected>Valor 2</option>
-                            <option value="valor3">Valor 3</option>
+                        <select class="form-control" name="tema" id="tema" [(ngModel)]='idCategory' (change)='findByIdCategory()'>
+                            <option *ngFor='let item of listCategory' value="{{item.idCategory}}">{{item.genre}}</option>
                         </select>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-success" data-dismiss="modal">Publicar</button>
+                <button type="button" class="btn btn-success" (click)="post()" data-dismiss="modal">Publicar</button>
             </div>
         </div>
     </div>
