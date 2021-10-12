@@ -17,6 +17,7 @@ import { AdimHomeComponent } from './adim-home/adim-home.component';
 import { AdimNavbarComponent } from './adim-navbar/adim-navbar.component';
 import { BookDeleteComponent } from './delete/book-delete/book-delete.component';
 import { BookEditComponent } from './edit/book-edit/book-edit.component';
+import { CategoryComponent } from './category/category.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BookEditComponent } from './edit/book-edit/book-edit.component';
     AdimHomeComponent,
     AdimNavbarComponent,
     BookDeleteComponent,
-    BookEditComponent
+    BookEditComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
