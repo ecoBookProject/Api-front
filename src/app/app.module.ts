@@ -17,7 +17,6 @@ import { AdimHomeComponent } from './adim-home/adim-home.component';
 import { AdimNavbarComponent } from './adim-navbar/adim-navbar.component';
 import { BookDeleteComponent } from './delete/book-delete/book-delete.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
   declarations: [
@@ -41,7 +40,6 @@ import { MatStepperModule } from '@angular/material/stepper';
       dropSpecialCharacters: false
     }),
     BrowserAnimationsModule,
-    MatStepperModule,
     ReactiveFormsModule
   ],
   providers: [
