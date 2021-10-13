@@ -154,6 +154,23 @@
                             </select>
                         </div>
                     </div>
+                    <div class="form-group mr-2 col-md-4">
+                        <label for="titulo">Formato</label>
+                        <input [(ngModel)]="book.format" type="text" class="form-control" id="titulo" placeholder="Digite o formato">
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="form-group mr-2 col-md-5">
+                        <label for="titulo">Paginas</label>
+                        <input [(ngModel)]="book.pages" type="text" class="form-control" id="titulo" placeholder="Digite a quantidade de paginas">
+                    </div>
+                    <div class="form-group mr-2 col-md-5">
+                        <label for="texto">Escolha uma categoria ou <a routerLink="/category" data-dismiss="modal">cadastre uma nova</a>:</label>
+                        <select class="form-control" name="tema" id="tema" [(ngModel)]='idCategory' (change)='findByIdCategory()'>
+                            <option *ngFor='let item of listCategory' value="{{item.idCategory}}">{{item.genre}}</option>
+                        </select>
+                    </div>
+                </div>
                 </form>
             </div>
             <div class="modal-footer">

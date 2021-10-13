@@ -26,13 +26,13 @@ export class CategoryComponent implements OnInit {
     this.findAllCategories()
   }
 
-  findAllCategories () {
+  findAllCategories() {
     this.categoryService.getAllCategory().subscribe((resp: CategoryModel[]) => {
       this.listCategory = resp
     })
   }
 
-  cadastrar () {
+  cadastrar() {
     this.categoryService.postCategory(this.category).subscribe((resp: CategoryModel) => {
       this.category = resp
       alert('Categoria cadastrada com sucesso!')
