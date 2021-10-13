@@ -1,13 +1,13 @@
 <div class="card mb-6" style="max-width: 1000px;">
   <div class="row no-gutters">
     <div class="col-md-4">
-      <img src="https://i.imgur.com/g3gO4vY.jpg" class="card-img" alt="...">
+      <img src="{{book.foto}}" class="card-img" alt="...">
     </div>
     <div class="col-md-6">
       <div class="card-body">
-            <h4 class="card-title">{{title}}</h4>
-            <h5> {{author}} </h5>
-            <h3> {{price}} </h3>
+            <h4 class="card-title">{{book.title}}</h4>
+            <h5> {{book.author}} </h5>
+            <h3> {{book.price}} </h3>
         <div class="form-group">
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
@@ -18,9 +18,12 @@
                 <label class="form-check-label" for="inlineRadio2">E-Book</label>
             </div>
         </div>
-        <div class="form-group">
-            <label for="picture">CEP</label>
-            <input class="form-control" type="text" name="cep" id="cep" placeholder="Digite seu CEP">
+        <div class="form-group my-3">
+          <div class="label">CEP</div>
+            <input class="form-control" type="text" mask="00000-000" name="cep" id="cep" placeholder="Ex: 01234-567">
+          <div class="d-flex justify-content-end">
+            <button class="btn btn-secondary btn-sm mt-2 mr-2" (click)='buscarCEP()'>Buscar</button>
+          </div>
         </div>
         <div class="d-flex justify-content-center">
             <button type="submit" class="btn btn-danger mr-3" > Adicionar ao carrinho </button>
@@ -30,7 +33,7 @@
     </div>
   </div>
   <div>
-<p class="card-text">{{description}}</p>
+<p class="card-text">{{book.description}}</p>
 </div>
 <table class="table table-striped">
   <thead>
@@ -42,43 +45,43 @@
   <tbody>
   <tr>
       <th scope="row">ID</th>
-      <td>{{idProduct}}</td>
+      <td>{{book.idProduct}}</td>
     </tr>
     <tr>
       <th scope="row">Título</th>
-      <td>{{title}}</td>
+      <td>{{book.title}}</td>
     </tr>
     <tr>
       <th scope="row">Autor</th>
-      <td>{{author}}</td>
+      <td>{{book.author}}</td>
     </tr>
     <tr>
       <th scope="row">Idioma</th>
-      <td>{{language}}</td>
+      <td>{{book.language}}</td>
     </tr>
     <tr>
       <th scope="row">Editora</th>
-      <td>{{publisher}}</td>
+      <td>{{book.publisher}}</td>
     </tr>
     <tr>
       <th scope="row">País</th>
-      <td>{{country}}</td>
+      <td>{{book.country}}</td>
     </tr>
     <tr>
       <th scope="row">Ano</th>
-      <td>{{year}}</td>
+      <td>{{book.year}}</td>
     </tr>
     <tr>
       <th scope="row">Páginas</th>
-      <td>{{pages}}</td>
+      <td>{{book.pages}}</td>
     </tr>
     <tr>
       <th scope="row">ISBN</th>
-      <td>{{isbn}}</td>
+      <td>{{book.isbn}}</td>
     </tr>
     <tr>
       <th scope="row">EAN</th>
-      <td>{{ean}}</td>
+      <td>{{book.ean}}</td>
     </tr>
   </tbody>
 </table>
