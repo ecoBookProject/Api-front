@@ -9,6 +9,7 @@ import { BookEditComponent } from './edit/book-edit/book-edit.component';
 import { CategoryEditComponent } from './edit/category-edit/category-edit.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { SearchCategoryComponent } from './search-category/search-category.component';
 import { VitrineComponent } from './vitrine/vitrine.component';
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path: 'category', component: CategoryComponent},
   {path: 'category-edit/:id', component: CategoryEditComponent},
   {path: 'category-delete/:id', component: CategoryDeleteComponent},
-  {path: 'vitrine', component: VitrineComponent }
+  {path: 'vitrine', component: VitrineComponent },
+  {path: 'search-category/:id', component: SearchCategoryComponent}
 ];
 
 @NgModule({
