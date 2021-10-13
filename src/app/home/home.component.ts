@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   book: BookModel = new BookModel()
   listBook: BookModel[]
   previous: boolean = false
+  tituloPost: string
 
   constructor(
     private router: Router,
