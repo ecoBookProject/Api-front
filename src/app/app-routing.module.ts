@@ -24,8 +24,9 @@ const routes: Routes = [
   {path: 'category', component: CategoryComponent},
   {path: 'category-edit/:id', component: CategoryEditComponent},
   {path: 'category-delete/:id', component: CategoryDeleteComponent},
-  {path: 'search-category/:id', component: SearchCategoryComponent}
-];
+  {path: 'search-category/:id', component: SearchCategoryComponent},
+  {path: 'vitrine', component: VitrineComponent }
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
