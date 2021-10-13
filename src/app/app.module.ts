@@ -21,9 +21,7 @@ import { BookEditComponent } from './edit/book-edit/book-edit.component';
 import { CategoryComponent } from './category/category.component';
 import { CategoryEditComponent } from './edit/category-edit/category-edit.component';
 import { CategoryDeleteComponent } from './delete/category-delete/category-delete.component';
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { VitrineComponent } from './vitrine/vitrine.component';
+import { VitrineComponent } from './vitrine/vitrine.component'
 
 @NgModule({
   declarations: [
@@ -51,7 +49,6 @@ import { VitrineComponent } from './vitrine/vitrine.component';
     NgxMaskModule.forRoot({
       dropSpecialCharacters: false
     }),
-    BrowserAnimationsModule,
     NgxCurrencyModule
   ],
   providers: [
