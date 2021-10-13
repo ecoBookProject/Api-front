@@ -20,10 +20,10 @@ const routes: Routes = [
   {path: 'adim-home', component: AdimHomeComponent},
   {path: 'book-delete/:id', component: BookDeleteComponent},
   {path: 'book-edit/:id', component: BookEditComponent},
+  {path: 'vitrine/:id', component: VitrineComponent },
   {path: 'category', component: CategoryComponent},
   {path: 'category-edit/:id', component: CategoryEditComponent},
   {path: 'category-delete/:id', component: CategoryDeleteComponent},
-  {path: 'vitrine', component: VitrineComponent },
   {path: 'search-category/:id', component: SearchCategoryComponent}
 ];
 

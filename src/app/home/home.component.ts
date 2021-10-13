@@ -29,6 +29,8 @@ export class HomeComponent implements OnInit {
     this.router.navigate(["/vitrine"])
   }
 
+
+
   findAllBook(){
     this.bookService.getAllBooks().subscribe((resp: BookModel[])=>{
       this.listBook = resp
