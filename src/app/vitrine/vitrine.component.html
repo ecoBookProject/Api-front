@@ -1,90 +1,144 @@
-<div class="card mb-6" style="max-width: 1000px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="{{book.foto}}" class="card-img" alt="...">
+<!--corpo-->
+<div class="container">
+
+<!-- linha livros e infor de compra -->
+  <div class="row d-flex justify-content-center">
+    <!--foto-->
+    <div class="col-5 d-flex justify-content-center ">
+      <img src="{{book.foto}}" class="shadow-sm" alt="...">
     </div>
-    <div class="col-md-6">
-      <div class="card-body">
-            <h4 class="card-title">{{book.title}}</h4>
-            <h5> {{book.author}} </h5>
-            <h3> {{book.price}} </h3>
+    <!--infor-->
+    <div class="col-5 d-flex justify-content-center">
+      <div class="card-body ">
+        
+        <h4 class="card-title">{{book.title}}</h4>
+        <h5> {{book.author}} </h5>
+        <h3> R$ {{book.price}} </h3>
+        
+        <!-- escolha de tipo de livro -->
         <div class="form-group">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                <label class="form-check-label" for="inlineRadio1">Brochura</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                <label class="form-check-label" for="inlineRadio2">E-Book</label>
-            </div>
-        </div>
-        <div class="form-group my-3">
-          <div class="label">CEP</div>
-            <input class="form-control" type="text" mask="00000-000" name="cep" id="cep" placeholder="Ex: 01234-567">
-          <div class="d-flex justify-content-end">
-            <button class="btn btn-secondary btn-sm mt-2 mr-2" (click)='buscarCEP()'>Buscar</button>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <label class="form-check-label" for="inlineRadio1">Brochura</label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">E-Book</label>
           </div>
         </div>
-        <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-danger mr-3" > Adicionar ao carrinho </button>
-            <button type="submit" class="btn btn-success ml-3"> Comprar </button>
+
+        <!-- campo de  CEP -->
+        <div class="form-group my-3">
+          
+          <p >Calcular o Frete</p>
+          <div class="d-flex justify-content-start ">
+            
+            <form class="form-inline ">
+              <input class="form-control " type="search" placeholder="Ex: 01234-567">
+              <button class="btn my-2 my-sm-0 btn-color rounded-0" name="cep" id="cep" mask="00000-000" type="submit" (click)='buscarCEP()'><i class="fa fa-search "></i></button>
+            </form>
+          </div>
+          
         </div>
-      </div>
+
+        <!--Botoes-->
+        <div class="row pt-3">
+        <div class=" ml-3 d-flex justify-content-center">
+            <button type="submit" href="#" class="text-light cor-buttom btn mr-3 shadow-sm rounded-0" > Adicionar ao carrinho </button>
+            <button type="submit" class="text-light cor-buttom btn ml-3 shadow-sm rounded-0"> Finalizar pedido </button>
+            </div>
+        </div>
+      </div>  
+      
+
+
     </div>
+
+
   </div>
-  <div>
-<p class="card-text">{{book.description}}</p>
-</div>
-<table class="table table-striped">
-  <thead>
+
+<!-- Sinopse -->
+  <div class="row ml-5 mr-5 pt-5 pb-5">
+    
+    <table class="table table-striped bg-infor-book shadow-sm">
+    <thead>
+      <tr>
+        <th scope="col d-flex justify-content-center">Detalhes do produto</th>
+        
+      </tr>
+      <tr class="bg-infor-book-2">
+        <p class="card-text ml-3 mr-3 pt-1 pb-1 ">{{book.description}}</p>
+        
+      </tr>
+    </thead>
+  </table>
+  </div>
+
+<!-- carosseul de livros com a mesma categoria 
+  {% comment %} <div class="mr-5 ml-5 pt-5 pb-5">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+      
+
+    </div>
+
+  </div> -->
+
+  <!--infor book-->
+  <div class="bg-infor-book ml-5 mr-5 ">
+  <table class="table table-striped shadow-sm">
+    <thead>
+      <tr>
+        <th scope="col d-flex justify-content-center">Detalhes do produto</th>
+        
+      </tr>
+    </thead>
+    <tbody>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">#</th>
-    </tr>
-  </thead>
-  <tbody>
-  <tr>
-      <th scope="row">ID</th>
-      <td>{{book.idProduct}}</td>
-    </tr>
-    <tr>
-      <th scope="row">Título</th>
-      <td>{{book.title}}</td>
-    </tr>
-    <tr>
-      <th scope="row">Autor</th>
-      <td>{{book.author}}</td>
-    </tr>
-    <tr>
-      <th scope="row">Idioma</th>
-      <td>{{book.language}}</td>
-    </tr>
-    <tr>
-      <th scope="row">Editora</th>
-      <td>{{book.publisher}}</td>
-    </tr>
-    <tr>
-      <th scope="row">País</th>
-      <td>{{book.country}}</td>
-    </tr>
-    <tr>
-      <th scope="row">Ano</th>
-      <td>{{book.year}}</td>
-    </tr>
-    <tr>
-      <th scope="row">Páginas</th>
-      <td>{{book.pages}}</td>
-    </tr>
-    <tr>
-      <th scope="row">ISBN</th>
-      <td>{{book.isbn}}</td>
-    </tr>
-    <tr>
-      <th scope="row">EAN</th>
-      <td>{{book.ean}}</td>
-    </tr>
-  </tbody>
-</table>
+        <th class="col-3" scope="row">ID</th>
+        <td>{{book.idProduct}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Título</th>
+        <td>{{book.title}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Autor</th>
+        <td>{{book.author}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Idioma</th>
+        <td>{{book.language}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Editora</th>
+        <td>{{book.publisher}}</td>
+      </tr>
+      <tr>
+        <th scope="row">País</th>
+        <td>{{book.country}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Ano</th>
+        <td>{{book.year}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Páginas</th>
+        <td>{{book.pages}}</td>
+      </tr>
+      <tr>
+        <th scope="row">ISBN</th>
+        <td>{{book.isbn}}</td>
+      </tr>
+      <tr>
+        <th scope="row">EAN</th>
+        <td>{{book.ean}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  </div>
 
 
 
@@ -95,4 +149,4 @@
 
 
 
-
+  

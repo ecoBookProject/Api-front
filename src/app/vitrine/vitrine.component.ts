@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { BookModel } from '../models/BookModel';
 import { BookServiceService } from '../services/book-service.service';
 
+
 @Component({
   selector: 'app-vitrine',
   templateUrl: './vitrine.component.html',
@@ -32,6 +33,8 @@ export class VitrineComponent implements OnInit {
   buscarCEP(){
     
   }
+
+
 
   findByIdBook(id: number){
     this.bookService.getByIdBook(id).subscribe((resp: BookModel) =>{
