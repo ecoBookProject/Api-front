@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'adim-home', component: AdimHomeComponent},
   {path: 'book-delete/:id', component: BookDeleteComponent},
   {path: 'book-edit/:id', component: BookEditComponent},
-  {path: 'vitrine', component: VitrineComponent }
+  {path: 'vitrine/:id', component: VitrineComponent }
 ];
 
 @NgModule({

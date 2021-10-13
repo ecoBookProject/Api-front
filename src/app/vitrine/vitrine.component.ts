@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { BookModel } from '../models/BookModel';
+import { BookServiceService } from '../services/book-service.service';
 
 @Component({
   selector: 'app-vitrine',
@@ -8,27 +11,32 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class VitrineComponent implements OnInit {
 
-  idProduct = environment.idProduct;
-  title = environment.title;
-  description = environment.description;
-  price = environment.price;
-  author = environment.author;
-  year = environment.year;
-  inventory = environment.inventory;
-  language = environment.language;
-  isbn = environment.isbn;
-  ean = environment.ean;
-  country = environment.country;
-  publisher = environment.publisher;
-  format = environment.format;
-  pages = environment.pages;
-  foto = environment.foto;
+  book: BookModel = new BookModel
 
 
+  constructor(
+    private bookService: BookServiceService,
+    private router: Router,
+    private route: ActivatedRoute,
 
-  constructor() { }
+  ) { }
 
   ngOnInit(){
+    window.scroll(0,0)
+
+    let id = this.route.snapshot.params['id']
+    this.findByIdBook(id)
+
+  }
+
+  buscarCEP(){
+    
+  }
+
+  findByIdBook(id: number){
+    this.bookService.getByIdBook(id).subscribe((resp: BookModel) =>{
+      this.book = resp
+    } )
   }
 
 }
