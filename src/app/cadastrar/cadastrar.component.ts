@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserModel } from '../models/UserModel';
+import { AlertsService } from '../services/alerts.service';
 import { CepServiceService } from '../services/cep-service.service';
 import { UserServiceService } from '../services/user-service.service';
 
@@ -24,7 +25,8 @@ export class CadastrarComponent implements OnInit {
     private cepsService: CepServiceService,
     private userService: UserServiceService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private alerts: AlertsService
   ) {
 
     this.FormGroup = this.formBuilder.group({
@@ -68,12 +70,12 @@ export class CadastrarComponent implements OnInit {
     this.user.type_user = "client"
 
     if (this.user.password != this.confirmarSenha) {
-      alert('A senhas estão incorretas.')
+      this.alerts.showAlertDanger('A senhas estão incorretas.')
     } else {
       console.log(this.user)
       this.userService.cadastrar(this.user).subscribe((resp: UserModel) => {
         this.user = resp
-        alert('Usuario cadastrado com sucesso!')
+        this.alerts.showAlertSuccess('Usuário cadastrado com sucesso!')
         this.router.navigate(['/login'])
       })
     }
@@ -85,7 +87,7 @@ export class CadastrarComponent implements OnInit {
       .catch(() => {
         let cep = this.user.cep
         this.user.cep = cep;
-        alert('Não possivel continuar a busca');
+        this.alerts.showAlertDanger('Não foi possivel continuar a busca');
       })
   }
 

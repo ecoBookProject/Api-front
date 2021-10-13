@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { CategoryModel } from '../models/CategoryModel';
+import { AlertsService } from '../services/alerts.service';
 import { CategoryService } from '../services/category.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class CategoryComponent implements OnInit {
 
   constructor(
     private categoryService: CategoryService,
-    private router: Router
+    private router: Router,
+    private alerts: AlertsService
   ) { }
 
   ngOnInit() {
@@ -35,7 +37,7 @@ export class CategoryComponent implements OnInit {
   cadastrar() {
     this.categoryService.postCategory(this.category).subscribe((resp: CategoryModel) => {
       this.category = resp
-      alert('Categoria cadastrada com sucesso!')
+      this.alerts.showAlertSuccess('Categoria cadastrada com sucesso!')
       this.findAllCategories()
       this.category = new CategoryModel()
 

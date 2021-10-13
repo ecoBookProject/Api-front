@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BookModel } from 'src/app/models/BookModel';
 import { CategoryModel } from 'src/app/models/CategoryModel';
 import { UserModel } from 'src/app/models/UserModel';
+import { AlertsService } from 'src/app/services/alerts.service';
 import { BookServiceService } from 'src/app/services/book-service.service';
 import { CategoryServiceService } from 'src/app/services/category-service.service';
 import { UserServiceService } from 'src/app/services/user-service.service';
@@ -29,7 +30,8 @@ export class BookEditComponent implements OnInit {
     private bookService: BookServiceService,
     private userService: UserServiceService,
     private categoryService: CategoryServiceService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private alerts: AlertsService
   ) { 
     this.FormGroup = this.formBuilder.group({
       titulo: ['', Validators.required],
@@ -88,7 +90,7 @@ export class BookEditComponent implements OnInit {
     this.book.category=this.category
     this.bookService.putBook(this.book).subscribe((resp:BookModel)=>{
       this.book = resp
-      alert("Livro atualizado com sucesso !")
+      this.alerts.showAlertSuccess("Livro atualizado com sucesso !")
       this.book = new BookModel()
       this.router.navigate(['/adim-home'])
     })

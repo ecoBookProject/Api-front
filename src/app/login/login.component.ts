@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { AlertsComponent } from '../alerts/alerts.component';
 import { UserDTO } from '../models/UserDTO';
+import { AlertsService } from '../services/alerts.service';
 import { UserServiceService } from '../services/user-service.service';
 
 @Component({
@@ -15,7 +17,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private userService: UserServiceService,
-    private router: Router
+    private router: Router,
+    private alerts: AlertsService
   ) { }
 
   ngOnInit() {
@@ -35,15 +38,15 @@ export class LoginComponent implements OnInit {
 
       if(this.userDto.type_user == "Adim")
       {
-        alert('Adiministrador logado com sucesso!')
+        this.alerts.showAlertSuccess('Administrador logado com sucesso!')
         this.router.navigate(['/adim-home'])
       }else{
-        alert('Usuario logado com sucesso!')
+        this.alerts.showAlertSuccess('Usuario logado com sucesso!')
         this.router.navigate(['/home'])
       }
     }, error => {
       if (error.status == 401 || error.status == 404) {
-        alert('Usuário ou senha estão incorretos')
+        this.alerts.showAlertDanger('Usuário ou senha estão incorretos')
       }
     })
   }

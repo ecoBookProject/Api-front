@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryModel } from 'src/app/models/CategoryModel';
+import { AlertsService } from 'src/app/services/alerts.service';
 import { CategoryService } from 'src/app/services/category.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -17,7 +18,8 @@ export class CategoryDeleteComponent implements OnInit {
   constructor(
     private categoryService: CategoryService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alerts: AlertsService
   ) { }
 
   ngOnInit() {
@@ -36,7 +38,7 @@ export class CategoryDeleteComponent implements OnInit {
 
   delete() {
     this.categoryService.deleteCategory(this.idCategory).subscribe(() => {
-      alert('Categoria apagada com sucesso!')
+      this.alerts.showAlertSuccess('Categoria apagada com sucesso!')
       this.router.navigate(['/category'])
     })
   }

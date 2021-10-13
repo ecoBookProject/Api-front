@@ -5,6 +5,7 @@ import { NgxMaskModule } from 'ngx-mask';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { HttpClientModule } from '@angular/common/http';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,7 +27,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VitrineComponent } from './vitrine/vitrine.component';
 
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
-import {MatProgressBarModule} from '@angular/material/progress-bar'
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { AlertsComponent } from './alerts/alerts.component'
+
 
 @NgModule({
   declarations: [
@@ -44,7 +47,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar'
     CategoryComponent,
     CategoryEditComponent,
     CategoryDeleteComponent,
-    VitrineComponent
+    VitrineComponent,
+    AlertsComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +61,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar'
     NgxCurrencyModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule, 
+    ModalModule.forRoot()
   ],
   providers: [
     {
