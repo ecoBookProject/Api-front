@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,6 +18,9 @@ import { AdimHomeComponent } from './adim-home/adim-home.component';
 import { AdimNavbarComponent } from './adim-navbar/adim-navbar.component';
 import { BookDeleteComponent } from './delete/book-delete/book-delete.component';
 import { BookEditComponent } from './edit/book-edit/book-edit.component';
+import { CategoryComponent } from './category/category.component';
+import { CategoryEditComponent } from './edit/category-edit/category-edit.component';
+import { CategoryDeleteComponent } from './delete/category-delete/category-delete.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VitrineComponent } from './vitrine/vitrine.component';
@@ -38,6 +41,9 @@ import {MatProgressBarModule} from '@angular/material/progress-bar'
     AdimNavbarComponent,
     BookDeleteComponent,
     BookEditComponent,
+    CategoryComponent,
+    CategoryEditComponent,
+    CategoryDeleteComponent,
     VitrineComponent
   ],
   imports: [
@@ -50,7 +56,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar'
     }),
     NgxCurrencyModule,
     MatProgressSpinnerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    ReactiveFormsModule
   ],
   providers: [
     {

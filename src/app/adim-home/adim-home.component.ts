@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { BookModel } from '../models/BookModel';
@@ -22,13 +23,34 @@ export class AdimHomeComponent implements OnInit {
   category: CategoryModel = new CategoryModel()
   idCategory: number
   listCategory: CategoryModel[]
+  FormGroup: FormGroup;
 
   constructor(
     private router: Router,
     private bookService: BookServiceService,
     private userService: UserServiceService,
-    private categoryService: CategoryServiceService
-  ) { }
+    private categoryService: CategoryServiceService,
+    private formBuilder: FormBuilder
+  ) {
+
+    this.FormGroup = this.formBuilder.group({
+      titulo: ['', Validators.required],
+      foto: ['', Validators.required],
+      preco: ['', Validators.required],
+      descricao: ['', Validators.required],
+      autor: ['', Validators.required],
+      ano: ['', Validators.required],
+      estoque: ['', Validators.required],
+      linguagem: ['', Validators.required],
+      isbn: ['', Validators.required],
+      ean: ['', Validators.required],
+      pais: ['', Validators.required],
+      editora: ['', Validators.required],
+      formato: ['', Validators.required],
+      paginas: ['', Validators.required],
+      tema: ['', Validators.required]
+    });
+  }
 
   ngOnInit(){
     window.scroll(0,0)
