@@ -26,7 +26,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VitrineComponent } from './vitrine/vitrine.component';
 
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
-import {MatProgressBarModule} from '@angular/material/progress-bar'
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { SearchCategoryComponent } from './search-category/search-category.component'
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar'
     CategoryComponent,
     CategoryEditComponent,
     CategoryDeleteComponent,
-    VitrineComponent
+    VitrineComponent,
+    SearchCategoryComponent
   ],
   imports: [
     BrowserModule,

@@ -48,13 +48,8 @@
           <i class="fa fa-bars mr-2" aria-hidden="true"></i> Categorias
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" >Biografia</a>
-          <a class="dropdown-item" >Fantasia</a>
-          <a class="dropdown-item" >Ficção Científica</a>
-          <a class="dropdown-item" >Horror</a>
-          <a class="dropdown-item" >Poesia</a>
-          <a class="dropdown-item" >Romance</a>
-          <a class="dropdown-item" >Sagas</a>
+          <a class="dropdown-item" routerLink='/home'>Todos</a>
+          <a *ngFor='let item of listCategory' class="dropdown-item" [routerLink]="['/search-category', item.idCategory]">{{item.genre}}</a>
         </div>
       </li>
       <li class="nav-item active">
