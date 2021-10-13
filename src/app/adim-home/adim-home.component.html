@@ -128,8 +128,7 @@
                         <input [(ngModel)]="book.pages" type="text" class="form-control" id="titulo" placeholder="Digite a quantidade de paginas">
                     </div>
                     <div class="form-group mr-2 col-md-5">
-                        <label for="texto">Escolha um tema ou <a data-dismiss="modal">cadastre um
-                                novo</a>:</label>
+                        <label for="texto">Escolha uma categoria ou <a routerLink="/category" data-dismiss="modal">cadastre uma nova</a>:</label>
                         <select class="form-control" name="tema" id="tema" [(ngModel)]='idCategory' (change)='findByIdCategory()'>
                             <option *ngFor='let item of listCategory' value="{{item.idCategory}}">{{item.genre}}</option>
                         </select>
