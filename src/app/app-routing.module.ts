@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { SearchCategoryComponent } from './search-category/search-category.component';
 import { VitrineComponent } from './vitrine/vitrine.component';
+import { ContatoComponent } from './contato/contato.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -27,8 +28,8 @@ const routes: Routes = [
   {path: 'category-delete/:id', component: CategoryDeleteComponent},
   {path: 'search-category/:id', component: SearchCategoryComponent},
   {path: 'vitrine', component: VitrineComponent },
-  {path: 'my-profile/:id', component: MyProfileComponent}
-
+  {path: 'my-profile/:id', component: MyProfileComponent},
+  {path: 'contato', component: ContatoComponent}
 ]
 
 @NgModule({

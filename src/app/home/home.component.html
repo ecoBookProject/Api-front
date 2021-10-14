@@ -29,13 +29,12 @@
 <!-- Menu text -->
 <div class="container d-flex text-center justify-content-center my-5">
     <div class="row">
-        <h4 class="head-text">Confira o que a EcoBook preparou para você:</h4>
+        <h4 class="head-text">Confira o que a eco.Book preparou para você:</h4>
     </div>
 </div>
 
 <div class="row d-flex justify-content-center" *ngIf='!previous'>
     <h2>Carregando</h2>
-    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 </div>
 
 <div class="col-md-5 my-4 container d-flex text-center justify-content-center my-5">
@@ -46,7 +45,7 @@
 <!-- Books card -->
 <div id="books-card">
     <div class="container">
-        <div class="row d-flex justify-content-center ">
+        <div class="row d-flex justify-content-center">
             <div class="col-12">
             </div>
             <div class="card-deck mb-3 mr-3" *ngFor='let item of listBook'>
