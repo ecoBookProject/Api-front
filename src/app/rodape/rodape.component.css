@@ -158,3 +158,9 @@ li {
     }
 }
 
+.partners_info ul li {
+    display: inline-block;
+    padding-right: 15px;
+    list-style: none;
+}
+
