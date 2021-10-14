@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SearchCategoryComponent } from './search-category/search-category.component';
 import { VitrineComponent } from './vitrine/vitrine.component';
+import { ContatoComponent } from './contato/contato.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -25,7 +26,8 @@ const routes: Routes = [
   {path: 'category-edit/:id', component: CategoryEditComponent},
   {path: 'category-delete/:id', component: CategoryDeleteComponent},
   {path: 'search-category/:id', component: SearchCategoryComponent},
-  {path: 'vitrine', component: VitrineComponent }
+  {path: 'vitrine', component: VitrineComponent },
+  {path: 'contato', component: ContatoComponent}
 ]
 
 @NgModule({
