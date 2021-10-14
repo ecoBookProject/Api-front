@@ -32,6 +32,7 @@
     display: flex;
 }
 
+
 .card:hover{
     box-sizing: border-box !important;
     cursor: pointer;
@@ -47,15 +48,3 @@
     width: 13em;
     font-size: 20px;
 }
-
-.loader-container{
-    position: fixed;
-    width: 100%;
-    z-index: 99;
-}
-
-.btn-color {
-    background-color: #BFAF80;
-    color: #fff;
-}
-
