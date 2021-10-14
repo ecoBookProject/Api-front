@@ -1,0 +1,98 @@
+<div class="container mt-1 mb-5">
+
+    <div class="row">
+        <div class="col-md-5 d-flex my-5">
+            <h1 class="text-center text-secondary" style="font-weight: bold;">
+                <i class="fa-nav fa fa-user c-green" aria-hidden="true"></i>
+                MEUS DADOS
+            </h1>
+        </div>
+    </div>
+
+    <form class="row d-flex justify-content-center" [formGroup]="FormGroup">
+        <div class="col-md-5 mr-5 col-style">
+            <h5 class="my-3" style="font-weight: bold;"><span><i class="fa-nav fa fa-user c-green"
+                        aria-hidden="true"></i></span> DADOS BÁSICOS
+            </h5>
+            <div class="form-group my-3">
+                <div class="label">Nome</div>
+                <input formControlName="nome" [(ngModel)]="user.name" class="form-control" type="text" name="nome"
+                    id="nome" placeholder="Nome e sobrenome">
+            </div>
+            <div class="form-group my-3">
+                <div class="label">Email</div>
+                <input formControlName="email" [(ngModel)]="user.email" class="form-control" type="text" name="email"
+                    id="email" placeholder="Ex: nome@email.com">
+            </div>
+            <div class="form-group my-3">
+                <div class="label">Telefone</div>
+                <input formControlName="telefone" [(ngModel)]="user.phone" mask="(00) 00000-0000" class="form-control"
+                    type="text" name="telefone" id="telefone" placeholder="(xx) 99999-9999">
+            </div>
+            <div class="form-group my-3">
+                <div class="label">CPF</div>
+                <input formControlName="cpf" [(ngModel)]="user.cpf" mask="000.000.000-00" class="form-control"
+                    type="text" name="cpf" id="cpf" placeholder="CPF">
+            </div>
+            <div class="form-group my-3">
+                <div class="label">Senha</div>
+                <input (input)='confirmSenha($event)' formControlName="senha" class="form-control" type="password" name="pass" id="pass"
+                    placeholder="Senha">
+            </div>
+            <div class="form-group my-3">
+                <div class="label">Confirmar Senha</div>
+                <input [(ngModel)]="user.password" formControlName="conSenha" class="form-control" type="password" name="conpass" id="conpass"
+                    placeholder="Confirme sua senha">
+            </div>
+            <div class="d-flex justify-content-center my-5">
+                <button class="btn btn-color mr-4" routerLink="">
+                    Voltar
+                </button>
+                <button [disabled]="!FormGroup.valid" type="submit" class="btn btn-color" (click)='atualizar()'>
+                    Atualizar
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-5 col-style">
+            <h5 class="my-3" style="font-weight: bold;"><span><i class="fa-nav fa fa-user c-green"
+                        aria-hidden="true"></i></span> ENDEREÇOS
+            </h5>
+            <div class="form-group my-3">
+                <div class="label">CEP</div>
+                <input formControlName="cep" [(ngModel)]="user.cep" mask="00000-000" class="form-control" type="text"
+                    name="cep" id="cep" placeholder="Ex: 01234-567">
+            </div>
+            <div class="form-group my-3">
+                <div class="label">Endereço</div>
+                <input formControlName="logradouro" [(ngModel)]="user.address" class="form-control" type="text"
+                    name="logradouro" id="logradouro" placeholder="Rua das Laranjeiras">
+            </div>
+            <div class="form-group my-3">
+                <div class="label">Bairro</div>
+                <input formControlName="bairro" [(ngModel)]="user.district" class="form-control" type="text"
+                    name="bairro" id="bairro" placeholder="Bairro">
+            </div>
+            <div class="form-group my-3">
+                <div class="label">Número</div>
+                <input formControlName="numero" [(ngModel)]="user.number" class="form-control" type="text" name="numero"
+                    id="numero" placeholder="Número">
+            </div>
+            <!--<div class="form-group my-3">
+                <div class="label">Complemento</div>
+                <input formControlName="complemento" class="form-control" type="text" [(ngModel)]="user.complement"
+                    name="compl" id="compl" placeholder="Ex: Bloco2 Apto100">
+            </div>-->
+            <div class="form-group my-3">
+                <div class="label">Cidade</div>
+                <input formControlName="cidade" [(ngModel)]="user.city" class="form-control" type="text" name="cidade"
+                    id="cidade" placeholder="Cidade">
+            </div>
+            <div class="form-group my-3">
+                <div class="label">UF</div>
+                <input formControlName="uf" [(ngModel)]="user.state" class="form-control" type="text" name="estado"
+                    id="estado" required placeholder="Estado">
+            </div>
+        </div>
+    </form>
+</div>

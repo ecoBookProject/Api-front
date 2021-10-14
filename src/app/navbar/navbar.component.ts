@@ -14,6 +14,7 @@ export class NavbarComponent implements OnInit {
   category: CategoryModel = new CategoryModel()
   listCategory: CategoryModel[]
   idCategory: number
+  idUser = environment.idClient
 
   constructor(
     private router: Router,
@@ -42,6 +43,15 @@ export class NavbarComponent implements OnInit {
     environment.name = ''
     environment.type_user = ''
     environment.token = ''    
+  }
+
+  logged(){
+    let ok: boolean = true
+
+    if(environment.token == ''){
+      ok = false
+    }
+    return ok
   }
 
 }

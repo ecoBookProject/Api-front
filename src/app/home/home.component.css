@@ -53,3 +53,8 @@
     width: 100%;
     z-index: 99;
 }
+
+.btn-color {
+    background-color: #BFAF80;
+    color: #fff;
+}
