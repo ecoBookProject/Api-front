@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   book: BookModel = new BookModel()
   listBook: BookModel[]
   previous: boolean = false
-  tituloPost: string
+  tituloBook: string
 
   constructor(
     private router: Router,
@@ -29,7 +29,16 @@ export class HomeComponent implements OnInit {
     this.router.navigate(["/vitrine"])
   }
 
-
+  findByTituloBook(){
+    if (this.tituloBook == '') {
+      this.findAllBook()
+    } else {
+      this.bookService.getByTituloBook(this.tituloBook).subscribe((resp: BookModel[]) => {
+        this.listBook = resp
+      })
+    }
+    console.log(this.tituloBook)
+  }
 
   findAllBook(){
     this.bookService.getAllBooks().subscribe((resp: BookModel[])=>{

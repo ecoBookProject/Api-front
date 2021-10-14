@@ -22,6 +22,10 @@ import { CategoryComponent } from './category/category.component';
 import { CategoryEditComponent } from './edit/category-edit/category-edit.component';
 import { CategoryDeleteComponent } from './delete/category-delete/category-delete.component';
 import { VitrineComponent } from './vitrine/vitrine.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { SearchCategoryComponent } from './search-category/search-category.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 import { SearchCategoryComponent } from './search-category/search-category.component';
 
 @NgModule({
@@ -41,7 +45,8 @@ import { SearchCategoryComponent } from './search-category/search-category.compo
     CategoryEditComponent,
     CategoryDeleteComponent,
     VitrineComponent,
-    SearchCategoryComponent
+    SearchCategoryComponent,
+    MyProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ import { BookEditComponent } from './edit/book-edit/book-edit.component';
 import { CategoryEditComponent } from './edit/category-edit/category-edit.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 import { SearchCategoryComponent } from './search-category/search-category.component';
 import { VitrineComponent } from './vitrine/vitrine.component';
 import { ContatoComponent } from './contato/contato.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path: 'category-delete/:id', component: CategoryDeleteComponent},
   {path: 'search-category/:id', component: SearchCategoryComponent},
   {path: 'vitrine', component: VitrineComponent },
+  {path: 'my-profile/:id', component: MyProfileComponent},
   {path: 'contato', component: ContatoComponent}
 ]
 
