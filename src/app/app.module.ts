@@ -21,13 +21,8 @@ import { BookEditComponent } from './edit/book-edit/book-edit.component';
 import { CategoryComponent } from './category/category.component';
 import { CategoryEditComponent } from './edit/category-edit/category-edit.component';
 import { CategoryDeleteComponent } from './delete/category-delete/category-delete.component';
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VitrineComponent } from './vitrine/vitrine.component';
-
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import { SearchCategoryComponent } from './search-category/search-category.component'
+import { SearchCategoryComponent } from './search-category/search-category.component';
 
 @NgModule({
   declarations: [
@@ -57,8 +52,6 @@ import { SearchCategoryComponent } from './search-category/search-category.compo
       dropSpecialCharacters: false
     }),
     NgxCurrencyModule,
-    MatProgressSpinnerModule,
-    MatProgressBarModule,
     ReactiveFormsModule
   ],
   providers: [
@@ -69,4 +62,4 @@ import { SearchCategoryComponent } from './search-category/search-category.compo
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
