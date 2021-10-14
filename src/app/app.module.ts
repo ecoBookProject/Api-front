@@ -24,7 +24,6 @@ import { CategoryDeleteComponent } from './delete/category-delete/category-delet
 import { VitrineComponent } from './vitrine/vitrine.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-import { SearchCategoryComponent } from './search-category/search-category.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { SearchCategoryComponent } from './search-category/search-category.component';
 
