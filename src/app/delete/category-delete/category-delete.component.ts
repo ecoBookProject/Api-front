@@ -24,12 +24,12 @@ export class CategoryDeleteComponent implements OnInit {
     if(environment.token == '') {
       this.router.navigate(['/login'])
     }
-    let idCategory = this.route.snapshot.params['idCategory']
-    this.findByIdCategory(idCategory)
+    this.idCategory = this.route.snapshot.params['id']
+    this.findByIdCategory(this.idCategory)
   }
   
-  findByIdCategory(idCategory: number) {
-    this.categoryService.getByIdCategory(idCategory).subscribe((resp: CategoryModel) => {
+  findByIdCategory(id: number) {
+    this.categoryService.getByIdCategory(id).subscribe((resp: CategoryModel) => {
       this.category = resp
     })
   }

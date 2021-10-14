@@ -33,7 +33,7 @@ export class UserServiceService {
 
   logged() {
     let ok: boolean = false;
-    if (this.router.url.includes('/home')) {
+    if (this.router.url.includes('/home') || this.router.url.includes('/search-category')) {
       ok = true;      
     }
     return ok;

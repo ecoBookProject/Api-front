@@ -1,7 +1,7 @@
 <!-- NavBar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-color">
   <a class="navbar-brand d-flex align-text-bottom ml-5" class="mr-1" href="#" id="logo-style">
-    ecobook <img src="https://i.imgur.com/ftw5v44.png" width="30" height="30" alt="" loading="lazy">
+    <img src="https://i.imgur.com/1sacd8p.png" alt="Logo da eco.Book" width="161" height="70">
 </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
     aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +27,7 @@
         </a>
       </li>
       <li class="nav-item active mx-1">
-        <a class="nav-items nav-link" (click)='logout($event)'>Sair
+        <a class="nav-items nav-link" href='logout()'>Sair
           <span><i class="fa-nav fa fa-sign-out d-flex justify-content-center"></i></span>
         </a>
       </li>
@@ -48,14 +48,8 @@
           <i class="fa fa-bars mr-2" aria-hidden="true"></i> Categorias
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" routerLink= '/category'>Biografia</a>
-          <a class="dropdown-item" routerLink= '/category'>Fantasia</a>
-          <a class="dropdown-item" routerLink= '/category'>Ficção Científica</a>
-          <a class="dropdown-item" routerLink= '/category'>Horror</a>
-          <a class="dropdown-item" routerLink= '/category'>Poesia</a>
-          <a class="dropdown-item" routerLink= '/category'>Romance</a>
-          <a class="dropdown-item" routerLink= '/category'>Sagas</a>
-          <a class="dropdown-item" routerLink= '/category'>Outras</a>
+          <a class="dropdown-item" routerLink='/home'>Todos</a>
+          <a *ngFor='let item of listCategory' class="dropdown-item" [routerLink]="['/search-category', item.idCategory]">{{item.genre}}</a>
         </div>
       </li>
       <li class="nav-item active">
@@ -63,15 +57,6 @@
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="#">eBooks</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Mais vendidos</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Ofertas</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Lançamentos</a>
       </li>
     </ul>
   </div>

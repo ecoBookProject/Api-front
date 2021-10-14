@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   book: BookModel = new BookModel()
   listBook: BookModel[]
   previous: boolean = false
+  tituloPost: string
 
   constructor(
     private router: Router,
@@ -27,6 +28,8 @@ export class HomeComponent implements OnInit {
   vitrine(){
     this.router.navigate(["/vitrine"])
   }
+
+
 
   findAllBook(){
     this.bookService.getAllBooks().subscribe((resp: BookModel[])=>{

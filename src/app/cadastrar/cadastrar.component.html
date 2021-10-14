@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-color">
     <a class="navbar-brand align-text-bottom h-100" href="#">
-        ecobook <img src="https://i.imgur.com/ftw5v44.png" class="align-bottom" width="30" height="30" alt="" loading="lazy">
+        <img src="https://i.imgur.com/1sacd8p.png" class="align-bottom" width="92" height="40" alt="Logo da eco.Book">
     </a>
 </nav>
 <div class="container-fluid">
@@ -12,11 +12,11 @@
                         <!--Etapa1 do cadastro-->
                         <div class="tab-pane fade show active" id="pills-etapa1" role="tabpanel"
                             aria-labelledby="pills-etapa1-tab">
-                            <form>
+                            <form [formGroup]="FormGroup">
                                 <h3 class="title-form text-center mt-3">Etapa 1</h3>
                                 <div class="form-group my-3">
                                     <div class="label">CEP</div>
-                                    <input class="form-control" type="text" mask="00000-000" name="cep" id="cep"
+                                    <input formControlName="cep" class="form-control" type="text" mask="00000-000" name="cep" id="cep"
                                         [(ngModel)]="user.cep" placeholder="Ex: 01234-567">
                                     <div class="d-flex justify-content-end">
                                         <button class="btn btn-secondary btn-sm mt-2 mr-2" (click)='buscar()'>Buscar</button>
@@ -24,17 +24,17 @@
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">Endereço</div>
-                                    <input class="form-control" type="text" name="logradouro" id="logradouro"
-                                        [(ngModel)]="user.address" #logradouro="ngModel" placeholder="Rua das Laranjeiras">
+                                    <input formControlName="logradouro" class="form-control" type="text" name="logradouro" id="logradouro"
+                                        [(ngModel)]="user.address" placeholder="Rua das Laranjeiras">
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">Bairro</div>
-                                    <input class="form-control" type="text" name="bairro" id="bairro"
+                                    <input formControlName="bairro" class="form-control" type="text" name="bairro" id="bairro"
                                         [(ngModel)]="user.district" placeholder="Bairro">
                                 </div>
                                 <div class="d-flex justify-content-center mb-3">
                                     <button class="btn mr-4 btn-color" routerLink="/login">Voltar</button>
-                                    <button class="btn btn-color" id="pills-etapa2-tab" data-toggle="pill"
+                                    <button [disabled]="!FormGroup.valid" class="btn btn-color" id="pills-etapa2-tab" data-toggle="pill"
                                         href="#pills-etapa2" role="tab" aria-controls="pills-etapa2" aria-selected="false">
                                         Próximo
                                     </button>
@@ -43,30 +43,30 @@
                         </div>
                         <!--Etapa2 do cadastro-->
                         <div class="tab-pane fade" id="pills-etapa2" role="tabpanel" aria-labelledby="pills-etapa2-tab">
-                            <form>
+                            <form [formGroup]="FormGroup1">
                                 <h3 class="title-form text-center mt-3">Etapa 2</h3>
                                 <div class="form-group my-3">
                                     <div class="label">Número</div>
-                                    <input class="form-control" type="text" [(ngModel)]="user.number" name="numero" id="numero"
+                                    <input formControlName="numero" class="form-control" type="text" [(ngModel)]="user.number" name="numero" id="numero"
                                         required placeholder="Número">
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">Complemento</div>
-                                    <input class="form-control" type="text" [(ngModel)]="user.complement" name="compl"
+                                    <input formControlName="complemento" class="form-control" type="text" [(ngModel)]="user.complement" name="compl"
                                         id="compl" placeholder="Ex: Bloco2 Apto100">
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">Cidade</div>
-                                    <input class="form-control" type="text" name="cidade" id="cidade" [(ngModel)]="user.city"
+                                    <input formControlName="cidade" class="form-control" type="text" name="cidade" id="cidade" [(ngModel)]="user.city"
                                         placeholder="Cidade">
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">UF</div>
-                                    <input class="form-control" type="text" name="estado" id="estado" [(ngModel)]="user.state"
+                                    <input formControlName="uf" class="form-control" type="text" name="estado" id="estado" [(ngModel)]="user.state"
                                         required placeholder="Estado">
                                 </div>
                                 <div class="d-flex justify-content-center mb-3">
-                                    <button class="btn btn-color" id="pills-etapa3-tab" data-toggle="pill"
+                                    <button [disabled]="!FormGroup1.valid" class="btn btn-color" id="pills-etapa3-tab" data-toggle="pill"
                                         href="#pills-etapa3" role="tab" aria-controls="pills-etapa3" aria-selected="false">
                                         Próximo
                                     </button>
@@ -75,24 +75,24 @@
                         </div>
                         <!--Etapa3 do cadastro-->
                         <div class="tab-pane fade" id="pills-etapa3" role="tabpanel" aria-labelledby="pills-etapa3-tab">
-                            <form>
+                            <form [formGroup]="FormGroup2">
                                 <h3 class="title-form text-center mt-3">Etapa 3</h3>
                                 <div class="form-group my-3">
                                     <div class="label">Nome Completo</div>
-                                        <input class="form-control" type="text" name="name" id="name" [(ngModel)]="user.name" required placeholder="Nome e sobrenome">
+                                        <input formControlName="nome" class="form-control" type="text" name="name" id="name" [(ngModel)]="user.name" required placeholder="Nome e sobrenome">
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">CPF</div>
-                                    <input class="form-control" type="text" [(ngModel)]="user.cpf" mask="000.000.000-00" name="cpf" id="cpf"
+                                    <input formControlName="cpf" class="form-control" type="text" [(ngModel)]="user.cpf" mask="000.000.000-00" name="cpf" id="cpf"
                                         required placeholder="CPF" >
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">Telefone</div>
-                                    <input class="form-control" type="text" [(ngModel)]="user.phone" mask="(00) 00000-0000" name="phone"
+                                    <input formControlName="telefone" class="form-control" type="text" [(ngModel)]="user.phone" mask="(00) 00000-0000" name="phone"
                                         id="phone" required placeholder="(xx) 99999-9999">
                                 </div>                      
                                 <div class="d-flex justify-content-center mb-3">
-                                    <button class="btn btn-color" id="pills-etapa4-tab" data-toggle="pill"
+                                    <button [disabled]="!FormGroup2.valid" class="btn btn-color" id="pills-etapa4-tab" data-toggle="pill"
                                         href="#pills-etapa4" role="tab" aria-controls="pills-etapa4" aria-selected="false">
                                         Próximo
                                     </button>
@@ -101,28 +101,28 @@
                         </div>
                         <!--Etapa4 do cadastro-->
                         <div class="tab-pane fade" id="pills-etapa4" role="tabpanel" aria-labelledby="pills-etapa4-tab">
-                            <form>
+                            <form [formGroup]="FormGroup3">
                                 <h3 class="title-form text-center mt-3">Etapa final</h3>
                                 <div class="form-group my-3">
                                     <div class="label">E-mail</div>
-                                        <input class="form-control" type="email" [(ngModel)]="user.email" name="email" id="email" required
+                                        <input formControlName="email" class="form-control" type="email" [(ngModel)]="user.email" name="email" id="email" required
                                             autocomplete="off" placeholder="Ex: nome@email.com">
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">Senha</div>
-                                    <input class="form-control" (input)='confirmSenha($event)' type="password" name="senha" id="senha" required
+                                    <input formControlName="senha" class="form-control" (input)='confirmSenha($event)' type="password" name="senha" id="senha" required
                                     placeholder="Senha">
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">Confirmar senha</div>
-                                    <input class="form-control" type="password" [(ngModel)]="user.password" name="Confsenha" id="Confsenha"
+                                    <input formControlName="conSenha" class="form-control" type="password" [(ngModel)]="user.password" name="Confsenha" id="Confsenha"
                                         required placeholder="Confirme sua senha">
                                 </div>                      
                                 <div class="d-flex justify-content-center mb-3">
                                     <button class="btn btn-color mr-4" routerLink="">
                                         Início
                                     </button>
-                                    <button type="submit" class="btn btn-color" (click)='cadastrar()'>
+                                    <button [disabled]="!FormGroup3.valid" type="submit" class="btn btn-color" (click)='cadastrar()'>
                                         Cadastrar
                                     </button>
                                 </div>

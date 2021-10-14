@@ -1,30 +1,48 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
-import { UserServiceService } from '../services/user-service.service';
+import { CategoryModel } from '../models/CategoryModel';
+import { CategoryService } from '../services/category.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  name = environment.name
+  name = environment.name;
+  category: CategoryModel = new CategoryModel();
+  listCategory: CategoryModel[];
+  idCategory: number;
 
   constructor(
     private router: Router,
-    private userService: UserServiceService
-  ) { }
+    private categoryService: CategoryService
+  ) {}
 
   ngOnInit() {
+    this.findAllCategory();
   }
 
-  logout(type: any) {
-    this.router.navigate(['/home'])
-    environment.idClient = 0    
-    environment.name = ''
-    environment.type_user = ''
-    environment.token = ''    
+  findAllCategory() {
+    this.categoryService.getAllCategory().subscribe((resp: CategoryModel[]) => {
+      this.listCategory = resp;
+    });
   }
 
+  findByIdCategory() {
+    this.categoryService
+      .getByIdCategory(this.idCategory)
+      .subscribe((resp: CategoryModel) => {
+        this.category = resp;
+      });
+  }
+
+  logout() {
+    this.router.navigate(['/home']);
+    environment.idClient = 0;
+    environment.name = '';
+    environment.type_user = '';
+    environment.token = '';
+  }
 }

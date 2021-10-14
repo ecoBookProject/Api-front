@@ -29,27 +29,29 @@
 <!-- Menu text -->
 <div class="container d-flex text-center justify-content-center my-5">
     <div class="row">
-        <h4 class="head-text">Confira o que a eco.Book preparou para você:</h4>
+        <h4 class="head-text">Confira o que a EcoBook preparou para você:</h4>
+    </div>
+</div>
+<div class="container d-flex text-center justify-content-center my-5">
+    <div class="row">
+        <h4 class="head-text" style="text-transform: uppercase;">{{category.genre}}</h4>
     </div>
 </div>
 
-<div class="row d-flex justify-content-center" *ngIf='!previous'>
-    <h2>Carregando</h2>
-</div>
 <!-- Books card -->
 <div id="books-card">
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="col-12">
             </div>
-            <div class="card-deck mb-3 mr-3" *ngFor='let item of listBook'>
-                <div class="card h-100" *ngIf='previous' [routerLink]="['/vitrine',item.idProduct]">
-                    <img class="card-img-top" src="{{item.foto}}" alt="book-img">
+            <div class="card-deck mb-3 mr-3" *ngFor='let item of category.book'>
+                <div class="card h-100">
+                    <img class="card-img-top" src="{{item.foto}}" alt="When Time Stopped">
                     <div class="card-body d-flex flex-column">
-                        <h5 class=" text-center titulo"  >{{item.title}}</h5>
+                        <h5 class=" text-center titulo" (click)="vitrine()">{{item.title}}</h5>
                         <p class="card-text text-center">{{item.publisher}}</p>
                         <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>R${{item.price}}</a></p>
-                        <a [routerLink]="['/vitrine',item.idProduct]"
+                        <a href="#"
                             class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 bc-green border border-light ">Comprar</a>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { HttpClientModule } from '@angular/common/http';
@@ -21,7 +21,8 @@ import { BookEditComponent } from './edit/book-edit/book-edit.component';
 import { CategoryComponent } from './category/category.component';
 import { CategoryEditComponent } from './edit/category-edit/category-edit.component';
 import { CategoryDeleteComponent } from './delete/category-delete/category-delete.component';
-import { VitrineComponent } from './vitrine/vitrine.component'
+import { VitrineComponent } from './vitrine/vitrine.component';
+import { SearchCategoryComponent } from './search-category/search-category.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { VitrineComponent } from './vitrine/vitrine.component'
     CategoryComponent,
     CategoryEditComponent,
     CategoryDeleteComponent,
-    VitrineComponent
+    VitrineComponent,
+    SearchCategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import { VitrineComponent } from './vitrine/vitrine.component'
     NgxMaskModule.forRoot({
       dropSpecialCharacters: false
     }),
-    NgxCurrencyModule
+    NgxCurrencyModule,
+    ReactiveFormsModule
   ],
   providers: [
     {
@@ -59,4 +62,4 @@ import { VitrineComponent } from './vitrine/vitrine.component'
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
