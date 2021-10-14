@@ -21,5 +21,9 @@
     background-color:  #B5BF65;
 }
 
-
-
+.img-size-card{
+    max-width: 50%;
+    max-height: 50%;
+    width: auto;
+    height: auto;
+}

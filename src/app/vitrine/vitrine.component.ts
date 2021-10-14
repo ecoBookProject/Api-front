@@ -1,19 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { environment } from 'src/environments/environment.prod';
 import { BookModel } from '../models/BookModel';
 import { BookServiceService } from '../services/book-service.service';
+
+
 
 
 @Component({
   selector: 'app-vitrine',
   templateUrl: './vitrine.component.html',
   styleUrls: ['./vitrine.component.css']
+
 })
+
 export class VitrineComponent implements OnInit {
 
   book: BookModel = new BookModel
+  bookcard: BookModel[]
+  previous: boolean = false
+  tituloPost: string
 
+  
 
   constructor(
     private bookService: BookServiceService,
@@ -34,12 +41,13 @@ export class VitrineComponent implements OnInit {
     
   }
 
-
-
   findByIdBook(id: number){
     this.bookService.getByIdBook(id).subscribe((resp: BookModel) =>{
       this.book = resp
     } )
   }
+
+  
+
 
 }

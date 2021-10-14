@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   previous: boolean = false
   tituloPost: string
 
+  
   constructor(
     private router: Router,
     private bookService: BookServiceService,
@@ -28,8 +29,6 @@ export class HomeComponent implements OnInit {
   vitrine(){
     this.router.navigate(["/vitrine"])
   }
-
-
 
   findAllBook(){
     this.bookService.getAllBooks().subscribe((resp: BookModel[])=>{

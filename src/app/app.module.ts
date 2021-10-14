@@ -22,6 +22,7 @@ import { CategoryComponent } from './category/category.component';
 import { CategoryEditComponent } from './edit/category-edit/category-edit.component';
 import { CategoryDeleteComponent } from './delete/category-delete/category-delete.component';
 
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VitrineComponent } from './vitrine/vitrine.component';
 
@@ -57,13 +58,15 @@ import {MatProgressBarModule} from '@angular/material/progress-bar'
     NgxCurrencyModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ],
   providers: [
     {
       provide: LocationStrategy,
-      useClass: HashLocationStrategy
-    }
+      useClass: HashLocationStrategy,
+    
+}
   ],
   bootstrap: [AppComponent]
 })
