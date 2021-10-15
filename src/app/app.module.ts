@@ -21,9 +21,9 @@ import { BookEditComponent } from './edit/book-edit/book-edit.component';
 import { CategoryComponent } from './category/category.component';
 import { CategoryEditComponent } from './edit/category-edit/category-edit.component';
 import { CategoryDeleteComponent } from './delete/category-delete/category-delete.component';
+
 import { VitrineComponent } from './vitrine/vitrine.component';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { SearchCategoryComponent } from './search-category/search-category.component';
 import { FormatBookComponent } from './format-book/format-book.component';
@@ -65,8 +65,9 @@ import { FormatBookFisicoComponent } from './format-book-fisico/format-book-fisi
   providers: [
     {
       provide: LocationStrategy,
-      useClass: HashLocationStrategy
-    }
+      useClass: HashLocationStrategy,
+    
+}
   ],
   bootstrap: [AppComponent]
 })

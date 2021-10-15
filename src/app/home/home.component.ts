@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   previous: boolean = false
   tituloBook: string
 
+  
   constructor(
     private router: Router,
     private bookService: BookServiceService,
