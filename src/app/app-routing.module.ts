@@ -9,9 +9,12 @@ import { BookEditComponent } from './edit/book-edit/book-edit.component';
 import { CategoryEditComponent } from './edit/category-edit/category-edit.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 import { SearchCategoryComponent } from './search-category/search-category.component';
 import { VitrineComponent } from './vitrine/vitrine.component';
 import { ContatoComponent } from './contato/contato.component';
+import { FormatBookComponent } from './format-book/format-book.component';
+import { FormatBookFisicoComponent } from './format-book-fisico/format-book-fisico.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -27,7 +30,10 @@ const routes: Routes = [
   {path: 'category-delete/:id', component: CategoryDeleteComponent},
   {path: 'search-category/:id', component: SearchCategoryComponent},
   {path: 'vitrine', component: VitrineComponent },
-  {path: 'contato', component: ContatoComponent}
+  {path: 'my-profile/:id', component: MyProfileComponent},
+  {path: 'contato', component: ContatoComponent},
+  {path: 'format-book-digital', component: FormatBookComponent},
+  {path: 'format-book-fisico', component: FormatBookFisicoComponent}
 ]
 
 @NgModule({

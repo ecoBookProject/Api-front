@@ -1,0 +1,20 @@
+.col-style {
+    border: 1px solid #ebe8e8;
+}
+
+.c-green{
+    color: #B5BF65;
+}
+
+.btn-color {
+    background-color: #90A641;
+    color: white;
+    font-weight: 400;
+    border: none;
+    width: 100px;
+    border-radius: 20px;
+  }
+  
+.btn-color:hover{
+    background-color: #738623;
+}

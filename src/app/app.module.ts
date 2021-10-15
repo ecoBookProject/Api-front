@@ -21,8 +21,13 @@ import { BookEditComponent } from './edit/book-edit/book-edit.component';
 import { CategoryComponent } from './category/category.component';
 import { CategoryEditComponent } from './edit/category-edit/category-edit.component';
 import { CategoryDeleteComponent } from './delete/category-delete/category-delete.component';
+
 import { VitrineComponent } from './vitrine/vitrine.component';
+
+import { MyProfileComponent } from './my-profile/my-profile.component';
 import { SearchCategoryComponent } from './search-category/search-category.component';
+import { FormatBookComponent } from './format-book/format-book.component';
+import { FormatBookFisicoComponent } from './format-book-fisico/format-book-fisico.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +46,10 @@ import { SearchCategoryComponent } from './search-category/search-category.compo
     CategoryEditComponent,
     CategoryDeleteComponent,
     VitrineComponent,
-    SearchCategoryComponent
+    SearchCategoryComponent,
+    MyProfileComponent,
+    FormatBookComponent,
+    FormatBookFisicoComponent
   ],
   imports: [
     BrowserModule,
@@ -57,8 +65,9 @@ import { SearchCategoryComponent } from './search-category/search-category.compo
   providers: [
     {
       provide: LocationStrategy,
-      useClass: HashLocationStrategy
-    }
+      useClass: HashLocationStrategy,
+    
+}
   ],
   bootstrap: [AppComponent]
 })

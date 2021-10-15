@@ -10,10 +10,14 @@ import { CategoryService } from '../services/category.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  name = environment.name;
-  category: CategoryModel = new CategoryModel();
-  listCategory: CategoryModel[];
-  idCategory: number;
+
+  name = environment.name
+  category: CategoryModel = new CategoryModel()
+  listCategory: CategoryModel[]
+  idCategory: number
+  idUser = environment.idClient
+  digital: string = 'digital'
+  fisico: string = 'fisico'
 
   constructor(
     private router: Router,
@@ -45,4 +49,14 @@ export class NavbarComponent implements OnInit {
     environment.type_user = '';
     environment.token = '';
   }
+
+  logged(){
+    let ok: boolean = true
+
+    if(environment.token == ''){
+      ok = false
+    }
+    return ok
+  }
+
 }

@@ -1,29 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BookModel } from '../models/BookModel';
 import { BookServiceService } from '../services/book-service.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-format-book-fisico',
+  templateUrl: './format-book-fisico.component.html',
+  styleUrls: ['./format-book-fisico.component.css']
 })
-export class HomeComponent implements OnInit {
+export class FormatBookFisicoComponent implements OnInit {
 
   book: BookModel = new BookModel()
   listBook: BookModel[]
   previous: boolean = false
   tituloBook: string
+  formato: string
 
-  
   constructor(
     private router: Router,
     private bookService: BookServiceService,
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit(){
     window.scroll(0, 0)
     this.findAllBook()
+    let format = this.route.snapshot.params['format']
+    this.formato = format
   }
 
   vitrine(){
@@ -47,5 +50,4 @@ export class HomeComponent implements OnInit {
     })
     this.previous = true
   }
-
 }

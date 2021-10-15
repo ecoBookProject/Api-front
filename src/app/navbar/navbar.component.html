@@ -8,16 +8,17 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <form class="form-inline my-3 ml-auto d-flex justify-content-center">
-      <input class="form-control mr-sm-2" type="search" placeholder="Buscar">
-      <button class="btn my-2 my-sm-0 btn-color rounded-right" type="submit"><i class="fa fa-search"></i></button>
-    </form>
     <ul class="navbar-nav ml-auto mt-2 mt-lg-0 d-flex align-items-center">
       <li class="nav-item active mx-2">
         <a class="nav-link text-center">Olá, {{name}}<br>seja bem-vinde!</a>
       </li>
-      <li class="nav-item active mx-1">
+      <li class="nav-item active mx-1" *ngIf='logged() == false'>
         <a class="nav-items nav-link" routerLink="/login">Login/Cadastro
+          <span><i class="fa-nav fa fa-user d-flex justify-content-center" aria-hidden="true"></i></span>
+        </a>
+      </li>
+      <li class="nav-item active mx-1" *ngIf='logged() == true'>
+        <a class="nav-items nav-link" [routerLink]="['/my-profile', idUser]">Meu perfil
           <span><i class="fa-nav fa fa-user d-flex justify-content-center" aria-hidden="true"></i></span>
         </a>
       </li>
@@ -26,7 +27,7 @@
           <span><i class="fa-nav fa fa-shopping-cart d-flex justify-content-center" aria-hidden="true"></i></span>
         </a>
       </li>
-      <li class="nav-item active mx-1">
+      <li class="nav-item active mx-1" *ngIf='logged() == true'>
         <a class="nav-items nav-link" href='logout()'>Sair
           <span><i class="fa-nav fa fa-sign-out d-flex justify-content-center"></i></span>
         </a>
@@ -53,10 +54,10 @@
         </div>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Livros</a>
+        <a class="nav-link" routerLink="/format-book-fisico">Livros</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">eBooks</a>
+        <a class="nav-link" routerLink="/format-book-digital">eBooks</a>
       </li>
     </ul>
   </div>

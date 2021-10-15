@@ -4,8 +4,8 @@
 <!-- linha livros e infor de compra -->
   <div class="row d-flex justify-content-center">
     <!--foto-->
-    <div class="col-5 d-flex justify-content-center ">
-      <img src="{{book.foto}}" class="shadow-sm" alt="...">
+    <div class="col-5 d-flex justify-content-center">
+      <img src="{{book.foto}}" class="shadow-sm " alt="...">
     </div>
     <!--infor-->
     <div class="col-5 d-flex justify-content-center">
@@ -13,18 +13,18 @@
         
         <h4 class="card-title">{{book.title}}</h4>
         <h5> {{book.author}} </h5>
-        <h3> R$ {{book.price}} </h3>
+        <h3>{{book.price | currency : 'BRL'}} </h3>
         
         <!-- escolha de tipo de livro -->
         <div class="form-group">
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-            <label class="form-check-label" for="inlineRadio1">Brochura</label>
+            <label class="form-check-label" for="inlineRadio1">Impresso</label>
           </div>
 
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-            <label class="form-check-label" for="inlineRadio2">E-Book</label>
+            <label class="form-check-label" for="inlineRadio2">Digital</label>
           </div>
         </div>
 
@@ -35,7 +35,8 @@
           <div class="d-flex justify-content-start ">
             
             <form class="form-inline ">
-              <input class="form-control " type="search" placeholder="Ex: 01234-567">
+              <input class="form-control " formControlName="cep" type="text" mask="00000-000" name="cep" id="cep"
+              placeholder="Ex: 01234-567">
               <button class="btn my-2 my-sm-0 btn-color rounded-0" name="cep" id="cep" mask="00000-000" type="submit" (click)='buscarCEP()'><i class="fa fa-search "></i></button>
             </form>
           </div>
@@ -64,25 +65,41 @@
     <table class="table table-striped bg-infor-book shadow-sm">
     <thead>
       <tr>
-        <th scope="col d-flex justify-content-center">Detalhes do produto</th>
+        <th scope="col d-flex justify-content-center">Informações do produto</th>
         
       </tr>
       <tr class="bg-infor-book-2">
-        <p class="card-text ml-3 mr-3 pt-1 pb-1 ">{{book.description}}</p>
+        <p class="card-text ml-3 mr-3 pt-1 pb-1 text-justify ">{{book.description}}</p>
         
       </tr>
     </thead>
   </table>
   </div>
 
-<!-- carosseul de livros com a mesma categoria 
-  {% comment %} <div class="mr-5 ml-5 pt-5 pb-5">
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+<!-- carosseul de livros com a mesma categoria -->
       
+              <div class="col-12">
 
-    </div>
 
-  </div> -->
+<div class="card  mb-5 " style="width: 18rem;">
+  <img src="https://i.imgur.com/yem4zWM.jpg" class="card-img-top img-size-card" alt="...">
+  <div class="card-body">
+    <h5 class="card-title text-center">Titulo</h5>
+    <p class="card-text text-center">Autor</p>
+    <p class="card-text text-center">valor</p>
+    <a href="#" class="text-light cor-buttom btn shadow-sm rounded-0 d-flex justify-content-center">Comprar</a>
+  </div>
+</div>
+
+
+
+
+
+
+
+                
+              </div>  
+
 
   <!--infor book-->
   <div class="bg-infor-book ml-5 mr-5 ">
