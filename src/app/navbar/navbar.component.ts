@@ -16,6 +16,8 @@ export class NavbarComponent implements OnInit {
   listCategory: CategoryModel[]
   idCategory: number
   idUser = environment.idClient
+  digital: string = 'digital'
+  fisico: string = 'fisico'
 
   constructor(
     private router: Router,

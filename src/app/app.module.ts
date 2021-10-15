@@ -26,6 +26,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { SearchCategoryComponent } from './search-category/search-category.component';
+import { FormatBookComponent } from './format-book/format-book.component';
+import { FormatBookFisicoComponent } from './format-book-fisico/format-book-fisico.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { SearchCategoryComponent } from './search-category/search-category.compo
     CategoryDeleteComponent,
     VitrineComponent,
     SearchCategoryComponent,
-    MyProfileComponent
+    MyProfileComponent,
+    FormatBookComponent,
+    FormatBookFisicoComponent
   ],
   imports: [
     BrowserModule,

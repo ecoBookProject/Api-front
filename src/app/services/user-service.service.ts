@@ -37,7 +37,10 @@ export class UserServiceService {
 
   logged() {
     let ok: boolean = false;
-    if (this.router.url.includes('/home') || this.router.url.includes('/search-category') || this.router.url.includes('/my-profile')) {
+    if (this.router.url.includes('/home') || this.router.url.includes('/search-category') 
+      || this.router.url.includes('/my-profile') || this.router.url.includes('/format-book')
+      || this.router.url.includes('/vitrine')
+    ){
       ok = true;      
     }
     return ok;
