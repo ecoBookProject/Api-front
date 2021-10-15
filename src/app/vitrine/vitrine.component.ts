@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BookModel } from '../models/BookModel';
+import { UserModel } from '../models/UserModel';
 import { BookServiceService } from '../services/book-service.service';
-
+import { CepServiceService } from '../services/cep-service.service';
 
 
 
@@ -19,14 +20,14 @@ export class VitrineComponent implements OnInit {
   bookcard: BookModel[]
   previous: boolean = false
   tituloPost: string
-
+  
   
 
   constructor(
     private bookService: BookServiceService,
     private router: Router,
     private route: ActivatedRoute,
-
+    private cepsService: CepServiceService,
   ) { }
 
   ngOnInit(){
@@ -38,6 +39,8 @@ export class VitrineComponent implements OnInit {
   }
 
   buscarCEP(){
+    this.cepsService.buscar
+     console.log(this.cepsService)
     
   }
 

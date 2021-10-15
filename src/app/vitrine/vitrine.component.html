@@ -35,7 +35,8 @@
           <div class="d-flex justify-content-start ">
             
             <form class="form-inline ">
-              <input class="form-control " type="search" placeholder="Ex: 01234-567">
+              <input class="form-control " formControlName="cep" type="text" mask="00000-000" name="cep" id="cep"
+              placeholder="Ex: 01234-567">
               <button class="btn my-2 my-sm-0 btn-color rounded-0" name="cep" id="cep" mask="00000-000" type="submit" (click)='buscarCEP()'><i class="fa fa-search "></i></button>
             </form>
           </div>
