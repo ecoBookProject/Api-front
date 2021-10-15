@@ -54,8 +54,13 @@
     z-index: 99;
 }
 
+.price-style {
+    font-size: 18px;
+    font-weight: 500;
+} 
 .btn-color {
     background-color: #BFAF80;
     color: #fff;
 }
+
 

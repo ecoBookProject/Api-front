@@ -54,7 +54,7 @@
                     <div class="card-body d-flex flex-column">
                         <h5 class="text-center titulo">{{item.title}}</h5>
                         <p class="card-text text-center">{{item.publisher}}</p>
-                        <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>{{item.price | currency : 'BRL'}}</a></p>
+                        <p class="text-center price-style"><a>R${{item.price  | currency : 'BRL'}}</a></p>
                         <a [routerLink]="['/vitrine',item.idProduct]"
                             class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 bc-green border border-light ">Comprar</a>
                     </div>
@@ -63,8 +63,6 @@
             <div class="col-12">
             </div>
         </div>
-    </div> 
-
-   
+    </div>  
 
 </div>
