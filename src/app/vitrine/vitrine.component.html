@@ -13,7 +13,7 @@
         
         <h4 class="card-title">{{book.title}}</h4>
         <h5> {{book.author}} </h5>
-        <h3> R$ {{book.price}} </h3>
+        <h3>{{book.price | currency : 'BRL'}} </h3>
         
         <!-- escolha de tipo de livro -->
         <div class="form-group">

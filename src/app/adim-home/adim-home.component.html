@@ -34,7 +34,7 @@
                     <div class="card-body d-flex flex-column">
                         <h5 class=" text-center titulo">{{item.title}}</h5>
                         <p class="card-text text-center">{{item.publisher}}</p>
-                        <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>R${{item.price}}</a></p>
+                        <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>{{item.price | currency : 'BRL'}}</a></p>
                         <a [routerLink]="['/book-edit', item.idProduct]"
                             class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 border border-light ">Editar</a>
                         <a href="#"
