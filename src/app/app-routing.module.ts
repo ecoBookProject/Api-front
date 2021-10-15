@@ -13,6 +13,8 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
 import { SearchCategoryComponent } from './search-category/search-category.component';
 import { VitrineComponent } from './vitrine/vitrine.component';
 import { ContatoComponent } from './contato/contato.component';
+import { FormatBookComponent } from './format-book/format-book.component';
+import { FormatBookFisicoComponent } from './format-book-fisico/format-book-fisico.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -29,7 +31,9 @@ const routes: Routes = [
   {path: 'search-category/:id', component: SearchCategoryComponent},
   {path: 'vitrine', component: VitrineComponent },
   {path: 'my-profile/:id', component: MyProfileComponent},
-  {path: 'contato', component: ContatoComponent}
+  {path: 'contato', component: ContatoComponent},
+  {path: 'format-book-digital', component: FormatBookComponent},
+  {path: 'format-book-fisico', component: FormatBookFisicoComponent}
 ]
 
 @NgModule({
