@@ -1,17 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BookModel } from '../models/BookModel';
-import { UserModel } from '../models/UserModel';
 import { BookServiceService } from '../services/book-service.service';
 import { CepServiceService } from '../services/cep-service.service';
-
-
 
 @Component({
   selector: 'app-vitrine',
   templateUrl: './vitrine.component.html',
   styleUrls: ['./vitrine.component.css']
-
 })
 
 export class VitrineComponent implements OnInit {
@@ -19,15 +15,12 @@ export class VitrineComponent implements OnInit {
   book: BookModel = new BookModel
   bookcard: BookModel[]
   previous: boolean = false
-  tituloPost: string
-  
-  
+  tituloPost: string  
 
   constructor(
     private bookService: BookServiceService,
-    private router: Router,
     private route: ActivatedRoute,
-    private cepsService: CepServiceService,
+    private cepsService: CepServiceService
   ) { }
 
   ngOnInit(){
@@ -35,13 +28,11 @@ export class VitrineComponent implements OnInit {
 
     let id = this.route.snapshot.params['id']
     this.findByIdBook(id)
-
   }
 
   buscarCEP(){
     this.cepsService.buscar
-     console.log(this.cepsService)
-    
+     console.log(this.cepsService)    
   }
 
   findByIdBook(id: number){
@@ -49,8 +40,6 @@ export class VitrineComponent implements OnInit {
       this.book = resp
     } )
   }
-
-  
 
 
 }

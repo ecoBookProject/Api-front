@@ -45,7 +45,8 @@
 }
 
 .col-style {
-  border: 1px solid #ebe8e8;
+  border: 2px solid #ebe8e8;
+  border-radius: 15px;
 }
 
 .navbar-color {
@@ -56,4 +57,8 @@
   font-family: 'Indie Flower', cursive;
   color: #fff;
   font-size: 26px;
+}
+
+.progress-bar {
+  background-color: #90A641;
 }

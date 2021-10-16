@@ -21,7 +21,8 @@
 }
 
 .col-style {
-    border: 1px solid #ebe8e8;
+    border: 2px solid #ebe8e8;
+    border-radius: 15px;
 }
 
 .btn {
@@ -34,7 +35,7 @@
 }
 
 .btn-color {
-    background-color: #90A641;
+    background-color: #B5BF65;
     color: white;
     font-weight: 400;
     border-radius: 20px;
@@ -46,4 +47,17 @@
 
 .back-home {
     cursor: pointer;
+}
+
+.modal-header-info {
+    color:#fff;
+    padding:9px 15px;
+    border-bottom:1px solid #eee;
+    background-color: #5bc0de;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
 }

@@ -3,23 +3,21 @@ import { Injectable } from '@angular/core';
 import { UserModel } from '../models/UserModel';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CepServiceService {
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(
-    private httpClient: HttpClient
-  ) { }
-
-  buscar(cep:string){
-    return this.httpClient.get(`https://viacep.com.br/ws/${cep}/json/`)
-            .toPromise()
-            .then(response =>{
-              return this.converterJsonCep(response)
-            })
+  buscar(cep: string) {
+    return this.httpClient
+      .get(`https://viacep.com.br/ws/${cep}/json/`)
+      .toPromise()
+      .then((response) => {
+        return this.converterJsonCep(response);
+      });
   }
 
-  private converterJsonCep(cepJson:any):UserModel{
+  private converterJsonCep(cepJson: any): UserModel {
     let cep = new UserModel();
     cep.cep = cepJson.cep;
     cep.address = cepJson.logradouro;
