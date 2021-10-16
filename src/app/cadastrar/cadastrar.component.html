@@ -13,8 +13,11 @@
                         <div class="tab-pane fade show active" id="pills-etapa1" role="tabpanel"
                             aria-labelledby="pills-etapa1-tab">
                             <form [formGroup]="FormGroup">
-                                <h3 class="title-form text-center mt-3">Etapa 1</h3>
-                                <div class="form-group my-3">
+                                <h3 class="title-form text-center mt-3 mb-4">Etapa 1</h3>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                                <div class="form-group my-4">
                                     <div class="label">CEP</div>
                                     <input formControlName="cep" class="form-control" type="text" mask="00000-000" name="cep" id="cep"
                                         [(ngModel)]="user.cep" placeholder="Ex: 01234-567">
@@ -44,8 +47,11 @@
                         <!--Etapa2 do cadastro-->
                         <div class="tab-pane fade" id="pills-etapa2" role="tabpanel" aria-labelledby="pills-etapa2-tab">
                             <form [formGroup]="FormGroup1">
-                                <h3 class="title-form text-center mt-3">Etapa 2</h3>
-                                <div class="form-group my-3">
+                                <h3 class="title-form text-center mt-3 mb-4">Etapa 2</h3>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 33%" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                                <div class="form-group my-4">
                                     <div class="label">Número</div>
                                     <input formControlName="numero" class="form-control" type="text" [(ngModel)]="user.number" name="numero" id="numero"
                                         required placeholder="Número">
@@ -76,8 +82,11 @@
                         <!--Etapa3 do cadastro-->
                         <div class="tab-pane fade" id="pills-etapa3" role="tabpanel" aria-labelledby="pills-etapa3-tab">
                             <form [formGroup]="FormGroup2">
-                                <h3 class="title-form text-center mt-3">Etapa 3</h3>
-                                <div class="form-group my-3">
+                                <h3 class="title-form text-center mt-3 mb-4">Etapa 3</h3>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                                <div class="form-group my-4">
                                     <div class="label">Nome Completo</div>
                                         <input formControlName="nome" class="form-control" type="text" name="name" id="name" [(ngModel)]="user.name" required placeholder="Nome e sobrenome">
                                 </div>
@@ -102,8 +111,11 @@
                         <!--Etapa4 do cadastro-->
                         <div class="tab-pane fade" id="pills-etapa4" role="tabpanel" aria-labelledby="pills-etapa4-tab">
                             <form [formGroup]="FormGroup3">
-                                <h3 class="title-form text-center mt-3">Etapa final</h3>
-                                <div class="form-group my-3">
+                                <h3 class="title-form text-center mt-3 mb-4">Etapa final</h3>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
+                                <div class="form-group my-4">
                                     <div class="label">E-mail</div>
                                         <input formControlName="email" class="form-control" type="email" [(ngModel)]="user.email" name="email" id="email" required
                                             autocomplete="off" placeholder="Ex: nome@email.com">

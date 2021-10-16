@@ -21,7 +21,6 @@ import { BookEditComponent } from './edit/book-edit/book-edit.component';
 import { CategoryComponent } from './category/category.component';
 import { CategoryEditComponent } from './edit/category-edit/category-edit.component';
 import { CategoryDeleteComponent } from './delete/category-delete/category-delete.component';
-
 import { VitrineComponent } from './vitrine/vitrine.component';
 
 import { MyProfileComponent } from './my-profile/my-profile.component';
@@ -49,7 +48,7 @@ import { FormatBookFisicoComponent } from './format-book-fisico/format-book-fisi
     SearchCategoryComponent,
     MyProfileComponent,
     FormatBookComponent,
-    FormatBookFisicoComponent
+    FormatBookFisicoComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,18 +56,17 @@ import { FormatBookFisicoComponent } from './format-book-fisico/format-book-fisi
     FormsModule,
     HttpClientModule,
     NgxMaskModule.forRoot({
-      dropSpecialCharacters: false
+      dropSpecialCharacters: false,
     }),
     NgxCurrencyModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
     {
       provide: LocationStrategy,
       useClass: HashLocationStrategy,
-    
-}
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
