@@ -15,30 +15,34 @@
                             <form [formGroup]="FormGroup">
                                 <h3 class="title-form text-center mt-3 mb-4">Etapa 1</h3>
                                 <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                                        aria-valuemax="100"></div>
+                                </div>
                                 <div class="form-group my-4">
                                     <div class="label">CEP</div>
-                                    <input formControlName="cep" class="form-control" type="text" mask="00000-000" name="cep" id="cep"
-                                        [(ngModel)]="user.cep" placeholder="Ex: 01234-567">
+                                    <input formControlName="cep" class="form-control" type="text" mask="00000-000"
+                                        name="cep" id="cep" [(ngModel)]="user.cep" placeholder="Ex: 01234-567">
                                     <div class="d-flex justify-content-end">
-                                        <button class="btn btn-secondary btn-sm mt-2 mr-2" (click)='buscar()'>Buscar</button>
+                                        <button class="btn btn-secondary btn-sm mt-2 mr-2"
+                                            (click)='buscar()'>Buscar</button>
                                     </div>
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">Endereço</div>
-                                    <input formControlName="logradouro" class="form-control" type="text" name="logradouro" id="logradouro"
-                                        [(ngModel)]="user.address" placeholder="Rua das Laranjeiras">
+                                    <input formControlName="logradouro" class="form-control" type="text"
+                                        name="logradouro" id="logradouro" [(ngModel)]="user.address"
+                                        placeholder="Rua das Laranjeiras">
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">Bairro</div>
-                                    <input formControlName="bairro" class="form-control" type="text" name="bairro" id="bairro"
-                                        [(ngModel)]="user.district" placeholder="Bairro">
+                                    <input formControlName="bairro" class="form-control" type="text" name="bairro"
+                                        id="bairro" [(ngModel)]="user.district" placeholder="Bairro">
                                 </div>
                                 <div class="d-flex justify-content-center mb-3">
                                     <button class="btn mr-4 btn-color" routerLink="/login">Voltar</button>
-                                    <button [disabled]="!FormGroup.valid" class="btn btn-color" id="pills-etapa2-tab" data-toggle="pill"
-                                        href="#pills-etapa2" role="tab" aria-controls="pills-etapa2" aria-selected="false">
+                                    <button [disabled]="!FormGroup.valid" class="btn btn-color" id="pills-etapa2-tab"
+                                        data-toggle="pill" href="#pills-etapa2" role="tab" aria-controls="pills-etapa2"
+                                        aria-selected="false">
                                         Próximo
                                     </button>
                                 </div>
@@ -49,12 +53,14 @@
                             <form [formGroup]="FormGroup1">
                                 <h3 class="title-form text-center mt-3 mb-4">Etapa 2</h3>
                                 <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 33%" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
+                                    <div class="progress-bar" role="progressbar" style="width: 33%" aria-valuenow="33"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
                                 <div class="form-group my-4">
                                     <div class="label">Número</div>
-                                    <input formControlName="numero" class="form-control" type="text" [(ngModel)]="user.number" name="numero" id="numero"
-                                        required placeholder="Número">
+                                    <input formControlName="numero" class="form-control" type="text"
+                                        [(ngModel)]="user.number" name="numero" id="numero" required
+                                        placeholder="Número">
                                 </div>
                                 <!--<div class="form-group my-3">
                                     <div class="label">Complemento</div>
@@ -63,17 +69,18 @@
                                 </div>-->
                                 <div class="form-group my-3">
                                     <div class="label">Cidade</div>
-                                    <input formControlName="cidade" class="form-control" type="text" name="cidade" id="cidade" [(ngModel)]="user.city"
-                                        placeholder="Cidade">
+                                    <input formControlName="cidade" class="form-control" type="text" name="cidade"
+                                        id="cidade" [(ngModel)]="user.city" placeholder="Cidade">
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">UF</div>
-                                    <input formControlName="uf" class="form-control" type="text" name="estado" id="estado" [(ngModel)]="user.state"
-                                        required placeholder="Estado">
+                                    <input formControlName="uf" class="form-control" type="text" name="estado"
+                                        id="estado" [(ngModel)]="user.state" required placeholder="Estado">
                                 </div>
                                 <div class="d-flex justify-content-center mb-3">
-                                    <button [disabled]="!FormGroup1.valid" class="btn btn-color" id="pills-etapa3-tab" data-toggle="pill"
-                                        href="#pills-etapa3" role="tab" aria-controls="pills-etapa3" aria-selected="false">
+                                    <button [disabled]="!FormGroup1.valid" class="btn btn-color" id="pills-etapa3-tab"
+                                        data-toggle="pill" href="#pills-etapa3" role="tab" aria-controls="pills-etapa3"
+                                        aria-selected="false">
                                         Próximo
                                     </button>
                                 </div>
@@ -84,25 +91,29 @@
                             <form [formGroup]="FormGroup2">
                                 <h3 class="title-form text-center mt-3 mb-4">Etapa 3</h3>
                                 <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
+                                    <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
                                 <div class="form-group my-4">
                                     <div class="label">Nome Completo</div>
-                                        <input formControlName="nome" class="form-control" type="text" name="name" id="name" [(ngModel)]="user.name" required placeholder="Nome e sobrenome">
+                                    <input formControlName="nome" class="form-control" type="text" name="name" id="name"
+                                        [(ngModel)]="user.name" required placeholder="Nome e sobrenome">
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">CPF</div>
-                                    <input formControlName="cpf" class="form-control" type="text" [(ngModel)]="user.cpf" mask="000.000.000-00" name="cpf" id="cpf"
-                                        required placeholder="CPF" >
+                                    <input formControlName="cpf" class="form-control" type="text" [(ngModel)]="user.cpf"
+                                        mask="000.000.000-00" name="cpf" id="cpf" required placeholder="CPF">
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">Telefone</div>
-                                    <input formControlName="telefone" class="form-control" type="text" [(ngModel)]="user.phone" mask="(00) 00000-0000" name="phone"
-                                        id="phone" required placeholder="(xx) 99999-9999">
-                                </div>                      
+                                    <input formControlName="telefone" class="form-control" type="text"
+                                        [(ngModel)]="user.phone" mask="(00) 00000-0000" name="phone" id="phone" required
+                                        placeholder="(xx) 99999-9999">
+                                </div>
                                 <div class="d-flex justify-content-center mb-3">
-                                    <button [disabled]="!FormGroup2.valid" class="btn btn-color" id="pills-etapa4-tab" data-toggle="pill"
-                                        href="#pills-etapa4" role="tab" aria-controls="pills-etapa4" aria-selected="false">
+                                    <button [disabled]="!FormGroup2.valid" class="btn btn-color" id="pills-etapa4-tab"
+                                        data-toggle="pill" href="#pills-etapa4" role="tab" aria-controls="pills-etapa4"
+                                        aria-selected="false">
                                         Próximo
                                     </button>
                                 </div>
@@ -113,38 +124,47 @@
                             <form [formGroup]="FormGroup3">
                                 <h3 class="title-form text-center mt-3 mb-4">Etapa final</h3>
                                 <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
+                                    <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
                                 <div class="form-group my-4">
                                     <div class="label">E-mail</div>
-                                        <input formControlName="email" class="form-control" type="email" [(ngModel)]="user.email" name="email" id="email" required
-                                            autocomplete="off" placeholder="Ex: nome@email.com">
+                                    <input formControlName="email" class="form-control" type="email"
+                                        [(ngModel)]="user.email" name="email" id="email" required autocomplete="off"
+                                        placeholder="Ex: nome@email.com">
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">Senha</div>
-                                    <input formControlName="senha" class="form-control" (input)='confirmSenha($event)' type="password" name="senha" id="senha" required
-                                    placeholder="Senha">
+                                    <input formControlName="senha" class="form-control" (input)='confirmSenha($event)'
+                                        type="password" name="senha" id="senha" required placeholder="Senha">
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">Confirmar senha</div>
-                                    <input formControlName="conSenha" class="form-control" type="password" [(ngModel)]="user.password" name="Confsenha" id="Confsenha"
-                                        required placeholder="Confirme sua senha">
-                                </div>                      
+                                    <input formControlName="conSenha" class="form-control" type="password"
+                                        [(ngModel)]="user.password" name="Confsenha" id="Confsenha" required
+                                        placeholder="Confirme sua senha">
+                                </div>
                                 <div class="d-flex justify-content-center mb-3">
                                     <button class="btn btn-color mr-4" routerLink="">
                                         Início
                                     </button>
-                                    <button [disabled]="!FormGroup3.valid" type="submit" class="btn btn-color" (click)='cadastrar()'>
+                                    <button [disabled]="!FormGroup3.valid" type="submit" class="btn btn-color"
+                                        (click)='cadastrar()'>
                                         Cadastrar
                                     </button>
                                 </div>
                             </form>
                         </div>
-        
+
                     </div>
-                </div>                
-            </div>           
+                </div>
+            </div>
         </div>
-        <div class="col-md-6" id="img-bg"></div>
+        <div class="d-none d-md-block">
+            <div class="col-md-6" id="img-bg" style="min-height: 700px; width: 500px;"></div>
+        </div>
+        <div class="d-md-none d-sm-block">
+            <div class="col-md-4" id="img-bg" style="min-height: 295px; width: 350px;"></div>
+        </div>
     </div>
 </div>
