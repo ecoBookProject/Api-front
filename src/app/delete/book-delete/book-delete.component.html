@@ -13,11 +13,11 @@
     </div>
     <div class="row d-flex justify-content-center">
         <!--foto-->
-        <div class="col-5 d-flex justify-content-center ">
+        <div class="col-md-3 d-flex justify-content-center ">
             <img src="{{book.foto}}" class="shadow-sm" alt="...">
         </div>
         <!--infor-->
-        <div class="col-5 d-flex justify-content-center">
+        <div class="col-md-3 justify-content-center">
             <div class="card-body ">
 
                 <h4 class="card-title">{{book.title}}</h4>
@@ -26,16 +26,9 @@
 
                 <!-- escolha de tipo de livro -->
                 <div class="form-group">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                            value="option1">
-                        <label class="form-check-label" for="inlineRadio1">Brochura</label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                            value="option2">
-                        <label class="form-check-label" for="inlineRadio2">E-Book</label>
+                    <div class="form-check form-check-inline" *ngFor="let enum of enum_details">
+                        <input class="form-check-input" type="radio" id="enum_answer_{{enum.name}}" [value]='enum.name' type="radio" name="enums" [(ngModel)]="book.format">
+                        <label class="form-check-label" for="enum_answer_{{enum.name}}">{{enum.name}}</label>
                     </div>
                 </div>
                 <!--Botoes-->
@@ -49,7 +42,7 @@
         </div>
     </div>
     <!-- Sinopse -->
-    <div class="row ml-5 mr-5 pt-1 pb-2">
+    <div class="row ml-5 mr-5 pt-4 pb-2">
         <table class="table table-striped bg-infor-book shadow-sm">
             <thead>
                 <tr>
@@ -63,7 +56,7 @@
     </div>
     <!--infor book-->
     <div class="row d-flex justify-content-center">
-        <table class="col-md-5 table table-striped shadow-sm">
+        <table class="col-md-5 table table-striped shadow-sm mr-1">
             <tbody>
                 <tr>
                     <th class="col-3" scope="row">ID</th>

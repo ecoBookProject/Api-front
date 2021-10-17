@@ -15,7 +15,12 @@ export class VitrineComponent implements OnInit {
   book: BookModel = new BookModel
   bookcard: BookModel[]
   previous: boolean = false
-  tituloPost: string  
+  tituloPost: string
+  radioSelected: any;
+  enum_details = [
+    {name: 'digital'},
+    {name: 'fisico'},
+  ]
 
   constructor(
     private bookService: BookServiceService,
