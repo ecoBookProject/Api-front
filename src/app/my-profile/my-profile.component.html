@@ -10,7 +10,7 @@
     </div>
 
     <form class="row d-flex justify-content-center" [formGroup]="FormGroup">
-        <div class="col-md-5 mr-5 col-style">
+        <div class="col-md-4 mr-3 mb-2 col-style">
             <h5 class="my-3" style="font-weight: bold;"><span><i class="fa fa-address-card c-green"
                         aria-hidden="true"></i></span> DADOS BÁSICOS
             </h5>
@@ -36,25 +36,27 @@
             </div>
             <div class="form-group my-3">
                 <div class="label">Senha</div>
-                <input (input)='confirmSenha($event)' formControlName="senha" class="form-control" type="password" name="pass" id="pass"
-                    placeholder="Senha">
+                <input (input)='confirmSenha($event)' formControlName="senha" class="form-control" type="password"
+                    name="pass" id="pass" placeholder="Senha">
             </div>
             <div class="form-group my-3">
                 <div class="label">Confirmar Senha</div>
-                <input [(ngModel)]="user.password" formControlName="conSenha" class="form-control" type="password" name="conpass" id="conpass"
-                    placeholder="Confirme sua senha">
+                <input [(ngModel)]="user.password" formControlName="conSenha" class="form-control" type="password"
+                    name="conpass" id="conpass" placeholder="Confirme sua senha">
             </div>
-            <div class="d-flex justify-content-center my-5">
-                <button class="btn btn-color mr-4" routerLink="">
-                    Voltar
-                </button>
-                <button [disabled]="!FormGroup.valid" type="submit" class="btn btn-color" (click)='atualizar()'>
-                    Atualizar
-                </button>
+            <div class="d-none d-md-block">
+                <div class="d-flex justify-content-center my-5 mb-2">
+                    <button class="btn btn-color mr-4" routerLink="">
+                        Voltar
+                    </button>
+                    <button [disabled]="!FormGroup.valid" type="submit" class="btn btn-color" (click)='atualizar()'>
+                        Atualizar
+                    </button>
+                </div>
             </div>
         </div>
 
-        <div class="col-md-5 col-style">
+        <div class="col-md-4 col-style">
             <h5 class="my-3" style="font-weight: bold;"><span><i class="fa fa-map-marker c-green"
                         aria-hidden="true"></i></span> ENDEREÇOS
             </h5>
@@ -92,6 +94,16 @@
                 <div class="label">UF</div>
                 <input formControlName="uf" [(ngModel)]="user.state" class="form-control" type="text" name="estado"
                     id="estado" required placeholder="Estado">
+            </div>
+            <div class="d-md-none d-sm-block">
+                <div class="d-flex justify-content-center my-5">
+                    <button class="btn btn-color mr-4" routerLink="">
+                        Voltar
+                    </button>
+                    <button [disabled]="!FormGroup.valid" type="submit" class="btn btn-color" (click)='atualizar()'>
+                        Atualizar
+                    </button>
+                </div>
             </div>
         </div>
     </form>

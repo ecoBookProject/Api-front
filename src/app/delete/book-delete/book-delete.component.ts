@@ -13,6 +13,11 @@ export class BookDeleteComponent implements OnInit {
 
   book: BookModel = new BookModel()
   idProduct: number
+  radioSelected: any;
+  enum_details = [
+    {name: 'digital'},
+    {name: 'fisico'},
+  ]
 
   constructor(
     private router: Router,
