@@ -10,20 +10,20 @@
     <!--infor-->
     <div class="col-md-3 justify-content-center">
       <div class="card-body ">
+        <div class="text-center justify-content-center">
+          <h4 class="card-title">{{book.title}}</h4>
+          <h5> {{book.author}} </h5>
+          <h3>{{book.price | currency : 'BRL'}} </h3>
 
-        <h4 class="card-title">{{book.title}}</h4>
-        <h5> {{book.author}} </h5>
-        <h3>{{book.price | currency : 'BRL'}} </h3>
-
-        <!-- escolha de tipo de livro -->
-        <div class="form-group">
-          <div class="form-check form-check-inline" *ngFor="let enum of enum_details">
-            <input class="form-check-input" type="radio" id="enum_answer_{{enum.name}}" [value]='enum.name' type="radio"
-              name="enums" [(ngModel)]="radioSelected">
-            <label class="form-check-label" for="enum_answer_{{enum.name}}">{{enum.name}}</label>
+          <!-- escolha de tipo de livro -->
+          <div class="form-group">
+            <div class="form-check form-check-inline" *ngFor="let enum of enum_details">
+              <input class="form-check-input" type="radio" id="enum_answer_{{enum.name}}" [value]='enum.name'
+                type="radio" name="enums" [(ngModel)]="radioSelected">
+              <label class="form-check-label" for="enum_answer_{{enum.name}}">{{enum.name}}</label>
+            </div>
           </div>
         </div>
-
         <!-- campo de  CEP 
 
         <div class="form-group my-3">          
