@@ -13,6 +13,10 @@ html{
     font-size: 18pt;
 }
 
+.fs-30{
+    font-size: 30pt;
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
