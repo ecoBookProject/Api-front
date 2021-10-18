@@ -40,6 +40,7 @@ export class UserServiceService {
     if (this.router.url.includes('/home') || this.router.url.includes('/search-category') 
       || this.router.url.includes('/my-profile') || this.router.url.includes('/format-book')
       || this.router.url.includes('/vitrine')
+      || this.router.url.includes('/contato')
     ){
       ok = true;      
     }

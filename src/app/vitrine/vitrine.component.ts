@@ -46,5 +46,4 @@ export class VitrineComponent implements OnInit {
     } )
   }
 
-
 }
