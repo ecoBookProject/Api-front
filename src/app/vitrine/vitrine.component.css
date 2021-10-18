@@ -18,6 +18,7 @@
 
 .cor-buttom{
     background-color:  #B5BF65;
+    width: 180px;
 }
 
 .img-size-card{
@@ -26,3 +27,4 @@
     width: auto;
     height: auto;
 }
+
