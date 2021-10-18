@@ -27,15 +27,9 @@
           <span><i class="fa-nav fa fa-shopping-cart d-flex justify-content-center" aria-hidden="true"></i></span>
         </a>
       </li>
-<<<<<<< HEAD
-      <li class="nav-item active mx-1">
-        <a (click)='logout()' class="nav-items nav-link"> Sair
-          <span><i class="fa-nav fa fa-sign-out d-flex justify-content-center" ></i></span>
-=======
       <li class="nav-item active mx-1" *ngIf='logged() == true'>
         <a class="nav-items nav-link" href='logout()'>Sair
           <span><i class="fa-nav fa fa-sign-out d-flex justify-content-center"></i></span>
->>>>>>> 562d84214b0b0776c671d428e1332dbd80ecbb97
         </a>
       </li>
     </ul>

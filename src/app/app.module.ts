@@ -6,7 +6,6 @@ import { NgxCurrencyModule } from 'ngx-currency';
 import { HttpClientModule } from '@angular/common/http';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ModalModule } from 'ngx-bootstrap/modal';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
@@ -23,19 +22,12 @@ import { CategoryComponent } from './category/category.component';
 import { CategoryEditComponent } from './edit/category-edit/category-edit.component';
 import { CategoryDeleteComponent } from './delete/category-delete/category-delete.component';
 import { VitrineComponent } from './vitrine/vitrine.component';
-
-<<<<<<< HEAD
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
-import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { AlertsComponent } from './alerts/alerts.component'
-
-=======
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { SearchCategoryComponent } from './search-category/search-category.component';
 import { FormatBookComponent } from './format-book/format-book.component';
 import { FormatBookFisicoComponent } from './format-book-fisico/format-book-fisico.component';
 import { AboutUsComponent } from './about-us/about-us.component';
->>>>>>> 562d84214b0b0776c671d428e1332dbd80ecbb97
 
 @NgModule({
   declarations: [
@@ -54,15 +46,12 @@ import { AboutUsComponent } from './about-us/about-us.component';
     CategoryEditComponent,
     CategoryDeleteComponent,
     VitrineComponent,
-<<<<<<< HEAD
-    AlertsComponent
-=======
+    AlertsComponent,
     SearchCategoryComponent,
     MyProfileComponent,
     FormatBookComponent,
     FormatBookFisicoComponent,
     AboutUsComponent,
->>>>>>> 562d84214b0b0776c671d428e1332dbd80ecbb97
   ],
   imports: [
     BrowserModule,
@@ -73,14 +62,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
       dropSpecialCharacters: false,
     }),
     NgxCurrencyModule,
-<<<<<<< HEAD
-    MatProgressSpinnerModule,
-    MatProgressBarModule,
     ReactiveFormsModule, 
-    ModalModule.forRoot()
-=======
-    ReactiveFormsModule,
->>>>>>> 562d84214b0b0776c671d428e1332dbd80ecbb97
+    ModalModule.forRoot(),
   ],
   providers: [
     {

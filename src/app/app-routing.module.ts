@@ -25,14 +25,6 @@ const routes: Routes = [
   {path: 'adim-home', component: AdimHomeComponent},
   {path: 'book-delete/:id', component: BookDeleteComponent},
   {path: 'book-edit/:id', component: BookEditComponent},
-<<<<<<< HEAD
-  {path: 'vitrine/:id', component: VitrineComponent},
-  {path: 'category', component: CategoryComponent},
-  {path: 'category-edit/:id', component: CategoryEditComponent},
-  {path: 'category-delete/:id', component: CategoryDeleteComponent},
-  {path: 'vitrine', component: VitrineComponent }
-];
-=======
   {path: 'vitrine/:id', component: VitrineComponent },
   {path: 'category', component: CategoryComponent},
   {path: 'category-edit/:id', component: CategoryEditComponent},
@@ -45,7 +37,6 @@ const routes: Routes = [
   {path: 'format-book-fisico', component: FormatBookFisicoComponent},
   {path: 'about-us', component: AboutUsComponent}
 ]
->>>>>>> 562d84214b0b0776c671d428e1332dbd80ecbb97
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
