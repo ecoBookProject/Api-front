@@ -19,7 +19,7 @@
           <div class="form-group">
             <div class="form-check form-check-inline" *ngFor="let enum of enum_details">
               <input class="form-check-input" type="radio" id="enum_answer_{{enum.name}}" [value]='enum.name'
-                type="radio" name="enums" [(ngModel)]="radioSelected">
+                type="radio" name="enums" [(ngModel)]="book.format">
               <label class="form-check-label" for="enum_answer_{{enum.name}}">{{enum.name}}</label>
             </div>
           </div>
