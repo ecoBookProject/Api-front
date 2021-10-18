@@ -32,6 +32,7 @@
     display: flex;
 }
 
+
 .card:hover{
     box-sizing: border-box !important;
     cursor: pointer;
@@ -47,28 +48,3 @@
     width: 13em;
     font-size: 20px;
 }
-
-.loader-container{
-    position: fixed;
-    width: 100%;
-    z-index: 99;
-}
-
-.price-style {
-    font-size: 18px;
-    font-weight: 500;
-} 
-.btn-color {
-    background-color: #BFAF80;
-    color: #fff;
-}
-
-.flex-fill {
-    border-width: 2px;
-    border-color: rgb(156, 156, 156);
-}
-
-.form-control:focus {
-    border-color: #B5BF65;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #90A641;
-  }

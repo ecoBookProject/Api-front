@@ -22,14 +22,20 @@ import { BookEditComponent } from './edit/book-edit/book-edit.component';
 import { CategoryComponent } from './category/category.component';
 import { CategoryEditComponent } from './edit/category-edit/category-edit.component';
 import { CategoryDeleteComponent } from './delete/category-delete/category-delete.component';
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VitrineComponent } from './vitrine/vitrine.component';
 
+<<<<<<< HEAD
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { AlertsComponent } from './alerts/alerts.component'
 
+=======
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import { SearchCategoryComponent } from './search-category/search-category.component';
+import { FormatBookComponent } from './format-book/format-book.component';
+import { FormatBookFisicoComponent } from './format-book-fisico/format-book-fisico.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+>>>>>>> 562d84214b0b0776c671d428e1332dbd80ecbb97
 
 @NgModule({
   declarations: [
@@ -48,7 +54,15 @@ import { AlertsComponent } from './alerts/alerts.component'
     CategoryEditComponent,
     CategoryDeleteComponent,
     VitrineComponent,
+<<<<<<< HEAD
     AlertsComponent
+=======
+    SearchCategoryComponent,
+    MyProfileComponent,
+    FormatBookComponent,
+    FormatBookFisicoComponent,
+    AboutUsComponent,
+>>>>>>> 562d84214b0b0776c671d428e1332dbd80ecbb97
   ],
   imports: [
     BrowserModule,
@@ -56,20 +70,24 @@ import { AlertsComponent } from './alerts/alerts.component'
     FormsModule,
     HttpClientModule,
     NgxMaskModule.forRoot({
-      dropSpecialCharacters: false
+      dropSpecialCharacters: false,
     }),
     NgxCurrencyModule,
+<<<<<<< HEAD
     MatProgressSpinnerModule,
     MatProgressBarModule,
     ReactiveFormsModule, 
     ModalModule.forRoot()
+=======
+    ReactiveFormsModule,
+>>>>>>> 562d84214b0b0776c671d428e1332dbd80ecbb97
   ],
   providers: [
     {
       provide: LocationStrategy,
-      useClass: HashLocationStrategy
-    }
+      useClass: HashLocationStrategy,
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+.container{
+    font-family: 'Roboto', sans-serif;
+}
+
+.vitrine-bg{
+    background-color: #b4bf658e;
+}
+
+.bg-infor-book{
+    background-color: #ffff;
+}
+
+.bg-infor-book-2{
+    background-color: rgb(236, 236, 236);
+}
+
+.cor-buttom{
+    background-color:  #B5BF65;
+}
