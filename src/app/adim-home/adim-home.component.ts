@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment.prod';
 import { BookModel } from '../models/BookModel';
 import { CategoryModel } from '../models/CategoryModel';
 import { UserModel } from '../models/UserModel';
+import { AlertsService } from '../services/alerts.service';
 import { BookServiceService } from '../services/book-service.service';
 import { CategoryServiceService } from '../services/category-service.service';
 import { UserServiceService } from '../services/user-service.service';
@@ -30,7 +31,8 @@ export class AdimHomeComponent implements OnInit {
     private bookService: BookServiceService,
     private userService: UserServiceService,
     private categoryService: CategoryServiceService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private alerts: AlertsService
   ) {
 
     this.FormGroup = this.formBuilder.group({
@@ -95,7 +97,7 @@ export class AdimHomeComponent implements OnInit {
 
     this.bookService.postBook(this.book).subscribe((resp: BookModel) => {
       this.book = resp
-      alert('Livro publicado com sucesso!')
+      this.alerts.showAlertSuccess('Livro publicado com sucesso!')
       this.book = new BookModel()
       this.findAllBook()
     })

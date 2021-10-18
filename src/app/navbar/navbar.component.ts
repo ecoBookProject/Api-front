@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { UserDTO } from '../models/UserDTO';
+import { UserServiceService } from '../services/user-service.service';
 import { CategoryModel } from '../models/CategoryModel';
 import { CategoryService } from '../services/category.service';
 
@@ -12,6 +14,7 @@ import { CategoryService } from '../services/category.service';
 export class NavbarComponent implements OnInit {
 
   name = environment.name
+  id = environment.idClient
   category: CategoryModel = new CategoryModel()
   listCategory: CategoryModel[]
   idCategory: number

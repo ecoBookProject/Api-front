@@ -15,6 +15,7 @@ import { VitrineComponent } from './vitrine/vitrine.component';
 import { ContatoComponent } from './contato/contato.component';
 import { FormatBookComponent } from './format-book/format-book.component';
 import { FormatBookFisicoComponent } from './format-book-fisico/format-book-fisico.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -33,7 +34,8 @@ const routes: Routes = [
   {path: 'my-profile/:id', component: MyProfileComponent},
   {path: 'contato', component: ContatoComponent},
   {path: 'format-book-digital', component: FormatBookComponent},
-  {path: 'format-book-fisico', component: FormatBookFisicoComponent}
+  {path: 'format-book-fisico', component: FormatBookFisicoComponent},
+  {path: 'about-us', component: AboutUsComponent}
 ]
 
 @NgModule({

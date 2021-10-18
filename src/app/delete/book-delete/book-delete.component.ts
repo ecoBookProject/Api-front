@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BookModel } from 'src/app/models/BookModel';
+import { AlertsService } from 'src/app/services/alerts.service';
 import { BookServiceService } from 'src/app/services/book-service.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -22,7 +23,8 @@ export class BookDeleteComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private bookService: BookServiceService
+    private bookService: BookServiceService,
+    private alerts: AlertsService
   ) { }
 
   ngOnInit(){
@@ -44,7 +46,7 @@ export class BookDeleteComponent implements OnInit {
 
   apagar(){
     this.bookService.deleteBook(this.idProduct).subscribe(()=>{
-      alert("Livro apagado com sucesso!")
+      this.alerts.showAlertSuccess("Livro apagado com sucesso!")
       this.router.navigate(['/adim-home'])
     })
   }

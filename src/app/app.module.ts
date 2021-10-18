@@ -5,7 +5,7 @@ import { NgxMaskModule } from 'ngx-mask';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { HttpClientModule } from '@angular/common/http';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-
+import { ModalModule } from 'ngx-bootstrap/modal';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
@@ -22,11 +22,12 @@ import { CategoryComponent } from './category/category.component';
 import { CategoryEditComponent } from './edit/category-edit/category-edit.component';
 import { CategoryDeleteComponent } from './delete/category-delete/category-delete.component';
 import { VitrineComponent } from './vitrine/vitrine.component';
-
+import { AlertsComponent } from './alerts/alerts.component'
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { SearchCategoryComponent } from './search-category/search-category.component';
 import { FormatBookComponent } from './format-book/format-book.component';
 import { FormatBookFisicoComponent } from './format-book-fisico/format-book-fisico.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -45,10 +46,12 @@ import { FormatBookFisicoComponent } from './format-book-fisico/format-book-fisi
     CategoryEditComponent,
     CategoryDeleteComponent,
     VitrineComponent,
+    AlertsComponent,
     SearchCategoryComponent,
     MyProfileComponent,
     FormatBookComponent,
     FormatBookFisicoComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,8 @@ import { FormatBookFisicoComponent } from './format-book-fisico/format-book-fisi
       dropSpecialCharacters: false,
     }),
     NgxCurrencyModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule, 
+    ModalModule.forRoot(),
   ],
   providers: [
     {
