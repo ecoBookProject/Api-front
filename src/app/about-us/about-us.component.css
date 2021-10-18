@@ -1,0 +1,29 @@
+.titulo{
+    text-align: center;
+    font-style: oblique;
+    font-family: 'Brush Script MT, Brush Script Std, cursive';
+    text-shadow: 0 0 7px rgb(0, 255, 0);
+}
+
+.sn{
+    margin: 30px;
+    
+}
+
+.card-text{
+    font-style: oblique;
+}
+
+.card{
+    border-color: darkgreen;
+    border-width: 5px;
+}
+
+.btn{
+  margin-left: 30px;
+}
+
+.card-txt{
+    font-style: oblique;
+    text-align: center;
+}

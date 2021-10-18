@@ -27,6 +27,7 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
 import { SearchCategoryComponent } from './search-category/search-category.component';
 import { FormatBookComponent } from './format-book/format-book.component';
 import { FormatBookFisicoComponent } from './format-book-fisico/format-book-fisico.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { FormatBookFisicoComponent } from './format-book-fisico/format-book-fisi
     MyProfileComponent,
     FormatBookComponent,
     FormatBookFisicoComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,
