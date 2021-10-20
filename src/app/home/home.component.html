@@ -38,7 +38,7 @@
 </div>
 
 <div class=" form-inline w-100 col-md-5 my-4 container d-flex text-center justify-content-center my-5">
-    <input [(ngModel)]='tituloBook' class="form-control flex-fill mr-sm-2" type="text" placeholder="Buscar por título" (keyup)='findByTituloBook()'>
+    <input [(ngModel)]='tituloBook' class="form-control flex-fill mr-sm-2" type="text" placeholder="Buscar por título ou autor" (keyup)='findByAuthor(); findByTituloBook()'>
     <!-- <button (click)='findByTituloBook()' class="btn my-2 my-sm-0 btn-color rounded-right" type="submit"><i class="fa fa-search"></i></button> -->
 </div>
 
