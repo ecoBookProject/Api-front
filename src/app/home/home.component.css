@@ -28,7 +28,9 @@
   padding: 0 10px;
   width: 450px;
   caret-color: #b5bf65;
+  opacity: 90%;
   transition: width 0.4s linear;
+  font-size: 14px;
 }
 
 @media (max-width: 600px) {

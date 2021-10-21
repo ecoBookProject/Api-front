@@ -6,7 +6,7 @@ import { BookServiceService } from '../services/book-service.service';
 @Component({
   selector: 'app-format-book-fisico',
   templateUrl: './format-book-fisico.component.html',
-  styleUrls: ['./format-book-fisico.component.css']
+  styleUrls: ['./format-book-fisico.component.css'],
 })
 export class FormatBookFisicoComponent implements OnInit {
 

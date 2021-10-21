@@ -44,20 +44,20 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav justify-content-lg-around flex-fill">
       <li class="nav-item dropdown active">
-        <a class="nav-link navbar-brand" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+        <a class="nav-link navbar-brand links-style" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-bars mr-2" aria-hidden="true"></i> Categorias
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" routerLink='/home'>Todos</a>
-          <a *ngFor='let item of listCategory' class="dropdown-item" [routerLink]="['/search-category', item.idCategory]">{{item.genre}}</a>
+          <a class="dropdown-item style-category" routerLink='/home'>Todos</a>
+          <a *ngFor='let item of listCategory' class="dropdown-item style-category" [routerLink]="['/search-category', item.idCategory]">{{item.genre}}</a>
         </div>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/format-book-fisico">Livros</a>
+        <a class="nav-link links-style" routerLink="/format-book-fisico">Livros</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/format-book-digital">eBooks</a>
+        <a class="nav-link links-style" routerLink="/format-book-digital">eBooks</a>
       </li>
     </ul>
   </div>
