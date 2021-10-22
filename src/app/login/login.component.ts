@@ -5,6 +5,7 @@ import { AlertsComponent } from '../alerts/alerts.component';
 import { UserDTO } from '../models/UserDTO';
 import { AlertsService } from '../services/alerts.service';
 import { UserServiceService } from '../services/user-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -36,19 +37,32 @@ export class LoginComponent implements OnInit {
 
       console.log(environment.token)
 
-      if(this.userDto.type_user == "Adim")
-      {
-        this.alerts.showAlertSuccess('Administrador logado com sucesso!')
+      if (this.userDto.type_user == "Adim") {
+        Swal.fire({
+          icon: 'success',
+          title: 'Administrador logado com sucesso!',
+          showConfirmButton: false,
+          timer: 2500,
+        })
         this.router.navigate(['/adim-home'])
-      }else{
-        this.alerts.showAlertSuccess('Usuario logado com sucesso!')
+      } else {
+        Swal.fire({
+          icon: 'success',
+          title: 'Usuario logado com sucesso!',
+          showConfirmButton: false,
+          timer: 1500,
+        })
         this.router.navigate(['/home'])
       }
     }, error => {
       if (error.status == 401 || error.status == 404) {
-        this.alerts.showAlertDanger('Usuário ou senha estão incorretos')
+        Swal.fire({
+          icon: 'error',
+          title: 'Usuário ou senha estão incorretos!',
+          showConfirmButton: false,
+          timer: 1500,
+        })
       }
     })
   }
-
 }

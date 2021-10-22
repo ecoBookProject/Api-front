@@ -4,6 +4,7 @@ import { CategoryModel } from 'src/app/models/CategoryModel';
 import { AlertsService } from 'src/app/services/alerts.service';
 import { CategoryService } from 'src/app/services/category.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-category-delete',
@@ -38,6 +39,12 @@ export class CategoryDeleteComponent implements OnInit {
 
   delete() {
     this.categoryService.deleteCategory(this.idCategory).subscribe(() => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Livro apagado com sucesso!',
+        showConfirmButton: false,
+        timer: 1500,
+      })
       this.alerts.showAlertSuccess('Categoria apagada com sucesso!')
       this.router.navigate(['/category'])
     })

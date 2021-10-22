@@ -4,6 +4,7 @@ import { CategoryModel } from 'src/app/models/CategoryModel';
 import { AlertsService } from 'src/app/services/alerts.service';
 import { CategoryService } from 'src/app/services/category.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-category-edit',
@@ -39,7 +40,12 @@ export class CategoryEditComponent implements OnInit {
   update(){
     this.categoryService.putCategory(this.category).subscribe((resp: CategoryModel) =>{
       this.category = resp
-      this.alerts.showAlertSuccess('Categoria atualizada com sucesso!')
+      Swal.fire({
+        icon: 'success',
+        title: 'Categoria atualizada com sucesso!',
+        showConfirmButton: false,
+        timer: 1500,
+      })
       this.router.navigate(['/category'])
     })
   }
