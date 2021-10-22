@@ -56,7 +56,7 @@ export class FormatBookFisicoComponent implements OnInit {
   }
 
   findAllBook(){
-    this.bookService.getAllBooks().subscribe((resp: BookModel[])=>{
+    this.bookService.getByBookPhysicist().subscribe((resp: BookModel[])=>{
       this.listBook = resp
     })
     this.previous = true
