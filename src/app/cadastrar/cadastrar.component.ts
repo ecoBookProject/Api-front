@@ -5,6 +5,7 @@ import { UserModel } from '../models/UserModel';
 import { AlertsService } from '../services/alerts.service';
 import { CepServiceService } from '../services/cep-service.service';
 import { UserServiceService } from '../services/user-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cadastrar',
@@ -75,7 +76,12 @@ export class CadastrarComponent implements OnInit {
       console.log(this.user)
       this.userService.cadastrar(this.user).subscribe((resp: UserModel) => {
         this.user = resp
-        this.alerts.showAlertSuccess('Usuário cadastrado com sucesso!')
+        Swal.fire({
+          icon: 'success',
+          title: 'Usuário cadastrado com sucesso!',
+          showConfirmButton: false,
+          timer: 1500,
+        })
         this.router.navigate(['/login'])
       })
     }

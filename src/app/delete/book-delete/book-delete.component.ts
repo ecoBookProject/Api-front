@@ -4,6 +4,7 @@ import { BookModel } from 'src/app/models/BookModel';
 import { AlertsService } from 'src/app/services/alerts.service';
 import { BookServiceService } from 'src/app/services/book-service.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-book-delete',
@@ -46,7 +47,12 @@ export class BookDeleteComponent implements OnInit {
 
   apagar(){
     this.bookService.deleteBook(this.idProduct).subscribe(()=>{
-      this.alerts.showAlertSuccess("Livro apagado com sucesso!")
+      Swal.fire({
+        icon: 'success',
+        title: 'Livro apagado com sucesso!',
+        showConfirmButton: false,
+        timer: 1500,
+      })
       this.router.navigate(['/adim-home'])
     })
   }

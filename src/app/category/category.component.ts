@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { CategoryModel } from '../models/CategoryModel';
 import { AlertsService } from '../services/alerts.service';
 import { CategoryService } from '../services/category.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-category',
@@ -37,7 +38,12 @@ export class CategoryComponent implements OnInit {
   cadastrar() {
     this.categoryService.postCategory(this.category).subscribe((resp: CategoryModel) => {
       this.category = resp
-      this.alerts.showAlertSuccess('Categoria cadastrada com sucesso!')
+      Swal.fire({
+        icon: 'success',
+        title: 'Categoria cadastrada com sucesso!',
+        showConfirmButton: false,
+        timer: 1500,
+      })
       this.findAllCategories()
       this.category = new CategoryModel()
 

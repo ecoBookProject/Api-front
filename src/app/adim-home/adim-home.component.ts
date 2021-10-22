@@ -9,6 +9,7 @@ import { AlertsService } from '../services/alerts.service';
 import { BookServiceService } from '../services/book-service.service';
 import { CategoryServiceService } from '../services/category-service.service';
 import { UserServiceService } from '../services/user-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-adim-home',
@@ -97,7 +98,12 @@ export class AdimHomeComponent implements OnInit {
 
     this.bookService.postBook(this.book).subscribe((resp: BookModel) => {
       this.book = resp
-      this.alerts.showAlertSuccess('Livro publicado com sucesso!')
+      Swal.fire({
+        icon: 'success',
+        title: 'Livro publicado com sucesso!',
+        showConfirmButton: false,
+        timer: 1500,
+      })
       this.book = new BookModel()
       this.findAllBook()
     })

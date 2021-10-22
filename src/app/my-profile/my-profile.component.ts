@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { UserModel } from '../models/UserModel';
 import { UserServiceService } from '../services/user-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-my-profile',
@@ -75,7 +76,12 @@ export class MyProfileComponent implements OnInit {
       this.userService.atualizar(this.user).subscribe((resp: UserModel)=>{
         this.user = resp
         console.log(this.user)
-        alert("Usuario atualizado com sucesso!")
+        Swal.fire({
+          icon: 'success',
+          title: 'Usuario atualizado com sucesso!',
+          showConfirmButton: false,
+          timer: 1500,
+        })
         this.router.navigate(['/home'])
       })
     }

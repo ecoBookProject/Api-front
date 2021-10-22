@@ -9,6 +9,7 @@ import { BookServiceService } from 'src/app/services/book-service.service';
 import { CategoryServiceService } from 'src/app/services/category-service.service';
 import { UserServiceService } from 'src/app/services/user-service.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-book-edit',
@@ -90,7 +91,12 @@ export class BookEditComponent implements OnInit {
     this.book.category=this.category
     this.bookService.putBook(this.book).subscribe((resp:BookModel)=>{
       this.book = resp
-      this.alerts.showAlertSuccess("Livro atualizado com sucesso !")
+      Swal.fire({
+        icon: 'success',
+        title: 'Livro atualizado com sucesso!',
+        showConfirmButton: false,
+        timer: 1500,
+      })
       this.book = new BookModel()
       this.router.navigate(['/adim-home'])
     })
