@@ -57,7 +57,7 @@ export class FormatBookComponent implements OnInit {
 
 
   findAllBook(){
-    this.bookService.getAllBooks().subscribe((resp: BookModel[])=>{
+    this.bookService.getByBookDigital().subscribe((resp: BookModel[])=>{
       this.listBook = resp
     })
     this.previous = true

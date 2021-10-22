@@ -29,6 +29,14 @@ export class BookServiceService {
     return this.http.get<BookModel[]>(`https://projetoecobook.herokuapp.com/book/author/${autor}`, this.token)
   }
 
+  getByBookDigital(){
+    return this.http.get<BookModel[]>('https://projetoecobook.herokuapp.com/book/format-digital', this.token)
+  }
+
+  getByBookPhysicist(){
+    return this.http.get<BookModel[]>('https://projetoecobook.herokuapp.com/book/format-physicist', this.token)
+  }
+
   postBook(book: BookModel): Observable<BookModel>{
     return this.http.post<BookModel>('https://projetoecobook.herokuapp.com/book', book, this.token)
   }
