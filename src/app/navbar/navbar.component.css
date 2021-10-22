@@ -1,43 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
 .navbar {
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
 }
 
 #logo-style {
-    font-family: 'Indie Flower', cursive;
-    color: #fff;
-    font-size: 26px;
+  font-family: "Indie Flower", cursive;
+  color: #fff;
+  font-size: 26px;
 }
 
 .bg-color {
-    background-color: #B5BF65;
+  background-color: #b5bf65;
 }
 
 .bg-color2 {
-    background-color: #90A641;
+  background-color: #90a641;
 }
 
 .btn-color {
-    background-color: #BFAF80;
-    color: #fff;
+  background-color: #bfaf80;
+  color: #fff;
 }
 
 .dropdown-item {
-    color: #fff;
+  color: #fff;
 }
 
 .dropdown-menu {
-    background-color: #90A641;
+  background-color: #90a641;
 }
 
 .nav-items {
-    font-size: 10pt;
+  font-size: 10pt;
 }
 
 .fa-nav {
-    font-size: 15pt;
-    border: none;
+  font-size: 15pt;
+  border: none;
 }
 
+.style-category:hover {
+    background-color: #b5bf65;
+    color: #fff;
+}
+
+.links-style:hover {
+    background-color: #b5bf65;
+    border-radius: 10px;
+}

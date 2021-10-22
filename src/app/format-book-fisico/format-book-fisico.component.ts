@@ -6,7 +6,7 @@ import { BookServiceService } from '../services/book-service.service';
 @Component({
   selector: 'app-format-book-fisico',
   templateUrl: './format-book-fisico.component.html',
-  styleUrls: ['./format-book-fisico.component.css']
+  styleUrls: ['./format-book-fisico.component.css'],
 })
 export class FormatBookFisicoComponent implements OnInit {
 
@@ -38,6 +38,17 @@ export class FormatBookFisicoComponent implements OnInit {
       this.findAllBook()
     } else {
       this.bookService.getByTituloBook(this.tituloBook).subscribe((resp: BookModel[]) => {
+        this.listBook = resp
+      })
+    }
+    console.log(this.tituloBook)
+  }
+
+  findByAuthor(){
+    if (this.tituloBook == '') {
+      this.findAllBook()
+    } else {
+      this.bookService.getByAuthor(this.tituloBook).subscribe((resp: BookModel[]) => {
         this.listBook = resp
       })
     }

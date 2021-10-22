@@ -44,6 +44,18 @@ export class FormatBookComponent implements OnInit {
     console.log(this.tituloBook)
   }
 
+  findByAuthor(){
+    if (this.tituloBook == '') {
+      this.findAllBook()
+    } else {
+      this.bookService.getByAuthor(this.tituloBook).subscribe((resp: BookModel[]) => {
+        this.listBook = resp
+      })
+    }
+    console.log(this.tituloBook)
+  }
+
+
   findAllBook(){
     this.bookService.getAllBooks().subscribe((resp: BookModel[])=>{
       this.listBook = resp
