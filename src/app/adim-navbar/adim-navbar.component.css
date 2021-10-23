@@ -7,6 +7,11 @@
 }
 a{
     text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+}  
+a:hover{
+    color: #fff;
 }
 .bg-color {
     background-color: #90A641;

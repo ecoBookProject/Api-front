@@ -47,10 +47,7 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     this.router.navigate(['/home']);
-    environment.idClient = 0;
-    environment.name = '';
-    environment.type_user = '';
-    environment.token = '';
+    location.reload();
   }
 
   logged(){
