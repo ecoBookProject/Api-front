@@ -83,6 +83,17 @@ export class CadastrarComponent implements OnInit {
           timer: 1500,
         })
         this.router.navigate(['/login'])
+      }, error => {
+        if (error.status == 400 || error.status == 401 || error.status == 404) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Usuário não cadastrado!',
+            text: 'Tente novamente mais tarde',
+            showConfirmButton: false,
+            timer: 1500,
+          })
+          this.router.navigate(['/login'])
+        }
       })
     }
   }
@@ -91,10 +102,14 @@ export class CadastrarComponent implements OnInit {
     this.cepsService.buscar(this.user.cep)
       .then((cep: UserModel) => this.user = cep)
       .catch(() => {
-        let cep = this.user.cep
-        this.user.cep = cep;
-        this.alerts.showAlertDanger('Não foi possivel continuar a busca');
+      let cep = this.user.cep
+      this.user.cep = cep;
+      Swal.fire({
+        icon: 'error',
+        title: 'Não foi possivel achar o seu cep!',
+        showConfirmButton: false,
+        timer: 1500,
       })
+    })
   }
-
 }

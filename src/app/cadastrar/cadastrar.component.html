@@ -20,22 +20,18 @@
                                 </div>
                                 <div class="form-group my-4">
                                     <div class="label">CEP</div>
-                                    <input formControlName="cep" class="form-control" type="text" mask="00000-000"
-                                        name="cep" id="cep" [(ngModel)]="user.cep" placeholder="Ex: 01234-567">
-                                    <div class="d-flex justify-content-end">
-                                        <button class="btn btn-secondary btn-sm mt-2 mr-2"
-                                            (click)='buscar()'>Buscar</button>
-                                    </div>
+                                    <input formControlName="cep" style="border:1px solid #727171" class="form-control" type="text" mask="00000-000"
+                                        name="cep" id="cep" [(ngModel)]="user.cep" placeholder="Ex: 01234-567" (blur)='buscar()'>
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">Endereço</div>
-                                    <input formControlName="logradouro" class="form-control" type="text"
+                                    <input formControlName="logradouro" style="border:1px solid #727171" class="form-control" type="text"
                                         name="logradouro" id="logradouro" [(ngModel)]="user.address"
                                         placeholder="Rua das Laranjeiras">
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">Bairro</div>
-                                    <input formControlName="bairro" class="form-control" type="text" name="bairro"
+                                    <input formControlName="bairro" style="border:1px solid #727171" class="form-control" type="text" name="bairro"
                                         id="bairro" [(ngModel)]="user.district" placeholder="Bairro">
                                 </div>
                                 <div class="d-flex justify-content-center mb-3">
@@ -58,7 +54,7 @@
                                 </div>
                                 <div class="form-group my-4">
                                     <div class="label">Número</div>
-                                    <input formControlName="numero" class="form-control" type="text"
+                                    <input formControlName="numero" style="border:1px solid #727171" class="form-control" type="text"
                                         [(ngModel)]="user.number" name="numero" id="numero" required
                                         placeholder="Número">
                                 </div>
@@ -69,12 +65,12 @@
                                 </div>-->
                                 <div class="form-group my-3">
                                     <div class="label">Cidade</div>
-                                    <input formControlName="cidade" class="form-control" type="text" name="cidade"
+                                    <input formControlName="cidade" style="border:1px solid #727171" class="form-control" type="text" name="cidade"
                                         id="cidade" [(ngModel)]="user.city" placeholder="Cidade">
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">UF</div>
-                                    <input formControlName="uf" class="form-control" type="text" name="estado"
+                                    <input formControlName="uf" style="border:1px solid #727171" class="form-control" type="text" name="estado"
                                         id="estado" [(ngModel)]="user.state" required placeholder="Estado">
                                 </div>
                                 <div class="d-flex justify-content-center mb-3">
@@ -96,17 +92,17 @@
                                 </div>
                                 <div class="form-group my-4">
                                     <div class="label">Nome Completo</div>
-                                    <input formControlName="nome" class="form-control" type="text" name="name" id="name"
+                                    <input formControlName="nome" style="border:1px solid #727171" class="form-control" type="text" name="name" id="name"
                                         [(ngModel)]="user.name" required placeholder="Nome e sobrenome">
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">CPF</div>
-                                    <input formControlName="cpf" class="form-control" type="text" [(ngModel)]="user.cpf"
+                                    <input formControlName="cpf" style="border:1px solid #727171" class="form-control" type="text" [(ngModel)]="user.cpf"
                                         mask="000.000.000-00" name="cpf" id="cpf" required placeholder="CPF">
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">Telefone</div>
-                                    <input formControlName="telefone" class="form-control" type="text"
+                                    <input formControlName="telefone" style="border:1px solid #727171" class="form-control" type="text"
                                         [(ngModel)]="user.phone" mask="(00) 00000-0000" name="phone" id="phone" required
                                         placeholder="(xx) 99999-9999">
                                 </div>
@@ -129,18 +125,18 @@
                                 </div>
                                 <div class="form-group my-4">
                                     <div class="label">E-mail</div>
-                                    <input formControlName="email" class="form-control" type="email"
+                                    <input formControlName="email" style="border:1px solid #727171" class="form-control" type="email"
                                         [(ngModel)]="user.email" name="email" id="email" required autocomplete="off"
                                         placeholder="Ex: nome@email.com">
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">Senha</div>
-                                    <input formControlName="senha" class="form-control" (input)='confirmSenha($event)'
+                                    <input formControlName="senha" style="border:1px solid #727171" class="form-control" (input)='confirmSenha($event)'
                                         type="password" name="senha" id="senha" required placeholder="Senha">
                                 </div>
                                 <div class="form-group my-3">
                                     <div class="label">Confirmar senha</div>
-                                    <input formControlName="conSenha" class="form-control" type="password"
+                                    <input formControlName="conSenha" style="border:1px solid #727171" class="form-control" type="password"
                                         [(ngModel)]="user.password" name="Confsenha" id="Confsenha" required
                                         placeholder="Confirme sua senha">
                                 </div>
