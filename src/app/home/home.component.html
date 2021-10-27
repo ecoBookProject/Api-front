@@ -29,12 +29,13 @@
 <!-- Search -->
 <div class="container mt-5">
     <div class="d-flex justify-content-center h-100">
-      <div class="searchbar">
-        <input [(ngModel)]='tituloBook' class="search_input" type="text" name="" placeholder="Buscar por título ou autor" (keyup)='findByAuthor(); findByTituloBook()'>
-        <a href="#" class="search_icon"><i class="fa fa-search"></i></a>
-      </div>
+        <div class="searchbar">
+            <input [(ngModel)]='tituloBook' class="search_input" type="text" name=""
+                placeholder="Buscar por título ou autor" (keyup)='findByAuthor(); findByTituloBook()'>
+            <a href="#" class="search_icon"><i class="fa fa-search"></i></a>
+        </div>
     </div>
-  </div>
+</div>
 
 <!-- Books card -->
 <div class="container">
@@ -43,20 +44,29 @@
             <div class="product-grid3" *ngIf='previous' [routerLink]="['/vitrine',item.idProduct]">
                 <div class="product-image3">
                     <a href="#">
-                        <img class="pic-1" src="{{item.foto}}" alt="book-img">
-                        <img class="pic-2" src="{{item.foto}}" alt="book-img">
+                        <div class="d-none d-md-block">
+                            <img class="pic-1" src="{{item.foto}}" alt="book-img">
+                            <img class="pic-2" src="{{item.foto}}" alt="book-img">
+                        </div>
+                        <div class="d-md-none d-sm-block">
+                            <img class="pic-1" src="{{item.foto}}" alt="book-img" style="max-width:550px; max-height:400px; width: auto; height: auto;">
+                            <img class="pic-2" src="{{item.foto}}" alt="book-img" style="max-width:550px; max-height:400px; width: auto; height: auto;">
+                        </div>
                     </a>
                     <ul class="social">
-                        <li><a href="#" data-toogle="tooltip" title="Comprar"><i class="fa fa-shopping-bag"></i></a></li>
-                        <li><a href="#" data-toogle="tooltip" title="Carrinho"><i class="fa fa-shopping-cart"></i></a></li>
-                        <li><a [routerLink]="['/vitrine',item.idProduct]" data-toogle="tooltip" title="Informações"><i class="fa fa-info"></i></a></li>
+                        <li><a href="#" data-toogle="tooltip" title="Comprar"><i class="fa fa-shopping-bag"></i></a>
+                        </li>
+                        <li><a href="#" data-toogle="tooltip" title="Carrinho"><i class="fa fa-shopping-cart"></i></a>
+                        </li>
+                        <li><a [routerLink]="['/vitrine',item.idProduct]" data-toogle="tooltip" title="Informações"><i
+                                    class="fa fa-info"></i></a></li>
                     </ul>
                 </div>
                 <div class="product-content mb-5">
                     <h3 class="title"><a>{{item.publisher}}</a></h3>
                     <h5 class="title-book"><a>{{item.title}}</a></h5>
                     <div class="price">
-                        {{item.price  | currency : 'BRL'}}
+                        {{item.price | currency : 'BRL'}}
                     </div>
                     <ul class="rating">
                         <li class="fa fa-star"></li>
