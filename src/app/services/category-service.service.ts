@@ -9,15 +9,17 @@ import { CategoryModel } from '../models/CategoryModel';
 })
 export class CategoryServiceService {
 
+  endereco = environment.server + environment.port;
+
   constructor(private http: HttpClient) { }
 
   token = {headers: new HttpHeaders().set('Authorization', environment.token)}
 
   getAllCategory():Observable<CategoryModel[]>{
-    return this.http.get<CategoryModel[]>('https://projetoecobook.herokuapp.com/category', this.token)
+    return this.http.get<CategoryModel[]>(`${this.endereco}/category`, this.token)
   }
 
   getByIdCategory(id: number):Observable<CategoryModel>{
-    return this.http.get<CategoryModel>(`https://projetoecobook.herokuapp.com/category/${id}`, this.token)
+    return this.http.get<CategoryModel>(`${this.endereco}/category/${id}`, this.token)
   }
 }

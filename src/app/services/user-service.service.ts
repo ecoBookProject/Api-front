@@ -11,6 +11,8 @@ import { UserModel } from '../models/UserModel';
 })
 export class UserServiceService {
 
+  endereco = environment.server + environment.port;
+
   constructor(
     private http: HttpClient,
     private router: Router
@@ -19,20 +21,20 @@ export class UserServiceService {
   token = {headers: new HttpHeaders().set('Authorization', environment.token)}
 
   cadastrar(user: UserModel): Observable<UserModel> {
-    return this.http.post<UserModel>('https://projetoecobook.herokuapp.com/users/register', user)
+    return this.http.post<UserModel>(`${this.endereco}/users/register`, user)
   }
 
   //Para o login ->  
   entrar(userDto: UserDTO): Observable<UserDTO> {
-    return this.http.post<UserDTO>('https://projetoecobook.herokuapp.com/users/auth', userDto)
+    return this.http.post<UserDTO>(`${this.endereco}/users/auth`, userDto)
   }
 
   getByIdUser(id: number):Observable<UserModel>{
-    return this.http.get<UserModel>(`https://projetoecobook.herokuapp.com/users/${id}`, this.token)
+    return this.http.get<UserModel>(`${this.endereco}/users/${id}`, this.token)
   }
 
   atualizar(user: UserModel): Observable<UserModel>{
-    return this.http.put<UserModel>('https://projetoecobook.herokuapp.com/users/', user)
+    return this.http.put<UserModel>(`${this.endereco}/users/`, user)
   }
 
   logged() {
