@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+.container{
+    font-family: 'Roboto', sans-serif;
+}
+
+.cor-buttom{
+  background-color:  #B5BF65;
+  width: 180px;
+}
+.cor-buttom:hover {
+  background-color: #90A641;
+}
+
+.cor-buttom-2{
+  background-color:  #B5BF65;
+  
+}
+.cor-buttom-2:hover {
+  background-color: #90A641;
+}
+
+.img-size{
+  max-width: 60%;
+    max-height: 60%;
+    width: auto;
+    height: auto;
+}

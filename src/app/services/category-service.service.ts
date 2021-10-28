@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment.prod';
 import { CategoryModel } from '../models/CategoryModel';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CategoryServiceService {
 

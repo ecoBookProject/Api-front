@@ -38,7 +38,7 @@ export class AdimHomeComponent implements OnInit {
 
     this.FormGroup = this.formBuilder.group({
       titulo: ['', Validators.required],
-      foto: ['', Validators.required],
+      photo: ['', Validators.required],
       preco: ['', Validators.required],
       descricao: ['', Validators.required],
       autor: ['', Validators.required],

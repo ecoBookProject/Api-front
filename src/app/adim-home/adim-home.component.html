@@ -101,8 +101,8 @@
                         </div>
                         <div class="form-group mr-2 col-md-4">
                             <label for="titulo">Link da Foto</label>
-                            <input formControlName="foto" [(ngModel)]="book.photo" type="text" class="form-control"
-                                id="foto" placeholder="Digite o link da foto">
+                            <input formControlName="photo" [(ngModel)]="book.photo" type="text" class="form-control"
+                                id="photo" placeholder="Digite o link da foto">
                         </div>
                         <div class="form-group mr-2 col-md-4">
                             <label for="titulo">Preço</label>
@@ -178,8 +178,8 @@
                         </div>
                         <div class="form-group mr-2 col-md-5">
                             <label for="texto">Escolha uma categoria ou <a routerLink="/category"
-                                    data-dismiss="modal">cadastre um
-                                    novo</a>:</label>
+                                    data-dismiss="modal">cadastre uma
+                                    nova</a>:</label>
                             <select formControlName="tema" class="form-control" name="tema" id="tema"
                                 [(ngModel)]='idCategory' (change)='findByIdCategory()'>
                                 <option *ngFor='let item of listCategory' value="{{item.idCategory}}">{{item.genre}}
