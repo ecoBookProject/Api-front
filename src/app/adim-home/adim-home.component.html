@@ -35,52 +35,45 @@
         </div>
     </div>
 </div>
-<!--<div class="d-md-none d-sm-block">
-    <div class="row d-flex align-items-center" style="background-color: #B5BF65;">
-        <div class="col-md-6">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-6 text-white">
-                    <h1 class="fs-54">Configure o site :}</h1>
-                </div>
-            </div>
-            <div class="row d-flex justify-content-center mt-1 mb-5">
-                <div class="col-md-6">
-                    <button class="btn btn-outline-light mr-2" data-toggle="modal" data-target="#novaPostagem">Novo
-                        Livro</button>
-                    <a href="#books-card" class="btn btn-outline-light">Ver Livros</a>
-                </div>
-            </div>
-        </div>
-        <div class="d-md-none d-sm-block">
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="https://i.imgur.com/eCQ7xRN.png" alt="" width="300px" height="300px">
-            </div>
-        </div>
-    </div>
-</div>-->
+
 <!-- Books card -->
 <div class="container mt-5 mb-5"></div>
-<div id="books-card">
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class="col-12">
-            </div>
-            <div class="card-deck mb-3 mr-3" *ngFor='let item of listBook'>
-                <div class="card h-100">
-                    <img class="card-img-top" src="{{item.foto}}" alt="When Time Stopped">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class=" text-center titulo">{{item.title}}</h5>
-                        <p class="card-text text-center">{{item.publisher}}</p>
-                        <p class="text-center"><a>{{item.price | currency : 'BRL'}}</a></p>
-                        <a [routerLink]="['/book-edit', item.idProduct]"
-                            class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 border border-light ">Editar</a>
-                        <a href="#"
-                            class="btn btn-danger mt-auto d-flex justify-content-center rounded-0 border border-light"
-                            [routerLink]="['/book-delete', item.idProduct]">Apagar</a>
-                    </div>
+<div class="container justify-content-center">
+    <div class="row my-5">
+        <div class="col-md-3 col-sm-6" *ngFor='let item of listBook'>
+            <div class="product-grid3" [routerLink]="['/vitrine',item.idProduct]">
+                <div class="product-image3">
+                    <a href="#">
+                        <div class="d-none d-md-block">
+                            <img class="pic-1" src="{{item.foto}}" alt="book-img">
+                            <img class="pic-2" src="{{item.foto}}" alt="book-img">
+                        </div>
+                        <div class="d-md-none d-sm-block">
+                            <img class="pic-1" src="{{item.foto}}" alt="book-img" style="max-width:550px; max-height:400px; width: auto; height: auto;">
+                            <img class="pic-2" src="{{item.foto}}" alt="book-img" style="max-width:550px; max-height:400px; width: auto; height: auto;">
+                        </div>
+                    </a>
+                    <ul class="social">
+                        <li><a [routerLink]="['/book-edit', item.idProduct]" data-toogle="tooltip" title="Editar"><i
+                                    class="fa fa-pencil" aria-hidden="true"></i></a></li>
+                        <li><a [routerLink]="['/book-delete', item.idProduct]" data-toogle="tooltip"
+                                title="Deletar"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
+                    </ul>
                 </div>
-            </div>
-            <div class="col-12">
+                <div class="product-content mb-5">
+                    <h3 class="title"><a>{{item.publisher}}</a></h3>
+                    <h5 class="title-book"><a>{{item.title}}</a></h5>
+                    <div class="price">
+                        {{item.price | currency : 'BRL'}}
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

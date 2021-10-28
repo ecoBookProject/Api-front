@@ -39,24 +39,41 @@
 </div>
 
 <!-- Books card -->
-<div id="books-card">
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class="col-12">
-            </div>
-            <div class="card-deck mb-3 mr-3" *ngFor='let item of category.book'>
-                <div class="card h-100">
-                    <img class="card-img-top" src="{{item.foto}}" alt="When Time Stopped">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class=" text-center titulo" (click)="vitrine()">{{item.title}}</h5>
-                        <p class="card-text text-center">{{item.publisher}}</p>
-                        <p class="text-center"><del class="mr-3 c-grey">R$50,00</del><a>{{item.price | currency : 'BRL'}}</a></p>
-                        <a href="#"
-                            class="btn btn-primary mt-auto d-flex justify-content-center rounded-0 bc-green border border-light ">Comprar</a>
-                    </div>
+<div class="container justify-content-center">
+    <div class="row my-5">
+        <div class="col-md-3 col-sm-6" *ngFor='let item of category.book'>
+            <div class="product-grid3" [routerLink]="['/vitrine',item.idProduct]">
+                <div class="product-image3">
+                    <a href="#">
+                        <div class="d-none d-md-block">
+                            <img class="pic-1" src="{{item.foto}}" alt="book-img">
+                            <img class="pic-2" src="{{item.foto}}" alt="book-img">
+                        </div>
+                        <div class="d-md-none d-sm-block">
+                            <img class="pic-1" src="{{item.foto}}" alt="book-img" style="max-width:550px; max-height:400px; width: auto; height: auto;">
+                            <img class="pic-2" src="{{item.foto}}" alt="book-img" style="max-width:550px; max-height:400px; width: auto; height: auto;">
+                        </div>
+                    </a>
+                    <ul class="social">
+                        <li><a href="#" data-toogle="tooltip" title="Comprar"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="#" data-toogle="tooltip" title="Carrinho"><i class="fa fa-shopping-cart"></i></a></li>
+                        <li><a [routerLink]="['/vitrine',item.idProduct]" data-toogle="tooltip" title="Informações"><i class="fa fa-info"></i></a></li>
+                    </ul>
                 </div>
-            </div>
-            <div class="col-12">
+                <div class="product-content mb-5">
+                    <h3 class="title"><a>{{item.publisher}}</a></h3>
+                    <h5 class="title-book"><a>{{item.title}}</a></h5>
+                    <div class="price">
+                        {{item.price  | currency : 'BRL'}}
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

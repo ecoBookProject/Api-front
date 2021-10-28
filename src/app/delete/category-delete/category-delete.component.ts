@@ -41,11 +41,10 @@ export class CategoryDeleteComponent implements OnInit {
     this.categoryService.deleteCategory(this.idCategory).subscribe(() => {
       Swal.fire({
         icon: 'success',
-        title: 'Livro apagado com sucesso!',
+        title: 'Categoria apagada com sucesso!',
         showConfirmButton: false,
         timer: 1500,
       })
-      this.alerts.showAlertSuccess('Categoria apagada com sucesso!')
       this.router.navigate(['/category'])
     })
   }

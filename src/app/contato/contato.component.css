@@ -4,6 +4,10 @@
     font-family: 'Roboto';
 }
 
+a {
+    cursor: pointer;
+}
+
 .card-img-top{
     
     width: 100px;
@@ -30,7 +34,6 @@
 .titulo{
     text-align: center;
     font-style: oblique;
-    text-shadow: 0 0 7px rgb(0, 255, 0);
 }
 
 .bg{
@@ -119,7 +122,7 @@ img, figure {
 
 .card-text {
     padding-top: 12px;
-    color: #8c8c8c;
+    color: #272222;
 }
 
 .text-sm {
@@ -152,7 +155,7 @@ p, .p {
 
 .card{
     border-width: 5px;
-    border-color: darkgreen;
+    border-color: #90A641;
 }
 
 .mapa{

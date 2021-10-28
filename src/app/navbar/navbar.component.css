@@ -50,3 +50,13 @@
     background-color: #b5bf65;
     border-radius: 10px;
 }
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+a:hover{
+  color: #fff;
+}

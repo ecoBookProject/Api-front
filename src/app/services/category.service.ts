@@ -9,6 +9,8 @@ import { CategoryModel } from '../models/CategoryModel';
 })
 export class CategoryService {
 
+  endereco = environment.server + environment.port;
+
   constructor( private http: HttpClient) { }
 
   token = {
@@ -16,22 +18,22 @@ export class CategoryService {
   }
 
   getAllCategory(): Observable<CategoryModel[]>{
-    return this.http.get<CategoryModel[]>('https://projetoecobook.herokuapp.com/category', this.token)
+    return this.http.get<CategoryModel[]>(`${this.endereco}/category`, this.token)
   }
   
   getByIdCategory(id: number): Observable<CategoryModel>{
-    return this.http.get<CategoryModel>(`https://projetoecobook.herokuapp.com/category/${id}`, this.token)
+    return this.http.get<CategoryModel>(`${this.endereco}/category/${id}`, this.token)
   }
 
   postCategory(category: CategoryModel): Observable<CategoryModel> {
-    return this.http.post<CategoryModel>('https://projetoecobook.herokuapp.com/category', category, this.token)
+    return this.http.post<CategoryModel>(`${this.endereco}/category`, category, this.token)
   }
 
   putCategory(category: CategoryModel): Observable<CategoryModel> {
-    return this.http.put<CategoryModel>('https://projetoecobook.herokuapp.com/category', category, this.token)
+    return this.http.put<CategoryModel>(`${this.endereco}/category`, category, this.token)
   }
 
   deleteCategory(id: number) {
-    return this.http.delete(`https://projetoecobook.herokuapp.com/category/${id}`, this.token)
+    return this.http.delete(`${this.endereco}/category/${id}`, this.token)
   }
 }

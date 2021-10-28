@@ -20,9 +20,6 @@ export class AdimNavbarComponent implements OnInit {
 
   sair(){
     this.router.navigate(['/home'])
-    environment.token = ''
-    environment.name = ''
-    environment.type_user = ''
-    environment.idClient = 0
+    location.reload();
   }
 }
