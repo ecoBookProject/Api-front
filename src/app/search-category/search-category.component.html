@@ -45,8 +45,19 @@
             <div class="product-grid3" [routerLink]="['/vitrine',item.idProduct]">
                 <div class="product-image3">
                     <a href="#">
+<<<<<<< HEAD
                         <img class="pic-1" src="{{item.photo}}" alt="book-img">
                         <img class="pic-2" src="{{item.photo}}" alt="book-img">
+=======
+                        <div class="d-none d-md-block">
+                            <img class="pic-1" src="{{item.foto}}" alt="book-img">
+                            <img class="pic-2" src="{{item.foto}}" alt="book-img">
+                        </div>
+                        <div class="d-md-none d-sm-block">
+                            <img class="pic-1" src="{{item.foto}}" alt="book-img" style="max-width:550px; max-height:400px; width: auto; height: auto;">
+                            <img class="pic-2" src="{{item.foto}}" alt="book-img" style="max-width:550px; max-height:400px; width: auto; height: auto;">
+                        </div>
+>>>>>>> c1e4bad782c009335664ca324de77c01bc923635
                     </a>
                     <ul class="social">
                         <li><a href="#" data-toogle="tooltip" title="Comprar"><i class="fa fa-shopping-bag"></i></a></li>

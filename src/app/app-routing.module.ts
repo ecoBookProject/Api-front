@@ -16,6 +16,7 @@ import { ContatoComponent } from './contato/contato.component';
 import { FormatBookComponent } from './format-book/format-book.component';
 import { FormatBookFisicoComponent } from './format-book-fisico/format-book-fisico.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { PaymentComponent } from './payment/payment.component';
 import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
@@ -38,6 +39,8 @@ const routes: Routes = [
   { path: 'format-book-fisico', component: FormatBookFisicoComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'carrinho', component: CartComponent },
+  { path: 'payment', component: PaymentComponent },
+  { path: 'payment/:id', component: PaymentComponent },
 ];
 
 @NgModule({

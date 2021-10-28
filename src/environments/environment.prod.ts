@@ -20,5 +20,7 @@ export const environment = {
   pages: 0,
   photo: '',
   quantity: 0,
-  partialValue: 0,
+  partialValue: 0,  
+  server: 'https://projetoecobook.',
+  port: 'herokuapp.com'
 };
