@@ -3,11 +3,11 @@
 </div>
 
 
-<div class="row container mt-5 mb-5 m-auto border">
+<div class="row container mt-5 mb-5 m-auto border" *ngFor="let item of bookcard">
   
   <div class="col-sm-1"></div>
   
-  <div class="col-sm-4 mt-5 d-flex justify-content-center">
+  <div class="col-sm-4 mt-5 d-flex justify-content-center" >
  <img class="img-size" src="https://i.imgur.com/yem4zWM.jpg" alt="">
   </div>
 
@@ -24,15 +24,15 @@
       <tbody>
         <tr>
           <th scope="row">Livro</th>
-          <td>{{book.title}}</td>
+          <h1>{{item.title}}</h1>
         </tr>
         <tr>
           <th scope="row">Autor</th>
-          <td>{{book.author}}</td>
+          <td>{{item.author}}</td>
         </tr>
         <tr>
           <th scope="row">Preço</th>
-          <td>{{ book.price | currency: "BRL" }}</td>
+          <td>{{ item.price | currency: "BRL" }}</td>
         </tr>
         <tr>
           <th scope="row">Total</th>

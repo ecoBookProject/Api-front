@@ -28,11 +28,9 @@ import { SearchCategoryComponent } from './search-category/search-category.compo
 import { FormatBookComponent } from './format-book/format-book.component';
 import { FormatBookFisicoComponent } from './format-book-fisico/format-book-fisico.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { CartComponent } from './cart/cart.component';
 import { PaymentComponent } from './payment/payment.component';
-
 import { GooglePayButtonModule } from '@google-pay/button-angular';
-
-
 
 @NgModule({
   declarations: [
@@ -57,6 +55,7 @@ import { GooglePayButtonModule } from '@google-pay/button-angular';
     FormatBookComponent,
     FormatBookFisicoComponent,
     AboutUsComponent,
+    CartComponent,
     PaymentComponent,
   ],
   imports: [

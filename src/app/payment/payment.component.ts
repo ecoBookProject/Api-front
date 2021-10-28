@@ -20,6 +20,14 @@ export class PaymentComponent implements OnInit {
   book: BookModel = new BookModel
   bookcard: BookModel[]
 
+  pValue: number;
+  totalValue: number;
+  empty: string;
+  quant: number;
+  cart = {
+    value: 0,
+  };
+
   nome: string = '';
   sobrenome: string = '';
   cep: string = '';
@@ -61,6 +69,30 @@ export class PaymentComponent implements OnInit {
         this.user.cep = cep;
         
       })
+  }
+
+  toShowTotalValue() {
+    this.totalValue = 0;
+    let dataCart = [];
+    dataCart = JSON.parse(localStorage.getItem('shoppingCart') || '{}');
+
+    dataCart.forEach((i: any) => {
+      this.cart = {
+        value: i.partialValue
+      };
+
+      this.totalValue += this.cart.value;
+    });
+    return this.totalValue;
+  }
+
+  priceSum() {
+    console.log('PREÇO: ' + JSON.stringify(this.totalValue));
+
+    this.bookcard.forEach((item) => {
+      this.totalValue += item.price;
+    });
+    console.log('PREÇO2: ' + JSON.stringify(this.totalValue));
   }
 
 }
