@@ -19,6 +19,7 @@
 .cor-buttom{
     background-color:  #B5BF65;
     width: 180px;
+    border-radius: 25px;
 }
 .cor-buttom:hover {
     background-color: #90A641;
@@ -31,35 +32,62 @@
     height: auto;
 }
 
-.product-count .qtyminus,
-  .product-count .qtyplus {
-    width: 34px;
-      height: 34px;
-      background: transparent;
-      text-align: center;
-      font-size: 19px;
-      line-height: 34px;
-      color: #B5BF65;
-      cursor: pointer;
-      font-weight: 600;
+.qty .count {
+  color: #000;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 30px;
+  padding: 0 2px;
+  min-width: 35px;
+  text-align: center;
+}
+.qty .plus {
+  cursor: pointer;
+  display: inline-block;
+  color: white;
+  width: 30px;
+  height: 30px;
+  font: 25px/1 Arial,sans-serif;
+  text-align: center;
+  border-radius: 50%;
+  background-color: rgb(202, 202, 202);
   }
-  .product-count .qtyminus {
-      line-height: 32px;
-  }
-  .product-count .qtyminus {
-    border-radius: 3px 0 0 3px; 
-  }
-  .product-count .qtyplus {
-    border-radius: 0 3px 3px 0; 
-  }
-  .product-count .qty {
-    width: 60px;
-    text-align: center;
-    border: none;
-  }
-  .count-inlineflex {
-    display: inline-flex;
-    border: solid 2px #ccc;
-    border-radius: 20px;  
-  }
+.qty .minus {
+  cursor: pointer;
+  display: inline-block;
+  color: white;
+  width: 30px;
+  height: 30px;
+  font: 25px/1 Arial,sans-serif;
+  text-align: center;
+  border-radius: 50%;
+  background-clip: padding-box;
+  background-color: rgb(202, 202, 202);
+}
+div {
+  text-align: center;
+}
+.minus:hover{
+  background-color: #90A641 !important;
+}
+.plus:hover{
+  background-color: #90A641 !important;
+}
+/*Prevent text selection*/
+
+input{  
+  border: 0;
+  width: 2%;
+}
+nput::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input:disabled{
+  background-color:white;
+}
+
 
