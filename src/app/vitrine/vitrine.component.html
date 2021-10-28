@@ -64,20 +64,28 @@
               </button>
             </div>
             <p class="color-green mb-1">Quantidade: </p>
-                    <div>
+                    <!-- <div>
                         <input type="button" id="minus" value="-" (click)="quantityChange(-1)" />
                         <input [(ngModel)]="quant" id="quant" name="quant" class="text" size="1" value="1"
                             type="text"/>
                         <input type="button" id="plus" value="+" (click)="quantityChange(1)">
-                    </div>
-            <div class="row d-flex justify-content-center">
+                    </div> -->
+                    <td class="product-count">
+                      <form action="#" class="count-inlineflex">
+                        <input type="text" id="minus" value="-" (click)="quantityChange(-1)" />
+                        <input input [(ngModel)]="quant" id="quant" name="quant" class="text" size="1" value="1"
+                        type="text" />
+                        <input type="text" id="plus" value="+" (click)="quantityChange(1)" />
+                      </form>
+                    </td>
+            <!-- <div class="row d-flex justify-content-center">
               <button
                 type="submit"
                 class="text-light cor-buttom btn shadow-sm rounded-1" [routerLink]="['/payment']"
               >
                 Finalizar pedido
               </button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>

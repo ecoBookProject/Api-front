@@ -85,6 +85,6 @@ export class VitrineComponent implements OnInit {
       partialValue: this.book.partialValue        
     })
     localStorage.setItem('shoppingCart', JSON.stringify(this.bookcard))
-    this.router.navigate(['/home'])
+    this.router.navigate(['/carrinho'])
   }
 }

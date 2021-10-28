@@ -45,22 +45,13 @@
             <div class="product-grid3" *ngIf='previous' [routerLink]="['/vitrine',item.idProduct]">
                 <div class="product-image3">
                     <a href="#">
-<<<<<<< HEAD
-                        <img class="pic-1" src="{{item.photo}}" alt="book-img">
-                        <img class="pic-2" src="{{item.photo}}" alt="book-img">
-                    </a>
-                    <ul class="social">
-                        <li><a data-toogle="tooltip" title="Comprar"><i class="fa fa-shopping-bag"></i></a></li>
-                        <li><a (click)="toBuy(item.idProduct)" data-toogle="tooltip" title="Carrinho"><i class="fa fa-shopping-cart"></i></a></li>
-                        <li><a [routerLink]="['/vitrine',item.idProduct]" data-toogle="tooltip" title="Informações"><i class="fa fa-info"></i></a></li>
-=======
                         <div class="d-none d-md-block">
-                            <img class="pic-1" src="{{item.foto}}" alt="book-img">
-                            <img class="pic-2" src="{{item.foto}}" alt="book-img">
+                            <img class="pic-1" src="{{item.photo}}" alt="book-img">
+                            <img class="pic-2" src="{{item.photo}}" alt="book-img">
                         </div>
                         <div class="d-md-none d-sm-block">
-                            <img class="pic-1" src="{{item.foto}}" alt="book-img" style="max-width:550px; max-height:400px; width: auto; height: auto;">
-                            <img class="pic-2" src="{{item.foto}}" alt="book-img" style="max-width:550px; max-height:400px; width: auto; height: auto;">
+                            <img class="pic-1" src="{{item.photo}}" alt="book-img" style="max-width:550px; max-height:400px; width: auto; height: auto;">
+                            <img class="pic-2" src="{{item.photo}}" alt="book-img" style="max-width:550px; max-height:400px; width: auto; height: auto;">
                         </div>
                     </a>
                     <ul class="social">
@@ -70,7 +61,6 @@
                         </li>
                         <li><a [routerLink]="['/vitrine',item.idProduct]" data-toogle="tooltip" title="Informações"><i
                                     class="fa fa-info"></i></a></li>
->>>>>>> c1e4bad782c009335664ca324de77c01bc923635
                     </ul>
                 </div>
                 <div class="product-content mb-5">

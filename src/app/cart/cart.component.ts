@@ -12,11 +12,11 @@ import { UserServiceService } from '../services/user-service.service';
 })
 export class CartComponent implements OnInit {
   product: BookModel = new BookModel();
-  shoppingCart: BookModel[];
-  partialValue: number;
+  bookcard: BookModel[];
+  pValue: number;
   totalValue: number;
   empty: string;
-  quantity: number;
+  quant: number;
   cart = {
     value: 0,
   };
@@ -37,13 +37,13 @@ export class CartComponent implements OnInit {
     this.toShowCart();
     this.toShowTotalValue();
 
-    console.log('PREÇO: ' + JSON.stringify(this.shoppingCart));
+    console.log('PREÇO: ' + JSON.stringify(this.bookcard));
   }
 
   toShowCart() {
     const storage = localStorage['shoppingCart'];
     if (storage.length > 0) {
-      this.shoppingCart = storage ? JSON.parse(storage) : [];
+      this.bookcard = storage ? JSON.parse(storage) : [];
     } else {
       this.empty = 'O Carrinho está vazio';
       this.totalValue = 0;
@@ -57,7 +57,7 @@ export class CartComponent implements OnInit {
 
     dataCart.forEach((i: any) => {
       this.cart = {
-        value: i.partialValue,
+        value: i.partialValue
       };
 
       this.totalValue += this.cart.value;
@@ -68,7 +68,7 @@ export class CartComponent implements OnInit {
   priceSum() {
     console.log('PREÇO: ' + JSON.stringify(this.totalValue));
 
-    this.shoppingCart.forEach((item) => {
+    this.bookcard.forEach((item) => {
       this.totalValue += item.price;
     });
     console.log('PREÇO2: ' + JSON.stringify(this.totalValue));

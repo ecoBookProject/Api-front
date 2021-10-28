@@ -1,37 +1,156 @@
-<div class="container">
-    <h1 class="mt-3 text-center">Carrinho</h1>
-    <h5 id="vazio"></h5>
-  
-    <div class="container-fluid" id="container-produto">
-  
-      <div class="row" id="produto" *ngFor="let item of shoppingCart">
-  
-        <div class="col-md-2"> <img src={{item.photo}} alt=""></div>
-        <div class="col">
-          <p id="nome">{{item.title}}</p>
-          <p id="preco">R$ {{item.price}}</p>
+<!-- <div class="container">
+      <h1 class="mt-3 text-center">Carrinho</h1>
+      <h5 id="vazio">{{empty}}</h5>
+    
+      <div class="container-fluid" id="container-produto">
+    
+        <div class="row" id="produto" *ngFor="let item of bookcard">
+    
+          <div class="col-md-2"> <img src={{item.photo}} alt=""></div>
+          <div class="col">
+            <p id="nome">{{item.title}}</p>
+            <p id="preco">R$ {{item.price.toFixed(2).replace('.', ',')}}</p>
+          </div>
+    
+          <div class="col">
+            <p class="text-center" id="quantidade">x {{item.quantity}}</p>
+          </div>
+    
+          <div class="col">
+            <p id="precoParcial">=  R$ {{item.partialValue.toFixed(2)}}</p>
+          </div>
+    
         </div>
-  
-        <div class="col">
-          <p class="text-center" id="quantidade">x </p>
-        </div>
-  
-        <div class="col">
-          <p id="precoParcial">=  R$ </p>
-        </div>
-  
       </div>
-    </div>
-  
-    <div class="confirma">
-      <hr>
-      <h3 id="total"><strong>TOTAL:</strong> R$  </h3>
-      <div class="d-flex justify-content-center">
-        <button type="submit" id="continuar" class="btn btn-secondary m-3" routerLink="/home"><strong>Continuar
-            comprando</strong></button>
-            <button type="submit" id="comprar" class="btn btn-secondary m-3" ><strong>Ir para
-              Pagamento</strong></button>
-      </div>
-    </div>
+    
+      <div class="confirma">
+        <hr>
+        <h3 id="total"><strong>TOTAL:</strong> R$ {{totalValue}} </h3>
+        <div class="d-flex justify-content-center">
+          <button type="submit" id="continuar" class="btn btn-secondary m-3" routerLink="/home"><strong>Continuar
+              comprando</strong></button>
+              <button type="submit" id="comprar" class="btn btn-secondary m-3" routerLink="/payment"><strong>Ir para
+                Pagamento</strong></button>
+        </div>
+      </div> -->
 
-    <!-- [routerLink]="['/payment', totalValue.toFixed(2)]" -->
+<link
+  href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous"
+/>
+<div class="cart-wrap">
+  <div class="container">
+    <div class="row" *ngFor="let item of bookcard">
+      <div class="col-lg-8">
+        <div class="main-heading">Carrinho</div>
+        <div class="table-cart">
+          <table>
+            <thead>
+              <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Total</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="display-flex align-center">
+                    <div class="img-product">
+                      <img
+                        src="{{item.photo}}"
+                        alt=""
+                        class="mCS_img_loaded"
+                      />
+                    </div>
+                    <div class="name-product">
+                      {{item.title}}
+                    </div>
+                    <div class="price">R${{item.price.toFixed(2).replace('.', ',')}}</div>
+                  </div>
+                </td>
+                <td class="product-count">
+                  <form action="#" class="count-inlineflex">
+                    <div class="qtyminus"></div>
+                    <input type="text" name="quantity" value="{{item.quantity}}" class="qty" />
+                    <div class="qtyplus"></div>
+                  </form>
+                </td>
+                <td>
+                  <div class="total">R${{item.partialValue.toFixed(2)}}</div>
+                </td>
+                <td>
+                  <a href="#" title="">
+                    <img
+                      src="images/icons/delete.png"
+                      alt=""
+                      class="mCS_img_loaded"
+                    />
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="coupon-box">
+            <form action="#" method="get" accept-charset="utf-8">
+              <div class="coupon-input">
+                <input
+                  type="text"
+                  name="coupon code"
+                  placeholder="Código"
+                />
+                <button type="submit" class="round-black-btn">
+                  Adicionar Cupom
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- /.table-cart -->
+      </div>
+      <!-- /.col-lg-8 -->
+      <div class="col-lg-4">
+        <div class="cart-totals">
+          <h3>Valor Total do Carrinho</h3>
+          <form action="#" method="get" accept-charset="utf-8">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Subtotal</td>
+                  <td class="subtotal">R${{item.partialValue.toFixed(2)}}</td>
+                </tr>
+                <tr>
+                  <td>Frete</td>
+                  <td class="free-shipping">Frete grátis</td>
+                </tr>
+                <tr class="total-row">
+                  <td>Total</td>
+                  <td class="price-total">R${{totalValue}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="btn-cart-totals">
+              <a routerLink="/home" class="update round-black-btn" title=""
+                >Continuar Comprando</a
+              >
+              <a routerLink="/payment" class="checkout round-black-btn" title=""
+                >Ir Para Pagamento</a
+              >
+            </div>
+            <!-- /.btn-cart-totals -->
+          </form>
+          <!-- /form -->
+        </div>
+        <!-- /.cart-totals -->
+      </div>
+      <!-- /.col-lg-4 -->
+    </div>
+  </div>
+</div>
