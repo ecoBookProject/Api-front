@@ -16,7 +16,7 @@ export class BookModel{
     publisher: string;
     format: string;
     pages: number;
-    foto: string;
+    photo: string;
     category: CategoryModel;
     users: UserModel;
 }

@@ -21,6 +21,6 @@ export const environment = {
   pages: '',
   foto: '',
   
-  server: 'https://projetoecobook.',
+  server: 'https://pi-g4.',
   port: 'herokuapp.com'
 };
