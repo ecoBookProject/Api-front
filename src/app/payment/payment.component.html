@@ -155,10 +155,8 @@
       <div class="row d-flex justify-content-center mt-5">
         <h3 class="row">Pague com Google Pay</h3>
 
-        <google-pay-button
-          class="row mt-5"
-          (click)="confirCompra()"
-          [routerLink]="['/home']"
+      <google-pay-button
+      class="row mt-5 "
           environment="TEST"
           buttonType="buy"
           buttonColor="white"
@@ -193,19 +191,15 @@
               countryCode: 'BR'
             }
           }"
-        ></google-pay-button>
-      </div>
-
-      <div class="row d-flex justify-content-center mt-5 mb-3">
-        <button
-          (click)="confirCompra()"
-          [routerLink]="['/home']"
-          class="text-light cor-buttom btn shadow-sm rounded-1 mb-2"
-        >
-          Finalizar compra
-        </button>
-      </div>
+      ></google-pay-button>
     </div>
+   
+    <div class="row d-flex justify-content-center mt-5 mb-3 ">
+      <button (click)='confirCompra()' class="text-light cor-buttom btn shadow-sm rounded-1 mb-2">
+        Finalizar compra
+      </button>
+    </div>
+    
     <div class="col-sm-1"></div>
   </div>
 </div>

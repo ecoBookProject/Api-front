@@ -6,6 +6,7 @@ import { UserModel } from '../models/UserModel';
 import { AlertsService } from '../services/alerts.service';
 import { BookServiceService } from '../services/book-service.service';
 import { CepServiceService } from '../services/cep-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-payment',
@@ -41,6 +42,7 @@ export class PaymentComponent implements OnInit {
   constructor(
     private bookservice: BookServiceService,
     private cepsService: CepServiceService,
+    private router: Router,
     private route: ActivatedRoute,
     private alerts: AlertsService
   ) {}
@@ -51,8 +53,13 @@ export class PaymentComponent implements OnInit {
     let id = this.route.snapshot.params['id'];
   }
 
-  confirCompra() {
-    this.alerts.showAlertSuccess('Compra realizada com sucesso!');
+  confirCompra(){
+    Swal.fire({
+      icon: 'success',
+      title: 'Compra realizada com sucesso!',
+      text: 'Você recebera um email para finalizar sua compra',
+    })
+    this.router.navigate(['/home'])
   }
 
   buscarCep() {
