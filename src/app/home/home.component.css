@@ -308,3 +308,46 @@
     margin: 0;
   }
 }
+
+@media (max-width: 1920px) {
+  #hero-1{
+    src: url(https://i.imgur.com/qUnZvy8.jpg) ;
+    
+  }
+}
+
+
+@media (max-width: 800px) {
+  #hero-1{
+    src: url(https://i.imgur.com/s8btpbt.png);
+  }
+
+}
+
+@media (max-width: 1920px) {
+  .hero-2{
+    src: url(https://i.imgur.com/UCOJfzY.jpg);
+  }
+}
+
+
+@media (max-width: 800px) {
+  .hero-2{
+    src: url(https://i.imgur.com/Sv3pS6Y.png);
+  }
+
+}
+
+@media (max-width: 1920px) {
+  .hero-3{
+    src: url(https://i.imgur.com/pUx2za7.jpg);
+  }
+}
+
+
+@media (max-width: 800px) {
+  .hero-3{
+    src: url(https://i.imgur.com/fUtYQKH.png);
+  }
+
+}
