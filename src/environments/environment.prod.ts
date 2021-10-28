@@ -17,10 +17,11 @@ export const environment = {
   country: '',
   publisher: '',
   format: '',
+
   pages: 0,
   photo: '',
   quantity: 0,
-  partialValue: 0,  
+  partialValue: 0,
   server: 'https://pi-g4.',
   port: 'herokuapp.com'
 };
