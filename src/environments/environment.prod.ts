@@ -4,23 +4,21 @@ export const environment = {
   name: '',
   token: '',
   type_user: '',
-
-  idProduct: '',
+  idProduct: 0,
   title: '',
   description: '',
-  price: '',
+  price: 0,
   author: '',
-  year: '',
-  inventory: '',
+  year: 0,
+  inventory: 0,
   language: '',
-  isbn: '',
-  ean: '',
+  isbn: 0,
+  ean: 0,
   country: '',
   publisher: '',
   format: '',
-  pages: '',
-  foto: '',
-  
-
-
+  pages: 0,
+  photo: '',
+  quantity: 0,
+  partialValue: 0,
 };

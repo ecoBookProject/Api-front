@@ -16,30 +16,32 @@ import { ContatoComponent } from './contato/contato.component';
 import { FormatBookComponent } from './format-book/format-book.component';
 import { FormatBookFisicoComponent } from './format-book-fisico/format-book-fisico.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full' },
-  {path: 'home', component: HomeComponent },
-  {path: 'cadastro', component: CadastrarComponent },
-  {path: 'login', component: LoginComponent },
-  {path: 'adim-home', component: AdimHomeComponent},
-  {path: 'book-delete/:id', component: BookDeleteComponent},
-  {path: 'book-edit/:id', component: BookEditComponent},
-  {path: 'vitrine/:id', component: VitrineComponent },
-  {path: 'category', component: CategoryComponent},
-  {path: 'category-edit/:id', component: CategoryEditComponent},
-  {path: 'category-delete/:id', component: CategoryDeleteComponent},
-  {path: 'search-category/:id', component: SearchCategoryComponent},
-  {path: 'vitrine', component: VitrineComponent },
-  {path: 'my-profile/:id', component: MyProfileComponent},
-  {path: 'contato', component: ContatoComponent},
-  {path: 'format-book-digital', component: FormatBookComponent},
-  {path: 'format-book-fisico', component: FormatBookFisicoComponent},
-  {path: 'about-us', component: AboutUsComponent}
-]
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'cadastro', component: CadastrarComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'adim-home', component: AdimHomeComponent },
+  { path: 'book-delete/:id', component: BookDeleteComponent },
+  { path: 'book-edit/:id', component: BookEditComponent },
+  { path: 'vitrine/:id', component: VitrineComponent },
+  { path: 'category', component: CategoryComponent },
+  { path: 'category-edit/:id', component: CategoryEditComponent },
+  { path: 'category-delete/:id', component: CategoryDeleteComponent },
+  { path: 'search-category/:id', component: SearchCategoryComponent },
+  { path: 'vitrine', component: VitrineComponent },
+  { path: 'my-profile/:id', component: MyProfileComponent },
+  { path: 'contato', component: ContatoComponent },
+  { path: 'format-book-digital', component: FormatBookComponent },
+  { path: 'format-book-fisico', component: FormatBookFisicoComponent },
+  { path: 'about-us', component: AboutUsComponent },
+  { path: 'carrinho', component: CartComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

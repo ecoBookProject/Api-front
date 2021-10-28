@@ -19,20 +19,20 @@ export class UserServiceService {
   token = {headers: new HttpHeaders().set('Authorization', environment.token)}
 
   cadastrar(user: UserModel): Observable<UserModel> {
-    return this.http.post<UserModel>('https://projetoecobook.herokuapp.com/users/register', user)
+    return this.http.post<UserModel>('https://pi-g4.herokuapp.com/users/register', user)
   }
 
   //Para o login ->  
   entrar(userDto: UserDTO): Observable<UserDTO> {
-    return this.http.post<UserDTO>('https://projetoecobook.herokuapp.com/users/auth', userDto)
+    return this.http.post<UserDTO>('https://pi-g4.herokuapp.com/users/auth', userDto)
   }
 
   getByIdUser(id: number):Observable<UserModel>{
-    return this.http.get<UserModel>(`https://projetoecobook.herokuapp.com/users/${id}`, this.token)
+    return this.http.get<UserModel>(`https://pi-g4.herokuapp.com/users/${id}`, this.token)
   }
 
   atualizar(user: UserModel): Observable<UserModel>{
-    return this.http.put<UserModel>('https://projetoecobook.herokuapp.com/users/', user)
+    return this.http.put<UserModel>('https://pi-g4.herokuapp.com/users/', user)
   }
 
   logged() {

@@ -28,6 +28,7 @@ import { SearchCategoryComponent } from './search-category/search-category.compo
 import { FormatBookComponent } from './format-book/format-book.component';
 import { FormatBookFisicoComponent } from './format-book-fisico/format-book-fisico.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     FormatBookComponent,
     FormatBookFisicoComponent,
     AboutUsComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

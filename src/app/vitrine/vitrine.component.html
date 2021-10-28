@@ -4,7 +4,7 @@
   <div class="row mt-5 d-flex justify-content-center">
     <!--foto-->
     <div class="col-md-3 d-flex justify-content-center">
-      <img src="{{ book.foto }}" class="shadow-sm" alt="..." />
+      <img src="{{ book.photo }}" class="shadow-sm" alt="..." />
     </div>
     <!--infor-->
     <div class="col-md-3 justify-content-center">
@@ -57,20 +57,19 @@
             <div class="row d-flex justify-content-center">
               <button
                 type="submit"
-                href="#"
+                (click)="addToShoppingCart()"
                 class="text-light cor-buttom btn shadow-sm rounded-1 mb-2"
               >
                 Adicionar ao carrinho
               </button>
             </div>
-            <div class="row d-flex justify-content-center">
-              <button
-                type="submit"
-                class="text-light cor-buttom btn shadow-sm rounded-1"
-              >
-                Finalizar pedido
-              </button>
-            </div>
+            <p class="color-green mb-1">Quantidade: </p>
+                    <div>
+                        <input type="button" id="minus" value="-" (click)="quantityChange(-1)" />
+                        <input [(ngModel)]="quant" id="quant" name="quant" class="text" size="1" value="1"
+                            type="text"/>
+                        <input type="button" id="plus" value="+" (click)="quantityChange(1)">
+                    </div>
           </div>
         </div>
       </div>
