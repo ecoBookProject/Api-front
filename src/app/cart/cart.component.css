@@ -1,73 +1,3 @@
-/* h1{
-    text-align: center;
-    color: #1c372c;
-    margin-bottom: 20px;
-  }
-  
-  p{
-    color: white;
-  }
-  .row{
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    margin: 0px;
-  }
-  #container-produto{
-  
-      background-color: #565754;
-      border-radius: 10px;
-      width: 700px;
-  }
-  #produto{
-    text-align: center;
-  }
-  #produto img{
-      width: 100px;
-      margin: 2vh 0 2vh 0;
-  }
-  
-  #precoParcial{
-    font-size: 20pt;
-  
-  }
-  #confirma{
-      display: flex;
-      justify-content: center;
-  }
-  #total{
-      margin-bottom: 10vh;
-      text-align: right;
-      font-size: 28pt;
-  }
-  #comprar{
-      width: 30vh;
-      margin-bottom: 5vh;
-      font-size: 12pt;
-      color: white;
-      background-color: #1c372c;
-  }
-  
-  #continuar{
-      width: 30vh;
-      margin-bottom: 5vh;
-      font-size: 12pt;
-      color: white;
-      background-color: #884f0e;
-  }
-  
-  #quantidade{
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    font-size: 25pt;
-  }
-  
-  #vazio{
-    text-align: center;
-    color: #884f0e;
-  } */
-
   @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
 
   .cart-wrap {
@@ -75,7 +5,7 @@
     font-family: "Roboto", sans-serif;
   }
   .main-heading {
-    font-size: 19px;
+    font-size: 25px;
     margin-bottom: 20px;
   }
   .table-cart table {
@@ -87,7 +17,7 @@
   }
   .table-cart thead tr th {
       padding: 8px 0 18px;
-      color: #484848;
+      color: #000000;
       font-size: 15px;
       font-weight: 400;
   }
@@ -131,7 +61,7 @@
       margin-right: 40px;
       color: #989898;
       font-size: 16px;
-      font-family: 'Nunito';
+      font-family: "Roboto";
   }
   .table-cart tr td .quanlity {
       position: relative;

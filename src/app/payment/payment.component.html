@@ -1,34 +1,25 @@
-<div class="row container mt-5 mb-5 m-auto d-flex justify-content-center" >
-  <h1 class="mt-5 mb-5 ">Finalize sua compra!</h1>
+<div class="container mt-5 mb-5 p-0 d-flex justify-content-center">
+  <h2 class="mt-5">Finalize sua compra</h2>
 </div>
 
-
-<div class="row container mt-5 mb-5 m-auto border" *ngFor="let item of bookcard">
-  
+<div class="row mb-5 border" *ngFor="let item of bookcard">
   <div class="col-sm-1"></div>
-  
-  <div class="col-sm-4 mt-5 d-flex justify-content-center" >
- <img class="img-size" src="https://i.imgur.com/yem4zWM.jpg" alt="">
-  </div>
-
-  <div class="col-sm-2"></div>
-  
   <div class="col-sm-4 mt-3">
     <table class="table">
       <thead>
         <tr>
           <th scope="">Informações do pedido</th>
-          <th scope=""> </th>
+          <th scope=""></th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <th scope="row">Livro</th>
-          <h1>{{item.title}}</h1>
+          <h1>{{ item.title }}</h1>
         </tr>
         <tr>
           <th scope="row">Autor</th>
-          <td>{{item.author}}</td>
+          <td>{{ item.author }}</td>
         </tr>
         <tr>
           <th scope="row">Preço</th>
@@ -43,108 +34,126 @@
   </div>
 
   <div class="col-sm-1"></div>
-
 </div>
 
-<div class="row container mt-5 mb-5 m-auto d-flex justify-content-center" >
-  <h1 class="mt-5 mb-5 "></h1>
-</div>
-
-<div  class="row container mt-5 mb-5 m-auto border" >
-
+<div class="row container mt-5 mb-5 m-auto border">
   <div class="col-sm-1"></div>
 
-
-<!-- dados de entrega  -->
+  <!-- dados de entrega  -->
   <div class="col-sm-5 mt-4 mr-3 mb-4">
-
-      <h2 class="d-flex justify-content-center">Dados de entrega</h2>
-
-      <div>
-        <div class="form-group">
-          <label>Nome</label>
-          <input class="form-control" name="nome" autocomplete="given-name" />
-        </div>
-      </div>
-
-      <div>
-        <div class="form-group" >
-          <label>Sobrenome</label>
-          <input class="form-control" name="sobrenome" autocomplete="family-name" />
-        </div>
-      </div>
-
-      <div>
-        <div class="form-group" >
-          <label>CEP</label>
-          <div class="row">
-            <div class="col-sm-9">
-              <input [(ngModel)]="user.cep" class="form-control" name="cep" autocomplete="shipping postal-code" />
-            </div>
-            <div class="col-sm-3">
-              <div class="d-flex justify-content-center">
-                <button (click)="buscarCep" class="btn text-light cor-buttom-2 shadow-sm rounded-circle " type="button" id="button-addon2">B</button>
-            
-              </div>
-              </div>
-          </div>    
-        </div>
-      </div>
-
-      <div>
-        <div class="form-group">
-          <div class="row">
-            <div class="form-group col-sm-9" >
-              <label>Endereço</label>
-              <input [(ngModel)]="user.address" class="form-control"  name="endereco" autocomplete="shipping address-line1" />
-            </div>
-            <div class="col-sm-3">
-              <label >Numero</label>
-              <input class="form-control"    name="numCasa" autocomplete="">                
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div >
-        <div class="form-group"> 
-          <label>Bairro</label>
-          <input [(ngModel)]="user.district" class="form-control"    name="bairro" autocomplete="shipping address-line2">
-        </div> 
-      </div>
-
-      <div class="row">
-        <div class="col-sm-9">
-          <div class="form-group" >
-            <label>Cidade</label>
-            <input class="form-control"name="cidade" autocomplete="shipping address-level2" />
-          </div>
-        </div>
-      
-        <div class="col-sm-3">
-          <div class="form-group" >
-            <label>UF</label>
-            <input class="form-control" name="uf" autocomplete="shipping address-level1" />
-          </div>
-        </div>
-      </div>      
- </div>
-
-<!-- dados de pegamento -->
-
-  
-
-  <div class="col-sm-5 mt-4 ml-3 mb-4" >
-
-    <h2 class="d-flex justify-content-center">Dados de Pagamento</h2>
+    <h3 class="d-flex justify-content-center">Dados de entrega</h3>
 
     <div>
-      
-    
-    
-    <div class=" row d-flex justify-content-center mt-5">
+      <div class="form-group">
+        <label>Nome</label>
+        <input class="form-control" name="nome" autocomplete="given-name" />
+      </div>
+    </div>
 
-      <h3 class="row ">Pague com Google Pay </h3>
+    <div>
+      <div class="form-group">
+        <label>Sobrenome</label>
+        <input
+          class="form-control"
+          name="sobrenome"
+          autocomplete="family-name"
+        />
+      </div>
+    </div>
+
+    <div>
+      <div class="form-group">
+        <label>CEP</label>
+        <div class="row">
+          <div class="col-sm-9">
+            <input
+              [(ngModel)]="user.cep"
+              class="form-control"
+              name="cep"
+              autocomplete="shipping postal-code"
+            />
+          </div>
+          <div class="col-sm-3">
+            <div class="d-flex justify-content-center">
+              <button
+                (click)="buscarCep()"
+                class="btn text-light cor-buttom-2 shadow-sm"
+                type="button"
+                id="button-addon2"
+              >
+                Buscar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="form-group">
+        <div class="row">
+          <div class="form-group col-sm-9">
+            <label>Endereço</label>
+            <input
+              [(ngModel)]="user.address"
+              class="form-control"
+              name="endereco"
+              autocomplete="shipping address-line1"
+            />
+          </div>
+          <div class="col-sm-3">
+            <label>Numero</label>
+            <input class="form-control" name="numCasa" autocomplete="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="form-group">
+        <label>Bairro</label>
+        <input
+          [(ngModel)]="user.district"
+          class="form-control"
+          name="bairro"
+          autocomplete="shipping address-line2"
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-9">
+        <div class="form-group">
+          <label>Cidade</label>
+          <input
+            class="form-control"
+            name="cidade"
+            autocomplete="shipping address-level2"
+          />
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="form-group">
+          <label>UF</label>
+          <input
+            class="form-control"
+            name="uf"
+            autocomplete="shipping address-level1"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- dados de pegamento -->
+
+  <div class="col-sm-5 mt-4 mb-4">
+    <h3 class="d-flex justify-content-center text-center">Dados de Pagamento</h3>
+
+    <div>
+      <div class="row d-flex justify-content-center mt-5">
+        <h3 class="row">Pague com Google Pay</h3>
 
       <google-pay-button
       class="row mt-5 "
@@ -163,23 +172,23 @@
                 },
                 tokenizationSpecification: {
                   type: 'PAYMENT_GATEWAY',
-                    parameters: {
-                      gateway: 'example',
-                      gatewayMerchantId: 'exampleGatewayMerchantId'
-                    }
+                  parameters: {
+                    gateway: 'example',
+                    gatewayMerchantId: 'exampleGatewayMerchantId'
                   }
                 }
+              }
             ],
             merchantInfo: {
-            merchantId: '12345678901234567890',
-            merchantName: 'Demo Merchant'
+              merchantId: '12345678901234567890',
+              merchantName: 'Demo Merchant'
             },
             transactionInfo: {
-            totalPriceStatus: 'FINAL',
-            totalPriceLabel: 'Total',
-            totalPrice: '100.00',
-            currencyCode: 'BRL',
-            countryCode: 'BR'
+              totalPriceStatus: 'FINAL',
+              totalPriceLabel: 'Total',
+              totalPrice: '100.00',
+              currencyCode: 'BRL',
+              countryCode: 'BR'
             }
           }"
       ></google-pay-button>
@@ -190,28 +199,7 @@
         Finalizar compra
       </button>
     </div>
-
+    
+    <div class="col-sm-1"></div>
   </div>
-  <div class="col-sm-1"></div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

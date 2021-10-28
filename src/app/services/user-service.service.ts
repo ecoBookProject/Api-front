@@ -45,7 +45,8 @@ export class UserServiceService {
       this.router.url.includes('/vitrine') ||
       this.router.url.includes('/contato') ||
       this.router.url.includes('/payment') ||
-      this.router.url.includes('/about-us')
+      this.router.url.includes('/about-us') ||
+      this.router.url.includes('/carrinho')
     ) {
       ok = true;
     }

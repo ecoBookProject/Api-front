@@ -8,17 +8,15 @@ import { BookServiceService } from '../services/book-service.service';
 import { CepServiceService } from '../services/cep-service.service';
 import Swal from 'sweetalert2';
 
-
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
-  styleUrls: ['./payment.component.css']
+  styleUrls: ['./payment.component.css'],
 })
 export class PaymentComponent implements OnInit {
-
-  user: UserModel = new UserModel
-  book: BookModel = new BookModel
-  bookcard: BookModel[]
+  user: UserModel = new UserModel();
+  book: BookModel = new BookModel();
+  bookcard: BookModel[];
 
   pValue: number;
   totalValue: number;
@@ -47,13 +45,12 @@ export class PaymentComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private alerts: AlertsService
-  ) { }
+  ) {}
 
-  ngOnInit(){
-    window.scroll(0,0)
+  ngOnInit() {
+    window.scroll(0, 0);
 
-    let id = this.route.snapshot.params['id']
-    
+    let id = this.route.snapshot.params['id'];
   }
 
   confirCompra(){
@@ -64,15 +61,15 @@ export class PaymentComponent implements OnInit {
     })
     this.router.navigate(['/home'])
   }
-  
+
   buscarCep() {
-    this.cepsService.buscar(this.user.cep)
-      .then((cep: UserModel) => this.user = cep)
+    this.cepsService
+      .buscar(this.user.cep)
+      .then((cep: UserModel) => (this.user = cep))
       .catch(() => {
-        let cep = this.user.cep
+        let cep = this.user.cep;
         this.user.cep = cep;
-        
-      })
+      });
   }
 
   toShowTotalValue() {
@@ -82,7 +79,7 @@ export class PaymentComponent implements OnInit {
 
     dataCart.forEach((i: any) => {
       this.cart = {
-        value: i.partialValue
+        value: i.partialValue,
       };
 
       this.totalValue += this.cart.value;
@@ -98,5 +95,4 @@ export class PaymentComponent implements OnInit {
     });
     console.log('PREÇO2: ' + JSON.stringify(this.totalValue));
   }
-
 }

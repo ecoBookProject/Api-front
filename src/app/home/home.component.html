@@ -44,7 +44,7 @@
         <div class="col-md-3 col-sm-6" [routerLink]="['/vitrine',item.idProduct]" *ngFor='let item of listBook'>
             <div class="product-grid3" *ngIf='previous' [routerLink]="['/vitrine',item.idProduct]">
                 <div class="product-image3">
-                    <a href="#">
+                    <a [routerLink]="['/vitrine',item.idProduct]">
                         <div class="d-none d-md-block">
                             <img class="pic-1" src="{{item.photo}}" alt="book-img">
                             <img class="pic-2" src="{{item.photo}}" alt="book-img">
@@ -55,9 +55,7 @@
                         </div>
                     </a>
                     <ul class="social">
-                        <li><a href="#" data-toogle="tooltip" title="Comprar"><i class="fa fa-shopping-bag"></i></a>
-                        </li>
-                        <li><a href="#" data-toogle="tooltip" title="Carrinho"><i class="fa fa-shopping-cart"></i></a>
+                        <li><a data-toogle="tooltip" title="Carrinho"><i class="fa fa-shopping-cart"></i></a>
                         </li>
                         <li><a [routerLink]="['/vitrine',item.idProduct]" data-toogle="tooltip" title="Informações"><i
                                     class="fa fa-info"></i></a></li>
