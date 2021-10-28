@@ -147,7 +147,7 @@
       <h3 class="row ">Pague com Google Pay </h3>
 
       <google-pay-button
-      class="row mt-5 " (click)='confirCompra()' [routerLink]="['/home']"
+      class="row mt-5 "
           environment="TEST"
           buttonType="buy"
           buttonColor="white"
@@ -186,7 +186,7 @@
     </div>
    
     <div class="row d-flex justify-content-center mt-5 mb-3 ">
-      <button (click)='confirCompra()' [routerLink]="['/home']" class="text-light cor-buttom btn shadow-sm rounded-1 mb-2">
+      <button (click)='confirCompra()' class="text-light cor-buttom btn shadow-sm rounded-1 mb-2">
         Finalizar compra
       </button>
     </div>
